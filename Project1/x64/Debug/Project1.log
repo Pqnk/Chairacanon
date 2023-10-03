@@ -1,0 +1,52 @@
+﻿  Animation.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Character.hpp(7,26): error C2504: 'Animation' : classe de base non définie
+  Character.cpp
+  Cursor.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Character.hpp(7,26): error C2504: 'Animation' : classe de base non définie
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Cursor.cpp(52,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Cursor.cpp(62,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  Enemy.cpp
+  Game.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Game.cpp(240,17): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+  Level.cpp
+  Main.cpp
+  Player.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(113,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(114,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(117,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(123,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(124,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Player.cpp(127,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  Génération de code en cours...
