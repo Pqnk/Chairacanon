@@ -35,17 +35,19 @@ class Cursor : public AnimatedObject
 		sf::Vector2i getPosCursorOnGameWindow();
 		sf::Vector2f getPosCursorOnCameraView();
 		sf::Vector2f getRightClickPosition();
+		sf::Vector2f getLeftClickPosition();
 
 		//##########################
 		//	Setters
 		//##########################
 		void setCursorPosition(sf::Vector2f position);
-		void setClickDirection(sf::Vector2f playerVelocity, sf::Vector2f playerPosition);
+		//void setClickDirection(sf::Vector2f playerVelocity, sf::Vector2f playerPosition);
 		void setIsFirstFrame(bool b);
 		void setIsClicking(bool b);
 		void setIsClickingRight(bool b);
 		void setPosCursorOnCameraView(sf::Vector2f position);
-		void setRightClickPosition(sf::Vector2f c);
+		void setRightClickPosition(sf::Vector2f rCPos);
+		void setLeftClickPosition(sf::Vector2f lCPos);
 
 
 	private :
@@ -62,6 +64,7 @@ class Cursor : public AnimatedObject
 		sf::Vector2f clickDirection;
 
 		sf::Vector2f rightClickPosition;
+		sf::Vector2f leftClickPosition;
 };
 
 #endif

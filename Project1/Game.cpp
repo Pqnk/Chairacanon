@@ -43,8 +43,7 @@ void Game::update()
 		*/
 
 		this->player.updatePlayer(
-			this->cursor.getLastClickPosition(),
-			this->cursor.getClickDirection(),
+			this->cursor.getLeftClickPosition(),
 			this->cursor.getRightClickPosition(),
 			this->levelManager.levels[1].getMaskLevel()
 		);
@@ -132,7 +131,8 @@ void Game::pollEvents()
 				if (	(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4	)	&&	event.mouseButton.button == sf::Mouse::Left)
 				{
 					this->cursor.setIsClicking(true);
-					this->cursor.setClickDirection(this->player.getVelocity(), this->player.getSpritePosition());
+					//this->cursor.setClickDirection(this->player.getVelocity(), this->player.getSpritePosition());
+					this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
 					this->player.setIsMoving(true);
 				}
 
@@ -198,6 +198,13 @@ void Game::initVariables()
 	//	Player : Initialized wi
 	this->player.initPlayer(this->spriteManager.getCharacterSprite());
 	this->cursor.initCursor();
+
+	/*	
+	*	Initialisation of LEFT CLICK POSITION at the Player position
+	*	At each frame, the player access the left click position to update it's position.
+	*	This is a temporary sollution, so the player doesn't go the the (0,0) map origin at the begining
+	*/
+	this->cursor.setLeftClickPosition(this->player.getSprite().getPosition());	// TO REPLACE
 
 	this->gameWindow->setView(this->camera.getCameraView());
 }

@@ -128,6 +128,11 @@ sf::Vector2f Cursor::getRightClickPosition()
 	return rightClickPosition;
 }
 
+sf::Vector2f Cursor::getLeftClickPosition()
+{
+	return leftClickPosition;
+}
+
 sf::Vector2f Cursor::getPosCursorOnWorld()
 {
 	return posCursorOnWorld;
@@ -152,9 +157,14 @@ void Cursor::setPosCursorOnCameraView(sf::Vector2f position)
 	posCursorOnCameraView = position;
 }
 
-void Cursor::setRightClickPosition(sf::Vector2f c)
+void Cursor::setRightClickPosition(sf::Vector2f rCPos)
 {
-	rightClickPosition = c;
+	rightClickPosition = rCPos;
+}
+
+void Cursor::setLeftClickPosition(sf::Vector2f lCPos)
+{
+	leftClickPosition = lCPos;
 }
 
 void Cursor::setIsFirstFrame(bool b)
@@ -167,27 +177,26 @@ void Cursor::setCursorPosition(sf::Vector2f position)
 	sprite.setPosition(position);
 }
 
-
-void Cursor::setClickDirection(sf::Vector2f playerVelocity, sf::Vector2f playerPosition)
-{
-	/*
-		Get the position of the mouse when the event 'Left Click' happen.
-		Then :
-		-	Calculate the vector of the direction the sprite has to follow (clickDirection).
-		-	Calculate the length of this vector (pythagore). And normalize the vector clickDirection dividing it by the length.
-		-	Then multiply the x and y value of the vector clickDirection by the velocity of the player.
-	*/
-
-	clickPosition = posCursorOnWorld;
-	clickDirection = clickPosition - playerPosition;
-
-	float length = std::sqrt(clickDirection.x * clickDirection.x + clickDirection.y * clickDirection.y);
-
-	if (length != 0)
-	{
-		clickDirection /= length; // Normalisation
-	}
-
-	clickDirection.x = playerVelocity.x * clickDirection.x;
-	clickDirection.y = playerVelocity.y * clickDirection.y;
-}
+//void Cursor::setClickDirection(sf::Vector2f playerVelocity, sf::Vector2f playerPosition)
+//{
+//	/*
+//		Get the position of the mouse when the event 'Left Click' happen.
+//		Then :
+//		-	Calculate the vector of the direction the sprite has to follow (clickDirection).
+//		-	Calculate the length of this vector (pythagore). And normalize the vector clickDirection dividing it by the length.
+//		-	Then multiply the x and y value of the vector clickDirection by the velocity of the player.
+//	*/
+//
+//	clickPosition = posCursorOnWorld;
+//	clickDirection = clickPosition - playerPosition;
+//
+//	float length = std::sqrt(clickDirection.x * clickDirection.x + clickDirection.y * clickDirection.y);
+//
+//	if (length != 0)
+//	{
+//		clickDirection /= length; // Normalisation
+//	}
+//
+//	clickDirection.x = playerVelocity.x * clickDirection.x;
+//	clickDirection.y = playerVelocity.y * clickDirection.y;
+//}

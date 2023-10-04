@@ -19,7 +19,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 {
 	sf::Vector2f position(500.f, 600.f);
 	sf::Vector2f origin(32.f, 50.f);
-	sf::Vector2f speed(2.f, 2.f);
+	sf::Vector2f speed(1.f, 1.f);
 
 	health = 50;
 
@@ -47,7 +47,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	setVelocity(speed);
 }
 
-void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vector2f rightClic, sf::Image maskLevel)
+void Player::updatePlayer(sf::Vector2f leftClic, sf::Vector2f rightClic, sf::Image maskLevel)
 {
 	/**
 	@return void
@@ -59,26 +59,32 @@ void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vec
 
 	if (health > 0)
 	{
-		sf::Vector2f spritePos;
-		spritePos.x = getSpritePosition().x;
-		spritePos.y = getSpritePosition().y;
-
-		playerAnimation(cursorPos, rightClic);
+		playerAnimation(leftClic, rightClic);
 		collisionDetection(maskLevel);
 
-		float distance = std::sqrt(std::pow(spritePos.x - cursorPos.x, 2) + std::pow(spritePos.y - cursorPos.y, 2));
+		sf::Vector2f direction = leftClic - sprite.getPosition();
+		
+		float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+		
+		if (length != 0)
+		{
+			direction /= length;
+		}
+		
+		direction.x *= getVelocity().x;
+		direction.y *= getVelocity().y;
 
 		float threshold = 5.f;
 
-		//	Cheking if the position is near the clickPosition
-		if (distance <= threshold)
+		//	Cheking if the position is near the destination
+		if (length <= threshold)
 		{
-			setSpritePosition(spritePos);
+			setSpritePosition(sprite.getPosition());
 			setIsMoving(false);
 		}
 		else
 		{
-			movePlayer(clickDir);
+			sprite.move(direction);
 			setIsShooting(false);
 		}
 	}
@@ -92,20 +98,12 @@ void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vec
 //#######################################################################################################
 //	Updating the Animation & Deplacement of the Player
 //#######################################################################################################
-void Player::movePlayer(sf::Vector2f target)
-{
-	sf::Vector2f newP;
-	newP.x = getSpritePosition().x + target.x;
-	newP.y = getSpritePosition().y + target.y;
-	setSpritePosition(newP);
-}
-
-void Player::playerAnimation(sf::Vector2f cursorPos, sf::Vector2f rightClic)
+void Player::playerAnimation(sf::Vector2f leftClic, sf::Vector2f rightClic)
 {
 	//	Left Click relative to the character
 	sf::Vector2f dir;
-	dir.x = cursorPos.x - getSpritePosition().x;
-	dir.y = cursorPos.y - getSpritePosition().y;
+	dir.x = leftClic.x - getSpritePosition().x;
+	dir.y = leftClic.y - getSpritePosition().y;
 
 	//	Right Click relative to the character
 	sf::Vector2f rightDir;
@@ -400,7 +398,7 @@ void Player::collisionDetection(sf::Image maskLevel)
 	{
 		//	GREEN
 		case 16711935 :
-			newSpeed = sf::Vector2f(2.f, 2.f);
+			newSpeed = sf::Vector2f(1.f, 1.f);
 			setVelocity(newSpeed);
 			break;
 
