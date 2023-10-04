@@ -27,6 +27,7 @@ Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 	direction.y *= 2.f;
 
 	bulletTimer.restart();
+	bulletAnimationTimer.restart();
 }
 
 void Bullet::updateBullet()
@@ -35,6 +36,18 @@ void Bullet::updateBullet()
 	if (bulletTimer.getElapsedTime().asSeconds() < 1.f)
 	{
 		spriteBullet.move(direction);
+
+		if (bulletAnimationTimer.getElapsedTime().asSeconds() >= 0.06f)
+		{
+			frameBullet.left += 64.f;
+			if (frameBullet.left >= 1024.f)
+			{
+				frameBullet.left = 0.f;
+			}
+
+			spriteBullet.setTextureRect(frameBullet);
+			bulletAnimationTimer.restart();
+		}
 	}
 	else
 	{

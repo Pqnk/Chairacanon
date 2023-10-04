@@ -26,6 +26,7 @@ class Bullet
 		void updateBullet();
 
 		sf::Clock bulletTimer;
+		sf::Clock bulletAnimationTimer;
 
 		bool waitingForDestroy;
 };

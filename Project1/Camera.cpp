@@ -1,6 +1,6 @@
 #include "Camera.hpp"
 
-Camera::Camera() : marginForCursor(150.f), marginForPlayer(120.f), marginForPlayerReposition(50.f), velocityCamera(1.7f), offset(5.f)
+Camera::Camera() : marginForCursor(150.f), marginForPlayer(120.f), marginForPlayerReposition(50.f), velocityCamera(1.7f), offset(5.f), isCursorOut(false)
 {
 }
 
@@ -30,6 +30,7 @@ void Camera::updateCamera(Level& map, Cursor& cursor, Player& player, sf::Render
 	isCameraAtMapBorder(map);
 	cursorAtCameraBorder(cursor, window);
 	playerAtCameraBorder(player);
+	isCursorOutOfWindow(cursor, window);
 }
 
 
@@ -137,32 +138,35 @@ void Camera::isPlayerAtCameraBorder(Player& player)
 
 void Camera::cursorAtCameraBorder(Cursor& cursor, sf::RenderTarget& window)
 {
-	//	///////////////////////////////////////////////////////////////////////////////////
-	//	When the cursor gets close to the LEFT border of the WINDOW -> the CAMERA moves to the LEFT
-	if (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f && cursor.getPosCursorOnGameWindow().x < window.getSize().x / 4.f + marginForCursor && isViewAtMapLeft == false)
+	if (!isCursorOut)
 	{
-		cameraView.move(-2.f, 0.f);
-	}
+		//	///////////////////////////////////////////////////////////////////////////////////
+		//	When the cursor gets close to the LEFT border of the WINDOW -> the CAMERA moves to the LEFT
+		if (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f && cursor.getPosCursorOnGameWindow().x < window.getSize().x / 4.f + marginForCursor && isViewAtMapLeft == false)
+		{
+			cameraView.move(-2.f, 0.f);
+		}
 
-	//	///////////////////////////////////////////////////////////////////////////////////
-	//	When the cursor gets close to the RIGHT border of the WINDOW -> the CAMERA moves to the RIGHT
-	if (cursor.getPosCursorOnGameWindow().x >= window.getSize().x -  marginForCursor && isViewAtMapRight == false)
-	{
-		cameraView.move(2.f, 0.f);
-	}
+		//	///////////////////////////////////////////////////////////////////////////////////
+		//	When the cursor gets close to the RIGHT border of the WINDOW -> the CAMERA moves to the RIGHT
+		if (cursor.getPosCursorOnGameWindow().x >= window.getSize().x - marginForCursor && isViewAtMapRight == false)
+		{
+			cameraView.move(2.f, 0.f);
+		}
 
-	//	///////////////////////////////////////////////////////////////////////////////////
-	//	When the cursor gets close to the TOP border of the WINDOW -> the CAMERA moves to the TOP
-	if ((cursor.getPosCursorOnGameWindow().y <  marginForCursor) && (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f) && isViewAtMapTop == false)
-	{
-		cameraView.move(0.f, -2.f);
-	}
+		//	///////////////////////////////////////////////////////////////////////////////////
+		//	When the cursor gets close to the TOP border of the WINDOW -> the CAMERA moves to the TOP
+		if ((cursor.getPosCursorOnGameWindow().y < marginForCursor) && (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f) && isViewAtMapTop == false)
+		{
+			cameraView.move(0.f, -2.f);
+		}
 
-	//	///////////////////////////////////////////////////////////////////////////////////
-	//	When the cursor gets close to the BOTTOM border of the WINDOW -> the CAMERA moves to the BOTTOM
-	if ((cursor.getPosCursorOnGameWindow().y >= window.getSize().y - marginForCursor) && (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f) && isViewAtMapBottom == false)
-	{
-		cameraView.move(0.f, 2.f);
+		//	///////////////////////////////////////////////////////////////////////////////////
+		//	When the cursor gets close to the BOTTOM border of the WINDOW -> the CAMERA moves to the BOTTOM
+		if ((cursor.getPosCursorOnGameWindow().y >= window.getSize().y - marginForCursor) && (cursor.getPosCursorOnGameWindow().x > window.getSize().x / 4.f) && isViewAtMapBottom == false)
+		{
+			cameraView.move(0.f, 2.f);
+		}
 	}
 }
 
@@ -186,6 +190,25 @@ void Camera::playerAtCameraBorder(Player& player)
 	if (isPlayerAtMapBottom == true && isViewAtMapBottom == false)
 	{
 		cameraView.move(0.f, 2);
+	}
+}
+
+void Camera::isCursorOutOfWindow(Cursor& cursor, sf::RenderTarget& window)
+{
+	if (	cursor.getPosCursorOnGameWindow().x > window.getSize().x 
+		|| 
+			cursor.getPosCursorOnGameWindow().x < 0
+		|| 
+			cursor.getPosCursorOnGameWindow().y > window.getSize().y
+		||
+			cursor.getPosCursorOnGameWindow().y < 0
+		)
+	{
+		isCursorOut = true;
+	}
+	else
+	{
+		isCursorOut = false;
 	}
 }
 

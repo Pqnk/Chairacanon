@@ -33,6 +33,7 @@ class Camera
 		void isPlayerAtCameraBorder(Player& player);
 		void cursorAtCameraBorder(Cursor& cursor, sf::RenderTarget& window);
 		void playerAtCameraBorder(Player& player);
+		void isCursorOutOfWindow(Cursor& cursor, sf::RenderTarget& window);
 
 		//##########################
 		//	Accessors
@@ -57,6 +58,8 @@ class Camera
 		bool isPlayerAtMapRight;
 		bool isPlayerAtMapBottom;
 
+		bool isCursorOut;
+
 		float leftLimiteView;
 		float rightLimiteView;
 		float topLimiteView;
@@ -68,5 +71,7 @@ class Camera
 		float bottomLimiteMap;
 
 		float offset;
+
+
 };
 
