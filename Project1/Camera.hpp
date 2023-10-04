@@ -56,5 +56,17 @@ class Camera
 		bool isPlayerAtMapLeft;
 		bool isPlayerAtMapRight;
 		bool isPlayerAtMapBottom;
+
+		float leftLimiteView;
+		float rightLimiteView;
+		float topLimiteView;
+		float bottomLimiteView;
+
+		float leftLimiteMap;
+		float rightLimiteMap;
+		float topLimiteMap;
+		float bottomLimiteMap;
+
+		float offset;
 };
 

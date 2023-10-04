@@ -45,7 +45,7 @@ void Game::update()
 		this->player.updatePlayer(this->cursor.getLastClickPosition(), this->cursor.getClickDirection(), this->cursor.getRightClickPosition());
 		this->bulletmanager.updateBullets();
 		this->cursor.updateCursor(this->gameWindow);
-		this->camera.updateCamera(this->level_01, this->cursor, this->player, *this->gameWindow);
+		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
 	}
 
 	//	Endgame condition

@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Jour 1 : Je veux mourir" << std::endl;
+	std::cout << "Jour 2 : Ma caméra est good !" << std::endl;
 
 	//	Initialisation of the srand
 	std::srand(static_cast<unsigned>(time(NULL)));

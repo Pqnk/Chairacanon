@@ -1,6 +1,6 @@
 #include "Camera.hpp"
 
-Camera::Camera() : marginForCursor(150.f), marginForPlayer(120.f), marginForPlayerReposition(50.f), velocityCamera(1.7f)
+Camera::Camera() : marginForCursor(150.f), marginForPlayer(120.f), marginForPlayerReposition(50.f), velocityCamera(1.7f), offset(5.f)
 {
 }
 
@@ -22,6 +22,11 @@ void Camera::initCameraView(sf::RenderTarget& target)
 
 	cameraView.setCenter(sf::Vector2f(500.f, 600.f));
 	cameraView.setSize(600, 300);
+
+	leftLimiteView = cameraView.getCenter().x - cameraView.getSize().x / 2;
+	rightLimiteView = cameraView.getCenter().x + cameraView.getSize().x / 2;
+	topLimiteView = cameraView.getCenter().y - cameraView.getSize().y / 2;
+	bottomLimiteView = cameraView.getCenter().y + cameraView.getSize().y / 2;
 }
 
 void Camera::updateCamera(Level& map, Cursor& cursor, Player& player, sf::RenderTarget& window)
@@ -38,17 +43,10 @@ void Camera::updateCamera(Level& map, Cursor& cursor, Player& player, sf::Render
 //#######################################################################################################
 void Camera::isCameraAtMapBorder(Level& map)
 {
-	float leftLimiteView = cameraView.getCenter().x - cameraView.getSize().x / 2;
-	float rightLimiteView = cameraView.getCenter().x + cameraView.getSize().x / 2;
-	float topLimiteView = cameraView.getCenter().y - cameraView.getSize().y / 2;
-	float bottomLimiteView = cameraView.getCenter().y + cameraView.getSize().y / 2;
-
-	float leftLimiteMap = map.getSprite().getGlobalBounds().left;
-	float rightLimiteMap = map.getSprite().getGlobalBounds().left + map.getSprite().getGlobalBounds().width;
-	float topLimiteMap = map.getSprite().getGlobalBounds().top;
-	float bottomLimiteMap = map.getSprite().getGlobalBounds().top + map.getSprite().getGlobalBounds().height;
-
-	float offset(5.f);
+	leftLimiteMap = map.getSpriteLevel().getGlobalBounds().left;
+	rightLimiteMap = map.getSpriteLevel().getGlobalBounds().left + map.getSpriteLevel().getGlobalBounds().width;
+	topLimiteMap = map.getSpriteLevel().getGlobalBounds().top;
+	bottomLimiteMap = map.getSpriteLevel().getGlobalBounds().top + map.getSpriteLevel().getGlobalBounds().height;
 
 	//	Left
 	if (leftLimiteView + 150 <= leftLimiteMap + offset)
