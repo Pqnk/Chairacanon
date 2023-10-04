@@ -1,10 +1,13 @@
-#pragma once
-#include "StillObject.hpp"
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
 
 #ifndef DEF_LEVEL
 #define DEF_LEVEL
 
-class Level : public StillObject
+class Level
 {
 	public :
 
@@ -16,9 +19,7 @@ class Level : public StillObject
 
 	protected : 
 
-		int numberLevel;
 		sf::Sprite spriteLevel;
 };
 
 #endif
-

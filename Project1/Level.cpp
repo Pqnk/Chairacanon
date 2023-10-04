@@ -1,6 +1,6 @@
 #include "Level.hpp"
 
-Level::Level() : numberLevel(0)
+Level::Level()
 {
 
 }

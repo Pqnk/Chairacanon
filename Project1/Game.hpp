@@ -70,7 +70,6 @@ class Game
 		Camera camera;
 		Cursor cursor;
 		Player player;
-		Level level_01;
 		LateralScreen latScreen;
 		BulletManager bulletmanager;
 		SpriteManager spriteManager;
