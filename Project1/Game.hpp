@@ -16,7 +16,6 @@
 #include "Cursor.hpp"
 #include "Level.hpp"
 #include "Camera.hpp"
-#include "StillObject.hpp"
 #include "LateralScreen.hpp"
 
 #include "BulletManager.hpp"

@@ -142,7 +142,7 @@ void Game::pollEvents()
 					sf::Vector2f cWorld = gameWindow->mapPixelToCoords(c);
 					this->cursor.setRightClickPosition(cWorld);
 
-					Bullet bullet(this->player.getSpritePosition(), this->cursor.getPosCursorOnWorld());
+					Bullet bullet(this->player.getSpritePosition(), this->cursor.getPosCursorOnWorld(), this->spriteManager.getCharacterSprite());
 					bulletmanager.addBullet(bullet);
 				}
 		}

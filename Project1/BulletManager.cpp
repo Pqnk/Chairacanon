@@ -14,13 +14,22 @@ void BulletManager::drawBullet(sf::RenderTarget& window)
 {
 	for (auto& b : bullets)
 	{
-		//window.draw(b.spriteBullet);
-		window.draw(b.bulletShape);
+		window.draw(b.spriteBullet);
+		std::cout << "Longueur tab : " << bullets.size() << std::endl;
 	}
+
+	eraseBullet();
 }
 
 void BulletManager::eraseBullet()
 {
+	for (auto& b : bullets)
+	{
+		if (b.waitingForDestroy == true)
+		{
+			bullets.erase(bullets.begin());
+		}
+	}
 }
 
 void BulletManager::updateBullets()

@@ -13,11 +13,10 @@ class Bullet
 {
 	public :
 
-		Bullet(sf::Vector2f pos, sf::Vector2f dir);
+		Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite);
 
 		sf::RectangleShape bulletShape;
 
-		sf::Texture texturebullet;
 		sf::Sprite spriteBullet;
 		sf::IntRect frameBullet;
 
@@ -27,5 +26,7 @@ class Bullet
 		void updateBullet();
 
 		sf::Clock bulletTimer;
+
+		bool waitingForDestroy;
 };
 

@@ -17,12 +17,9 @@ Player::~Player()
 //#######################################################################################################
 void Player::initPlayer(sf::Sprite characterSprite)
 {
-	//std::string path("Textures/All_Sprites.png");
 	sf::Vector2f position(500.f, 600.f);
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(0.7f, 0.7f);
-
-	std::cout << " Oui ! je suis rentrer ! " << std::endl;
 
 	health = 50;
 
@@ -39,13 +36,13 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	currentFrameSprite.width = 64.f;
 	currentFrameSprite.height = 64.f;
 
+	//	Sprite from the SpriteManager class
 	sprite = characterSprite;
+
 	sprite.setTextureRect(frameSprite);
 	sprite.setOrigin(origin);
 	sprite.setPosition(position);
 	sprite.setScale(scale);
-
-	//initSprite(path, scale, position, origin);
 
 	setVelocity(speed);
 }

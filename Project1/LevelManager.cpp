@@ -24,4 +24,3 @@ void LevelManager::renderLevel(sf::RenderTarget& window, int numLevel)
 {
 	window.draw(levels[numLevel].getSpriteLevel());
 }
-
