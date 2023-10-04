@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Jour 2 : Sprite balle 6" << std::endl;
+	std::cout << "Jour 2 : Masquage" << std::endl;
 
 	//	Initialisation of the srand
 	std::srand(static_cast<unsigned>(time(NULL)));

@@ -25,6 +25,10 @@ class Player : public Character
 		void playerAnimation(sf::Vector2f cursorPos, sf::Vector2f rightClic);
 
 		//##########################
+		//	Collision Detection (Color)
+		//##########################
+
+		//##########################
 		//	Accessors
 		//##########################
 		bool getIsMoving();
