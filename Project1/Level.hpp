@@ -17,9 +17,13 @@ class Level
 		sf::Sprite getSpriteLevel();
 		void setSpriteLevel(sf::Sprite s);
 
+		sf::Image getMaskLevel();
+		void setMaskLevel(sf::Image i);
+
 	protected : 
 
 		sf::Sprite spriteLevel;
+		sf::Image maskLevel;
 };
 
 #endif

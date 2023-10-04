@@ -42,7 +42,12 @@ void Game::update()
 		*	-	Update the Camera (View) 
 		*/
 
-		this->player.updatePlayer(this->cursor.getLastClickPosition(), this->cursor.getClickDirection(), this->cursor.getRightClickPosition());
+		this->player.updatePlayer(
+			this->cursor.getLastClickPosition(),
+			this->cursor.getClickDirection(),
+			this->cursor.getRightClickPosition(),
+			this->levelManager.levels[1].getMaskLevel()
+		);
 		this->bulletmanager.updateBullets();
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
@@ -180,7 +185,13 @@ void Game::initVariables()
 	this->spriteManager.initSpriteManager();
 
 	//	Level Manager : Saving all the level's sprites in a vector 
-	this->levelManager.initLevels(this->spriteManager.getMainMenuSprite(), this->spriteManager.getLevel1Sprite(), this->spriteManager.getLevel2Sprite());
+	this->levelManager.initLevels(
+			this->spriteManager.getMainMenuSprite(), 
+			this->spriteManager.getLevel1Sprite(), 
+			this->spriteManager.getLevel1MaskImage(),
+			this->spriteManager.getLevel2Sprite(),
+			this->spriteManager.getLevel2MaskImage()
+	);
 
 	this->latScreen.initLateralScreen(this->camera, *this->gameWindow);
 

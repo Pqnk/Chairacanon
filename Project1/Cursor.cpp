@@ -167,6 +167,7 @@ void Cursor::setCursorPosition(sf::Vector2f position)
 	sprite.setPosition(position);
 }
 
+
 void Cursor::setClickDirection(sf::Vector2f playerVelocity, sf::Vector2f playerPosition)
 {
 	/*

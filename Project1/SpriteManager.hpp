@@ -19,8 +19,9 @@ class SpriteManager
 		sf::Sprite getMainMenuSprite();
 		sf::Sprite getLateralScreenSprite();
 		sf::Sprite getLevel1Sprite();
-		sf::Sprite getLevel1MaskSprite();
+		sf::Image getLevel1MaskImage();
 		sf::Sprite getLevel2Sprite();
+		sf::Image getLevel2MaskImage();
 
 	private :
 
@@ -35,11 +36,10 @@ class SpriteManager
 
 		sf::Texture level1Image;
 		sf::Sprite level1Sprite;
-
-		sf::Texture level1MaskImage;
-		sf::Sprite level1MaskSprite;
+		sf::Image level1MaskImage;
 
 		sf::Texture level2Image;
 		sf::Sprite level2Sprite;
+		sf::Image level2MaskImage;
 };
 

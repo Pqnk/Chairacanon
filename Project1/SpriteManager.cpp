@@ -31,15 +31,15 @@ void SpriteManager::initLevelSprite()
 	//	Level 01
 	level1Image.loadFromFile("Textures/Level_01.png");
 	level1Sprite.setTexture(level1Image);
-
+	//	Mask Level1
 	level1MaskImage.loadFromFile("Textures/Level_01_Mask.png");
-	level1MaskSprite.setTexture(level1MaskImage);
-
 
 	//	////////////////////////////////////////////////////////
 	//	Level 02
 	level2Image.loadFromFile("Textures/Level_02.png");
 	level2Sprite.setTexture(level2Image);
+	//	Mask Level2
+	level2MaskImage.loadFromFile("Textures/Level_02_Mask.png");
 }
 
 void SpriteManager::initLateralScreenSprite()
@@ -56,27 +56,36 @@ sf::Sprite SpriteManager::getCharacterSprite()
 	return characterSprite;
 }
 
+
 sf::Sprite SpriteManager::getMainMenuSprite()
 {
 	return mainMenuSprite;
 }
+
 
 sf::Sprite SpriteManager::getLateralScreenSprite()
 {
 	return lateralScreenSprite;
 }
 
+
 sf::Sprite SpriteManager::getLevel1Sprite()
 {
 	return level1Sprite;
 }
 
-sf::Sprite SpriteManager::getLevel1MaskSprite()
+sf::Image SpriteManager::getLevel1MaskImage()
 {
-	return level1MaskSprite;
+	return level1MaskImage;
 }
+
 
 sf::Sprite SpriteManager::getLevel2Sprite()
 {
 	return level2Sprite;
+}
+
+sf::Image SpriteManager::getLevel2MaskImage()
+{
+	return level2MaskImage;
 }

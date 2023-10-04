@@ -4,7 +4,7 @@ LevelManager::LevelManager()
 {
 }
 
-void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf::Sprite spriteLevel2)
+void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf::Image maskLevel1, sf::Sprite spriteLevel2, sf::Image maskLevel2)
 {
 	Level menu;
 	menu.setSpriteLevel(spriteMenu);
@@ -12,10 +12,12 @@ void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf
 
 	Level level1;
 	level1.setSpriteLevel(spriteLevel1);
+	level1.setMaskLevel(maskLevel1);
 	levels.push_back(level1);
 
 	Level level2;
 	level2.setSpriteLevel(spriteLevel2);
+	level2.setMaskLevel(maskLevel2);
 	levels.push_back(level2);
 
 }

@@ -19,7 +19,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 {
 	sf::Vector2f position(500.f, 600.f);
 	sf::Vector2f origin(32.f, 50.f);
-	sf::Vector2f speed(0.7f, 0.7f);
+	sf::Vector2f speed(2.f, 2.f);
 
 	health = 50;
 
@@ -47,7 +47,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	setVelocity(speed);
 }
 
-void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vector2f rightClic)
+void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vector2f rightClic, sf::Image maskLevel)
 {
 	/**
 	@return void
@@ -64,6 +64,7 @@ void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vec
 		spritePos.y = getSpritePosition().y;
 
 		playerAnimation(cursorPos, rightClic);
+		collisionDetection(maskLevel);
 
 		float distance = std::sqrt(std::pow(spritePos.x - cursorPos.x, 2) + std::pow(spritePos.y - cursorPos.y, 2));
 
@@ -89,7 +90,7 @@ void Player::updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vec
 
 
 //#######################################################################################################
-//	Animation & Deplacement of the Player
+//	Updating the Animation & Deplacement of the Player
 //#######################################################################################################
 void Player::movePlayer(sf::Vector2f target)
 {
@@ -387,6 +388,39 @@ void Player::playerAnimation(sf::Vector2f cursorPos, sf::Vector2f rightClic)
 
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
+	}
+}
+
+void Player::collisionDetection(sf::Image maskLevel)
+{
+	sf::Vector2f newSpeed;
+	int pixelColored = maskLevel.getPixel(sprite.getPosition().x, sprite.getPosition().y).toInteger();
+
+	switch (pixelColored)
+	{
+		//	GREEN
+		case 16711935 :
+			newSpeed = sf::Vector2f(2.f, 2.f);
+			setVelocity(newSpeed);
+			break;
+
+		//	BLACK
+		case 255 :
+			newSpeed = sf::Vector2f(0.f, 0.f);
+			setVelocity(newSpeed);
+			break;
+
+		//	PINK
+		case 4278255615:
+			newSpeed = sf::Vector2f(0.5f, 0.5f);
+			setVelocity(newSpeed);
+			break;
+
+		//	BLUE
+		default :
+			newSpeed = sf::Vector2f(0.5f, 0.5f);
+			setVelocity(newSpeed);
+			break;
 	}
 }
 

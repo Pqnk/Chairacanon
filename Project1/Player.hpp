@@ -16,7 +16,7 @@ class Player : public Character
 		//	Init. & Update of the P.
 		//##########################
 		void initPlayer(sf::Sprite characterSprite);
-		void updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vector2f rightClic);
+		void updatePlayer(sf::Vector2f cursorPos, sf::Vector2f clickDir, sf::Vector2f rightClic, sf::Image maskLevel);
 
 		//##########################
 		//	Animation & Deplacement
@@ -27,6 +27,7 @@ class Player : public Character
 		//##########################
 		//	Collision Detection (Color)
 		//##########################
+		void collisionDetection(sf::Image maskLevel);
 
 		//##########################
 		//	Accessors

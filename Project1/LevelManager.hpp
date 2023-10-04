@@ -14,7 +14,7 @@ class LevelManager
 	public :
 
 		LevelManager();
-		void initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf::Sprite spriteLevel2);
+		void initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf::Image maskLevel1, sf::Sprite spriteLevel2, sf::Image maskLevel2);
 		void renderLevel(sf::RenderTarget& window, int numLevel);
 
 		vector<Level> levels;
