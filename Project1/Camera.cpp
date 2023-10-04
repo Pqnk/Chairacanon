@@ -22,11 +22,6 @@ void Camera::initCameraView(sf::RenderTarget& target)
 
 	cameraView.setCenter(sf::Vector2f(500.f, 600.f));
 	cameraView.setSize(600, 300);
-
-	leftLimiteView = cameraView.getCenter().x - cameraView.getSize().x / 2;
-	rightLimiteView = cameraView.getCenter().x + cameraView.getSize().x / 2;
-	topLimiteView = cameraView.getCenter().y - cameraView.getSize().y / 2;
-	bottomLimiteView = cameraView.getCenter().y + cameraView.getSize().y / 2;
 }
 
 void Camera::updateCamera(Level& map, Cursor& cursor, Player& player, sf::RenderTarget& window)
@@ -43,6 +38,11 @@ void Camera::updateCamera(Level& map, Cursor& cursor, Player& player, sf::Render
 //#######################################################################################################
 void Camera::isCameraAtMapBorder(Level& map)
 {
+	leftLimiteView = cameraView.getCenter().x - cameraView.getSize().x / 2;
+	rightLimiteView = cameraView.getCenter().x + cameraView.getSize().x / 2;
+	topLimiteView = cameraView.getCenter().y - cameraView.getSize().y / 2;
+	bottomLimiteView = cameraView.getCenter().y + cameraView.getSize().y / 2;
+
 	leftLimiteMap = map.getSpriteLevel().getGlobalBounds().left;
 	rightLimiteMap = map.getSpriteLevel().getGlobalBounds().left + map.getSpriteLevel().getGlobalBounds().width;
 	topLimiteMap = map.getSpriteLevel().getGlobalBounds().top;

@@ -15,9 +15,7 @@ void BulletManager::drawBullet(sf::RenderTarget& window)
 	for (auto& b : bullets)
 	{
 		window.draw(b.spriteBullet);
-		std::cout << "Longueur tab : " << bullets.size() << std::endl;
 	}
-
 	eraseBullet();
 }
 
