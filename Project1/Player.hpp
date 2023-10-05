@@ -26,8 +26,10 @@ class Player : public Character
 		//##########################
 		//	Col. Detection (Color)
 		//##########################
-		void collisionDetection(sf::Image maskLevel);
+		void collisionDetection(sf::Image maskLevel, sf::Vector2f direction);
 
+	protected :
+		bool isBlocked;
 };
 
 #endif
