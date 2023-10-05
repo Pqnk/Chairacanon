@@ -60,8 +60,8 @@ void Player::updatePlayer(sf::Vector2f leftClic, sf::Vector2f rightClic, sf::Ima
 	if (health > 0)
 	{
 		playerAnimation(leftClic, rightClic);
+
 		sf::Vector2f direction = leftClic - sprite.getPosition();
-		
 		float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 		
 		if (length != 0)
@@ -83,6 +83,7 @@ void Player::updatePlayer(sf::Vector2f leftClic, sf::Vector2f rightClic, sf::Ima
 		}
 		else
 		{
+			setIsMoving(true);
 			sprite.move(direction);
 			setIsShooting(false);
 		}

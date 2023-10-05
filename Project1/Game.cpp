@@ -123,7 +123,7 @@ void Game::pollEvents()
 				//	Test de mort
 				if (this->event.key.code == sf::Keyboard::D)
 				{
-					//this->player.setIsDead(true);
+					this->player.setIsDead(true);
 				}
 				break;
 
@@ -135,7 +135,6 @@ void Game::pollEvents()
 				{
 					this->cursor.setIsClicking(true);
 					this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
-					this->player.setIsMoving(true);
 				}
 
 				//	/////////////////////////////////////////////////		
