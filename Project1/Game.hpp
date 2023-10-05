@@ -22,6 +22,7 @@
 #include "Bullet.hpp"
 #include "SpriteManager.hpp"
 #include "LevelManager.hpp"
+#include "EnemyManager.hpp"
 
 #ifndef DEF_GAME
 #define DEF_GAME
@@ -69,6 +70,7 @@ class Game
 		Camera camera;
 		Cursor cursor;
 		Player player;
+		EnemyManager enemyManager;
 		LateralScreen latScreen;
 		BulletManager bulletmanager;
 		SpriteManager spriteManager;

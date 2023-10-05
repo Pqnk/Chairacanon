@@ -18,11 +18,8 @@ class BulletManager
 		BulletManager();
 
 		void addBullet(Bullet b);
-
 		void drawBullet(sf::RenderTarget& window);
-
 		void eraseBullet();
-
 		void updateBullets();
 
 		std::vector<Bullet> bullets;

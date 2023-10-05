@@ -47,6 +47,7 @@ void Game::update()
 			this->cursor.getRightClickPosition(),
 			this->levelManager.levels[1].getMaskLevel()
 		);
+		this->enemyManager.updateEnemies();
 		this->bulletmanager.updateBullets();
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
@@ -77,6 +78,7 @@ void Game::render()
 	this->gameWindow->setView(this->camera.getCameraView());
 	this->levelManager.renderLevel(*this->gameWindow, 1);
 	this->player.renderObject(*this->gameWindow);
+	this->enemyManager.drawEnemy(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
 	this->latScreen.renderShape(this->camera, *this->gameWindow);
 
@@ -121,7 +123,7 @@ void Game::pollEvents()
 				//	Test de mort
 				if (this->event.key.code == sf::Keyboard::D)
 				{
-					this->player.setIsDead(true);
+					//this->player.setIsDead(true);
 				}
 				break;
 
@@ -192,8 +194,13 @@ void Game::initVariables()
 
 	this->latScreen.initLateralScreen(this->camera, *this->gameWindow);
 
-	//	Player : Initialized wi
+	//	Player : Initialisation
 	this->player.initPlayer(this->spriteManager.getCharacterSprite());
+
+	//	Enemies : Initialisation
+	this->enemyManager.initEnemyManager(this->spriteManager.getCharacterSprite());
+	this->enemyManager.initEnemiesOnLevel(1);
+
 	this->cursor.initCursor();
 
 	/*	

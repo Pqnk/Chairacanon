@@ -24,31 +24,10 @@ class Player : public Character
 		void playerAnimation(sf::Vector2f cursorPos, sf::Vector2f rightClic);
 
 		//##########################
-		//	Collision Detection (Color)
+		//	Col. Detection (Color)
 		//##########################
 		void collisionDetection(sf::Image maskLevel);
 
-		//##########################
-		//	Accessors
-		//##########################
-		bool getIsMoving();
-		bool getIsShooting();
-		bool getCanShoot();
-
-		//##########################
-		//	Setters
-		//##########################
-		void setIsMoving(bool b);
-		void setIsShooting(bool b);
-		void setIsDead(bool b);
-
-
-	protected :
-
-		bool canShoot;
-		bool isMoving;
-		bool isShooting;
-		bool isDead;
 };
 
 #endif

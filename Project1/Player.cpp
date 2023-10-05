@@ -3,7 +3,7 @@
 //#######################################################################################################
 //	Constructor / Destructor
 //#######################################################################################################
-Player::Player() : canShoot(true), isMoving(false), isShooting(false), isDead(false)
+Player::Player()
 {
 }
 
@@ -425,42 +425,3 @@ void Player::collisionDetection(sf::Image maskLevel)
 			break;
 	}
 }
-
-
-//#######################################################################################################
-//	Accessors
-//#######################################################################################################
-bool Player::getIsMoving()
-{
-	return isMoving;
-}
-
-bool Player::getIsShooting()
-{
-	return isShooting;
-}
-
-bool Player::getCanShoot()
-{
-	return canShoot;
-}
-
-//#######################################################################################################
-//	Setters
-//#######################################################################################################
-void Player::setIsMoving(bool b)
-{
-	isMoving = b;
-}
-
-void Player::setIsShooting(bool b)
-{
-	isShooting = b;
-}
-
-void Player::setIsDead(bool b)
-{
-	isDead = b;
-}
-
-

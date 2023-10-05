@@ -2,15 +2,15 @@
 
 int main()
 {
-	std::cout << "Jour 3 : Nuages 2 !" << std::endl;
+	std::cout << "Jour 3 : Ajout enemy 4 !" << std::endl;
 
-	//	Initialisation of the srand
+	//	Initialisation of the randomization seed
 	std::srand(static_cast<unsigned>(time(NULL)));
 
 	// Initialisation of the Game
 	Game game;
 
-	//	Game Loop
+	//	Game Loop : CHAIRACANON
 	while (game.running() and !game.getEndGame())
 	{
 		//Update
