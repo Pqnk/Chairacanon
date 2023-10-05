@@ -33,6 +33,7 @@ class Player : public Character
 		//##########################
 		bool getIsMoving();
 		bool getIsShooting();
+		bool getCanShoot();
 
 		//##########################
 		//	Setters
@@ -44,6 +45,7 @@ class Player : public Character
 
 	protected :
 
+		bool canShoot;
 		bool isMoving;
 		bool isShooting;
 		bool isDead;

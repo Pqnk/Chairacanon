@@ -131,22 +131,17 @@ void Game::pollEvents()
 				if (	(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4	)	&&	event.mouseButton.button == sf::Mouse::Left)
 				{
 					this->cursor.setIsClicking(true);
-					//this->cursor.setClickDirection(this->player.getVelocity(), this->player.getSpritePosition());
 					this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
 					this->player.setIsMoving(true);
 				}
 
 				//	/////////////////////////////////////////////////		
 				//	When the user is Clicking RIGHT in the cameraView
-				if (	(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4	)		&&	event.mouseButton.button == sf::Mouse::Right)
+				if ( this->player.getCanShoot() == true && (this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4	)		&&	event.mouseButton.button == sf::Mouse::Right)
 				{
 					this->cursor.setIsClickingRight(true);
-					this->player.setIsShooting(true);	
-
-					sf::Vector2i c = sf::Mouse::getPosition(*this->gameWindow);
-					sf::Vector2f cWorld = gameWindow->mapPixelToCoords(c);
-					this->cursor.setRightClickPosition(cWorld);
-
+					this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
+					this->player.setIsShooting(true);
 					Bullet bullet(this->player.getSpritePosition(), this->cursor.getPosCursorOnWorld(), this->spriteManager.getCharacterSprite());
 					bulletmanager.addBullet(bullet);
 				}

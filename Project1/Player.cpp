@@ -3,7 +3,7 @@
 //#######################################################################################################
 //	Constructor / Destructor
 //#######################################################################################################
-Player::Player() : isMoving(false), isShooting(false), isDead(false)
+Player::Player() : canShoot(true), isMoving(false), isShooting(false), isDead(false)
 {
 }
 
@@ -400,24 +400,28 @@ void Player::collisionDetection(sf::Image maskLevel)
 		case 16711935 :
 			newSpeed = sf::Vector2f(1.f, 1.f);
 			setVelocity(newSpeed);
+			canShoot = true;
 			break;
 
 		//	BLACK
 		case 255 :
 			newSpeed = sf::Vector2f(0.f, 0.f);
 			setVelocity(newSpeed);
+			canShoot = false;
 			break;
 
 		//	PINK
 		case 4278255615:
 			newSpeed = sf::Vector2f(0.5f, 0.5f);
 			setVelocity(newSpeed);
+			canShoot = true;
 			break;
 
 		//	BLUE
 		default :
 			newSpeed = sf::Vector2f(0.5f, 0.5f);
 			setVelocity(newSpeed);
+			canShoot = false;
 			break;
 	}
 }
@@ -434,6 +438,11 @@ bool Player::getIsMoving()
 bool Player::getIsShooting()
 {
 	return isShooting;
+}
+
+bool Player::getCanShoot()
+{
+	return canShoot;
 }
 
 //#######################################################################################################
