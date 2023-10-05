@@ -14,16 +14,31 @@ class Level
 		Level();
 		~Level();
 
-		sf::Sprite getSpriteLevel();
-		void setSpriteLevel(sf::Sprite s);
+		//##########################
+		//	Level Elements
+		//##########################
+		void initLevelElements();
+		void updateLevelElements(sf::RenderTarget& window);
 
+		//##########################
+		//	Accessors
+		//##########################
+		sf::Sprite getSpriteLevel();
 		sf::Image getMaskLevel();
+		sf::Sprite getCloudLevel();
+
+		//##########################
+		//	Setters
+		//##########################
+		void setSpriteLevel(sf::Sprite s);
 		void setMaskLevel(sf::Image i);
+		void setCloudLevel(sf::Sprite s);
 
 	protected : 
 
-		sf::Sprite spriteLevel;
-		sf::Image maskLevel;
+		sf::Sprite	spriteLevel;
+		sf::Image	maskLevel;
+		sf::Sprite	spriteCloudLevel;
 };
 
 #endif

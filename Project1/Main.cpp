@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Jour 2 : Masquage ready ! Manque blocage tir eau" << std::endl;
+	std::cout << "Jour 3 : Nuages 2 !" << std::endl;
 
 	//	Initialisation of the srand
 	std::srand(static_cast<unsigned>(time(NULL)));

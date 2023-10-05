@@ -14,12 +14,14 @@ class SpriteManager
 		void initCharacterSprite();
 		void initLevelSprite();
 		void initLateralScreenSprite();
+		void initCloudSprite();
 
 		sf::Sprite getCharacterSprite();
 		sf::Sprite getMainMenuSprite();
 		sf::Sprite getLateralScreenSprite();
 		sf::Sprite getLevel1Sprite();
 		sf::Image getLevel1MaskImage();
+		sf::Sprite getLevel1CloudSprite();
 		sf::Sprite getLevel2Sprite();
 		sf::Image getLevel2MaskImage();
 
@@ -41,5 +43,8 @@ class SpriteManager
 		sf::Texture level2Image;
 		sf::Sprite level2Sprite;
 		sf::Image level2MaskImage;
+
+		sf::Texture cloudImage;
+		sf::Sprite cloudSprite;
 };
 

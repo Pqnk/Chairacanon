@@ -12,6 +12,7 @@ void SpriteManager::initSpriteManager()
 	initCharacterSprite();
 	initLateralScreenSprite();
 	initLevelSprite();
+	initCloudSprite();
 }
 
 void SpriteManager::initCharacterSprite()
@@ -48,6 +49,12 @@ void SpriteManager::initLateralScreenSprite()
 	lateralScreenSprite.setTexture(lateralScreenImage);
 }
 
+void SpriteManager::initCloudSprite()
+{
+	cloudImage.loadFromFile("Textures/Cloud_02.png");
+	cloudSprite.setTexture(cloudImage);
+}
+
 //#######################################################################################################
 //	Accessors
 //#######################################################################################################
@@ -56,18 +63,15 @@ sf::Sprite SpriteManager::getCharacterSprite()
 	return characterSprite;
 }
 
-
 sf::Sprite SpriteManager::getMainMenuSprite()
 {
 	return mainMenuSprite;
 }
 
-
 sf::Sprite SpriteManager::getLateralScreenSprite()
 {
 	return lateralScreenSprite;
 }
-
 
 sf::Sprite SpriteManager::getLevel1Sprite()
 {
@@ -79,6 +83,10 @@ sf::Image SpriteManager::getLevel1MaskImage()
 	return level1MaskImage;
 }
 
+sf::Sprite SpriteManager::getLevel1CloudSprite()
+{
+	return cloudSprite;
+}
 
 sf::Sprite SpriteManager::getLevel2Sprite()
 {

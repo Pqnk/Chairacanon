@@ -50,6 +50,7 @@ void Game::update()
 		this->bulletmanager.updateBullets();
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
+		this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
 	}
 
 	//	Endgame condition
@@ -181,9 +182,10 @@ void Game::initVariables()
 
 	//	Level Manager : Saving all the level's sprites in a vector 
 	this->levelManager.initLevels(
-			this->spriteManager.getMainMenuSprite(), 
-			this->spriteManager.getLevel1Sprite(), 
+			this->spriteManager.getMainMenuSprite(),
+			this->spriteManager.getLevel1Sprite(),
 			this->spriteManager.getLevel1MaskImage(),
+			this->spriteManager.getLevel1CloudSprite(),
 			this->spriteManager.getLevel2Sprite(),
 			this->spriteManager.getLevel2MaskImage()
 	);
