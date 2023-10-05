@@ -22,7 +22,7 @@ class EnemyManager
 		void addEnemy(Enemy e);
 		void drawEnemy(sf::RenderTarget& window);
 		void eraseEnemy();
-		void updateEnemies();
+		void updateEnemies(sf::Vector2f playerPos);
 
 
 		std::vector <Enemy> enemies;

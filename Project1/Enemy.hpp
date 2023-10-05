@@ -11,12 +11,26 @@ class Enemy : public Character
 		//	Init. & Update of Enemy
 		//##########################
 		void initEnemy(sf::Sprite &characterSprite);
-		void updateEnemy();
+		void updateEnemy(sf::Vector2f &playerPos);
 
 		//##########################
 		//	Animation
 		//##########################
 		void enemyAnimation();
-		void enemyDetectingPlayer();
+		void enemyDetectingPlayer(sf::Vector2f &playerPos);
+
+		//##########################
+		//	Accessors
+		//##########################
+		void setPlayerDetected(bool b);
+
+		//##########################
+		//	Accessors
+		//##########################
+		bool getPlayerDetected();
+
+	protected :
+
+		bool playerDetected;
 };
 

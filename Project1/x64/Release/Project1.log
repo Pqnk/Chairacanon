@@ -1,8 +1,76 @@
-﻿  Game.cpp
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Game.cpp(134,53): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Game.cpp(143,91): warning C4018: '>' : incompatibilité signed/unsigned
+﻿  Enemy.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(26,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(27,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(28,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(29,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(31,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(32,27): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(33,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(34,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(65,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(66,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(70,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(79,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(80,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(84,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
   Génération de code en cours
-  3 of 502 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+  4 of 503 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

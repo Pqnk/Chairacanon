@@ -47,7 +47,7 @@ void Game::update()
 			this->cursor.getRightClickPosition(),
 			this->levelManager.levels[1].getMaskLevel()
 		);
-		this->enemyManager.updateEnemies();
+		this->enemyManager.updateEnemies(this->player.getSpritePosition());
 		this->bulletmanager.updateBullets();
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);

@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy()
+Enemy::Enemy() : playerDetected(false)
 {
 }
 
@@ -44,9 +44,10 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 	setVelocity(speed);
 }
 
-void Enemy::updateEnemy()
+void Enemy::updateEnemy(sf::Vector2f &playerPos)
 {
 	enemyAnimation();
+	enemyDetectingPlayer(playerPos);
 }
 
 
@@ -64,18 +65,64 @@ void Enemy::enemyAnimation()
 			currentFrameSprite.top = 1280.f;
 			currentFrameSprite.left += 64.f;
 
-			if (currentFrameSprite.left >= 512.f)
+			if (currentFrameSprite.left >= 512)
 			{
 				currentFrameSprite.left = 0.f;
 				animationTimer.restart();
 			}
 		}
+		
+		//	/////////////////////////////////////////
+		//	Attack animation
+		if (playerDetected == true)
+		{
+			currentFrameSprite.top = 1344.f;
+			currentFrameSprite.left += 64.f;
+
+			if (currentFrameSprite.left >= 768.f)
+			{
+				currentFrameSprite.left = 0.f;
+				animationTimer.restart();
+			}
+		}
+		
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
 	}
 }
 
-void Enemy::enemyDetectingPlayer()
+void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 {
+	sf::Vector2f playerPosRelativToEnemy = sprite.getPosition() - playerPos;
 
+	if (	playerPosRelativToEnemy.x > -100 
+		and playerPosRelativToEnemy.x < 100 
+		and playerPosRelativToEnemy.y > -100 
+		and playerPosRelativToEnemy.y < 100
+		)
+	{
+		playerDetected = true;
+	}
+	else
+	{
+		playerDetected = false;
+	}
+}
+
+
+//#######################################################################################################
+//	Setters
+//#######################################################################################################
+void Enemy::setPlayerDetected(bool b)
+{
+	playerDetected = b;
+}
+
+
+//#######################################################################################################
+//	Accessors
+//#######################################################################################################
+bool Enemy::getPlayerDetected()
+{
+	return playerDetected;
 }
