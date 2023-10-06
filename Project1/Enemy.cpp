@@ -144,7 +144,6 @@ void Enemy::enemyDeathAnimation()
 	}
 }
 
-
 void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 {
 	playerPosRelativToEnemy = playerPos - sprite.getPosition();
