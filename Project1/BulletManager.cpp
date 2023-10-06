@@ -16,6 +16,7 @@ void BulletManager::drawBullet(sf::RenderTarget& window)
 	{
 		window.draw(b.spriteBullet);
 	}
+
 	eraseBullet();
 }
 
