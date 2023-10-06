@@ -59,6 +59,7 @@ class Character : public AnimatedObject
 		bool isDead;
 		bool isMoving;
 		bool isShooting;
+		bool isBlocked;
 		bool canShoot;
 };
 

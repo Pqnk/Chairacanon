@@ -28,8 +28,6 @@ class Player : public Character
 		//##########################
 		void collisionDetection(sf::Image maskLevel, sf::Vector2f direction);
 
-	protected :
-		bool isBlocked;
 };
 
 #endif

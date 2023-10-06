@@ -49,11 +49,11 @@ void EnemyManager::eraseEnemy()
 	}
 }
 
-void EnemyManager::updateEnemies(sf::Vector2f playerPos)
+void EnemyManager::updateEnemies(sf::Vector2f playerPos, sf::Image maskLevel)
 {
 	for (auto& e : enemies)
 	{
-		e.updateEnemy(playerPos);
+		e.updateEnemy(playerPos, maskLevel);
 	}
 }
 

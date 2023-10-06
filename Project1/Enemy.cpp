@@ -44,14 +44,14 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 	setVelocity(speed);
 }
 
-void Enemy::updateEnemy(sf::Vector2f &playerPos)
+void Enemy::updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel)
 {
 	enemyAnimation();
 	enemyDetectingPlayer(playerPos);
 
 	if (health > 0 && playerDetected == true)
 	{
-		sf::Vector2f direction = -playerPosRelativToEnemy;
+		sf::Vector2f direction = playerPosRelativToEnemy;
 		float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 
 		if (length != 0)
@@ -62,17 +62,20 @@ void Enemy::updateEnemy(sf::Vector2f &playerPos)
 		direction.x *= getVelocity().x;
 		direction.y *= getVelocity().y;
 
-		float threshold = 5.f;
+		float threshold = 15.f;
 
 		//	Cheking if the position is near the destination
-		if (length <= threshold)
+		if (length <= threshold or isBlocked == true)
 		{
 			setSpritePosition(sprite.getPosition());
+			isBlocked = false;
 		}
 		else
 		{
 			sprite.move(direction);
 		}
+
+		collisionDetection(maskLevel, direction);
 	}
 	else
 	{
@@ -123,7 +126,7 @@ void Enemy::enemyAnimation()
 
 void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 {
-	playerPosRelativToEnemy = sprite.getPosition() - playerPos;
+	playerPosRelativToEnemy = playerPos - sprite.getPosition();
 
 	if (	playerPosRelativToEnemy.x > -100 
 		and playerPosRelativToEnemy.x < 100 
@@ -136,6 +139,45 @@ void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 	else
 	{
 		playerDetected = false;
+	}
+}
+
+void Enemy::collisionDetection(sf::Image& maskLevel, sf::Vector2f& direction)
+{
+	sf::Vector2f newSpeed;
+	int pixelColored = maskLevel.getPixel(sprite.getPosition().x, sprite.getPosition().y).toInteger();
+	int pixelColOffset = maskLevel.getPixel(sprite.getPosition().x + 10.f * direction.x, sprite.getPosition().y + 10.f * direction.y).toInteger();
+
+	switch (pixelColored)
+	{
+		//	GREEN
+	case 16711935:
+		newSpeed = sf::Vector2f(0.5f, 0.5f);
+		setVelocity(newSpeed);
+		canShoot = true;
+		break;
+
+		//	PINK
+	case 4278255615:
+		newSpeed = sf::Vector2f(0.2f, 0.2f);
+		setVelocity(newSpeed);
+		canShoot = true;
+		break;
+
+		//	BLUE
+	default:
+		newSpeed = sf::Vector2f(0.2f, 0.2f);
+		setVelocity(newSpeed);
+		canShoot = false;
+		break;
+	}
+
+	switch (pixelColOffset)
+	{
+		//	BLACK
+	case 255:
+		isBlocked = true;
+		break;
 	}
 }
 
