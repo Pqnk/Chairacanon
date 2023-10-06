@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false)
+Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true)
 {
 }
 

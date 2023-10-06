@@ -56,6 +56,8 @@ class Character : public AnimatedObject
 		bool isShooting;
 		bool isBlocked;
 		bool canShoot;
+
+		bool isFirstFrame;
 };
 
 #endif

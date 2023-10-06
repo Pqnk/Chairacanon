@@ -96,13 +96,14 @@ void Enemy::enemyAnimation()
 {
 	if (animationTimer.getElapsedTime().asSeconds() >= 0.1f)
 	{
+
+
 		//	/////////////////////////////////////////
 		//	Idle animation
 		if (playerDetected == false && isDead == false)
 		{
 			currentFrameSprite.top = 1280.f;
 			currentFrameSprite.left += 64.f;
-
 			if (currentFrameSprite.left >= 512)
 			{
 				currentFrameSprite.left = 0.f;
@@ -116,7 +117,6 @@ void Enemy::enemyAnimation()
 		{
 			currentFrameSprite.top = 1344.f;
 			currentFrameSprite.left += 64.f;
-
 			if (currentFrameSprite.left >= 768.f)
 			{
 				currentFrameSprite.left = 0.f;

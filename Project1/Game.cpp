@@ -48,8 +48,9 @@ void Game::update()
 			this->levelManager.levels[1].getMaskLevel()
 		);
 		this->enemyManager.updateEnemies(
-			this->player.getSpritePosition(), 
-			this->levelManager.levels[1].getMaskLevel());
+			this->player.getSpritePosition(),
+			this->levelManager.levels[1].getMaskLevel()
+		);
 		this->bulletmanager.updateBullets(this->enemyManager.enemies);
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
@@ -79,8 +80,8 @@ void Game::render()
 
 	this->gameWindow->setView(this->camera.getCameraView());
 	this->levelManager.renderLevel(*this->gameWindow, 1);
-	this->player.renderObject(*this->gameWindow);
 	this->enemyManager.drawEnemy(*this->gameWindow);
+	this->player.renderObject(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
 	this->latScreen.renderShape(this->camera, *this->gameWindow);
 
