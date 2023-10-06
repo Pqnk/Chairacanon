@@ -3,6 +3,7 @@
 Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 {	
 	waitingForDestroy = false;
+	hasAlreadyHit = false;
 
 	position = pos;
 	position.x += 5.f;
@@ -30,9 +31,30 @@ Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 	bulletAnimationTimer.restart();
 }
 
-void Bullet::updateBullet()
+void Bullet::updateBullet(std::vector<Enemy> &enemies)
 {
+	animationBullet();
 
+	for (auto& e : enemies)
+	{
+		sf::Vector2f bulletPosRelativeToEnemy;
+		bulletPosRelativeToEnemy = e.getSpritePosition() - spriteBullet.getPosition();
+
+		if (bulletPosRelativeToEnemy.x > -5
+			&&	bulletPosRelativeToEnemy.x	<	5
+			&&	bulletPosRelativeToEnemy.y	>	-2
+			&&	bulletPosRelativeToEnemy.y < 30
+			&&	hasAlreadyHit == false
+			)
+		{
+			e.damageHealth(2);
+			hasAlreadyHit = true;
+		}
+	}
+}
+
+void Bullet::animationBullet()
+{
 	if (bulletTimer.getElapsedTime().asSeconds() < 1.f)
 	{
 		spriteBullet.move(direction);

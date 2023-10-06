@@ -1,13 +1,12 @@
-#pragma once
-#include <iostream>
-#include <vector>
-#include <sstream>
-
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include <vector>
+#include "EnemyManager.hpp"
+
+using namespace std;
 
 class Bullet
 {
@@ -23,11 +22,13 @@ class Bullet
 		sf::Vector2f direction;
 		sf::Vector2f position;
 
-		void updateBullet();
+		void updateBullet(std::vector<Enemy> &enemies);
+		void animationBullet();
 
 		sf::Clock bulletTimer;
 		sf::Clock bulletAnimationTimer;
 
 		bool waitingForDestroy;
+		bool hasAlreadyHit;
 };
 

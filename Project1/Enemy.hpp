@@ -1,4 +1,6 @@
 #include "Character.hpp"
+ 
+using namespace std;
 
 class Enemy : public Character
 {
@@ -17,11 +19,12 @@ class Enemy : public Character
 		//	Animation
 		//##########################
 		void enemyAnimation();
+		void enemyDeathAnimation();
 		void enemyDetectingPlayer(sf::Vector2f &playerPos);
 		void collisionDetection(sf::Image& maskLevel, sf::Vector2f& direction);
 
 		//##########################
-		//	Accessors
+		//	Setters
 		//##########################
 		void setPlayerDetected(bool b);
 
@@ -29,11 +32,12 @@ class Enemy : public Character
 		//	Accessors
 		//##########################
 		bool getPlayerDetected();
+		bool getWaitinForErase();
 
 	protected :
 
 		bool playerDetected;
-
 		sf::Vector2f playerPosRelativToEnemy;
+		bool waitingForErase;
 };
 

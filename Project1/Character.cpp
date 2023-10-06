@@ -88,4 +88,9 @@ void Character::setCanShoot(bool b)
 void Character::damageHealth(int damage)
 {
 	health -= damage;
+
+	if (health <= 0)
+	{
+		isDead = true;
+	}
 }

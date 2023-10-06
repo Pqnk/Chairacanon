@@ -1,8 +1,3 @@
-#pragma once
-#include <iostream>
-#include <vector>
-#include <sstream>
-
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>

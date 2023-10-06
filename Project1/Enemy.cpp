@@ -1,7 +1,8 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy() : playerDetected(false)
+Enemy::Enemy() : playerDetected(false), waitingForErase(false)
 {
+	isDead = false;
 }
 
 Enemy::~Enemy()
@@ -46,40 +47,44 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 
 void Enemy::updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel)
 {
-	enemyAnimation();
-	enemyDetectingPlayer(playerPos);
 
-	if (health > 0 && playerDetected == true)
+	if (isDead == true)
 	{
-		sf::Vector2f direction = playerPosRelativToEnemy;
-		float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-
-		if (length != 0)
-		{
-			direction /= length;
-		}
-
-		direction.x *= getVelocity().x;
-		direction.y *= getVelocity().y;
-
-		float threshold = 15.f;
-
-		//	Cheking if the position is near the destination
-		if (length <= threshold or isBlocked == true)
-		{
-			setSpritePosition(sprite.getPosition());
-			isBlocked = false;
-		}
-		else
-		{
-			sprite.move(direction);
-		}
-
-		collisionDetection(maskLevel, direction);
+		enemyDeathAnimation();
 	}
-	else
+	else 
 	{
-		isDead = true;
+		enemyAnimation();
+		enemyDetectingPlayer(playerPos);
+
+		if (playerDetected == true)
+		{
+			sf::Vector2f direction = playerPosRelativToEnemy;
+			float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+
+			if (length != 0)
+			{
+				direction /= length;
+			}
+
+			direction.x *= getVelocity().x;
+			direction.y *= getVelocity().y;
+
+			float threshold = 15.f;
+
+			//	Cheking if the position is near the destination
+			if (length <= threshold or isBlocked == true)
+			{
+				setSpritePosition(sprite.getPosition());
+				isBlocked = false;
+			}
+			else
+			{
+				sprite.move(direction);
+			}
+
+			collisionDetection(maskLevel, direction);
+		}
 	}
 }
 
@@ -93,7 +98,7 @@ void Enemy::enemyAnimation()
 	{
 		//	/////////////////////////////////////////
 		//	Idle animation
-		if (playerDetected == false)
+		if (playerDetected == false && isDead == false)
 		{
 			currentFrameSprite.top = 1280.f;
 			currentFrameSprite.left += 64.f;
@@ -107,7 +112,7 @@ void Enemy::enemyAnimation()
 		
 		//	/////////////////////////////////////////
 		//	Attack animation
-		if (playerDetected == true)
+		if (playerDetected == true && isDead == false)
 		{
 			currentFrameSprite.top = 1344.f;
 			currentFrameSprite.left += 64.f;
@@ -115,14 +120,30 @@ void Enemy::enemyAnimation()
 			if (currentFrameSprite.left >= 768.f)
 			{
 				currentFrameSprite.left = 0.f;
-				animationTimer.restart();
+				animationTimer.restart();			
 			}
 		}
-		
+
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
 	}
 }
+
+void Enemy::enemyDeathAnimation()
+{
+	if (animationTimer.getElapsedTime().asSeconds() >= 0.1f)
+	{
+		currentFrameSprite.top = 1472.f;
+		currentFrameSprite.left += 64.f;
+		if (currentFrameSprite.left >= 768.f)
+		{
+			waitingForErase = true;
+		}
+		animationTimer.restart();
+		sprite.setTextureRect(currentFrameSprite);
+	}
+}
+
 
 void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 {
@@ -198,3 +219,9 @@ bool Enemy::getPlayerDetected()
 {
 	return playerDetected;
 }
+
+bool Enemy::getWaitinForErase()
+{
+	return waitingForErase;
+}
+

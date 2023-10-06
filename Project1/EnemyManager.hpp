@@ -3,9 +3,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include <iostream>
 #include <vector>
-#include <sstream>
 
 #include "Enemy.hpp"
 
@@ -23,7 +21,6 @@ class EnemyManager
 		void drawEnemy(sf::RenderTarget& window);
 		void eraseEnemy();
 		void updateEnemies(sf::Vector2f playerPos, sf::Image maskLevel);
-
 
 		std::vector <Enemy> enemies;
 

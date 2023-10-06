@@ -14,7 +14,10 @@ void BulletManager::drawBullet(sf::RenderTarget& window)
 {
 	for (auto& b : bullets)
 	{
-		window.draw(b.spriteBullet);
+		if (b.hasAlreadyHit == false)
+		{
+			window.draw(b.spriteBullet);
+		}
 	}
 
 	eraseBullet();
@@ -31,10 +34,10 @@ void BulletManager::eraseBullet()
 	}
 }
 
-void BulletManager::updateBullets()
+void BulletManager::updateBullets(std::vector<Enemy>& enemies )
 {
 	for (auto& bu : bullets)
 	{
-		bu.updateBullet();
+		bu.updateBullet(enemies);
 	}
 }

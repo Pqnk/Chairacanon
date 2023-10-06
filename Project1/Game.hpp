@@ -12,17 +12,15 @@
 
 #include "Player.hpp"
 #include "AnimatedObject.hpp"
-#include "Character.hpp"
 #include "Cursor.hpp"
 #include "Level.hpp"
 #include "Camera.hpp"
 #include "LateralScreen.hpp"
 
 #include "BulletManager.hpp"
-#include "Bullet.hpp"
 #include "SpriteManager.hpp"
 #include "LevelManager.hpp"
-#include "EnemyManager.hpp"
+//#include "EnemyManager.hpp"
 
 #ifndef DEF_GAME
 #define DEF_GAME

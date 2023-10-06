@@ -36,15 +36,22 @@ void EnemyManager::drawEnemy(sf::RenderTarget& window)
 	{
 		window.draw(e.getSprite());
 	}
+	eraseEnemy();
 }
 
 void EnemyManager::eraseEnemy()
 {
+	enemies.erase(std::remove_if(enemies.begin(), enemies.end(),[](Enemy& enemy) 
+		{
+			return enemy.getWaitinForErase() == true;
+		})
+		, enemies.end());
+
 	for (auto& e : enemies)
 	{
-		if (e.getIsDead() == true)
+		if (e.getWaitinForErase() == true)
 		{
-			// erase this enemy from the tab
+			enemies.erase(enemies.end());
 		}
 	}
 }
