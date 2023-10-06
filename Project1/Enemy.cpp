@@ -16,7 +16,7 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 {
 	sf::Vector2f position(600.f, 500.f);
 	sf::Vector2f origin(32.f, 50.f);
-	sf::Vector2f speed(1.f, 1.f);
+	sf::Vector2f speed(0.5f, 0.5f);
 
 	health = 10;
 
@@ -48,6 +48,36 @@ void Enemy::updateEnemy(sf::Vector2f &playerPos)
 {
 	enemyAnimation();
 	enemyDetectingPlayer(playerPos);
+
+	if (health > 0 && playerDetected == true)
+	{
+		sf::Vector2f direction = -playerPosRelativToEnemy;
+		float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+
+		if (length != 0)
+		{
+			direction /= length;
+		}
+
+		direction.x *= getVelocity().x;
+		direction.y *= getVelocity().y;
+
+		float threshold = 5.f;
+
+		//	Cheking if the position is near the destination
+		if (length <= threshold)
+		{
+			setSpritePosition(sprite.getPosition());
+		}
+		else
+		{
+			sprite.move(direction);
+		}
+	}
+	else
+	{
+		isDead = true;
+	}
 }
 
 
@@ -60,7 +90,7 @@ void Enemy::enemyAnimation()
 	{
 		//	/////////////////////////////////////////
 		//	Idle animation
-		if (isMoving == false && isDead == false && isShooting == false)
+		if (playerDetected == false)
 		{
 			currentFrameSprite.top = 1280.f;
 			currentFrameSprite.left += 64.f;
@@ -93,7 +123,7 @@ void Enemy::enemyAnimation()
 
 void Enemy::enemyDetectingPlayer(sf::Vector2f &playerPos)
 {
-	sf::Vector2f playerPosRelativToEnemy = sprite.getPosition() - playerPos;
+	playerPosRelativToEnemy = sprite.getPosition() - playerPos;
 
 	if (	playerPosRelativToEnemy.x > -100 
 		and playerPosRelativToEnemy.x < 100 

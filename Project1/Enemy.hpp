@@ -32,5 +32,7 @@ class Enemy : public Character
 	protected :
 
 		bool playerDetected;
+
+		sf::Vector2f playerPosRelativToEnemy;
 };
 
