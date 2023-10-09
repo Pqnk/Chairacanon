@@ -14,7 +14,6 @@ class Enemy : public Character
 		//	Init. & Update of Enemy
 		//##########################
 		void initEnemy(sf::Sprite &characterSprite);
-		//void updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel);
 		void updateEnemy(Player &player, sf::Image& maskLevel);
 
 		//##########################
