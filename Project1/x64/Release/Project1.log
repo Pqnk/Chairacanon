@@ -19,64 +19,98 @@ C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(23,22): w
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(28,21): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(28,23): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(29,20): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(29,22): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(30,22): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(30,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(31,23): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(31,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(52,22): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(37,23): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(56,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(38,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(57,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(39,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(61,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(44,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(62,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(45,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(66,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(46,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(67,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(47,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-  Main.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(69,22): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(73,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(74,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(78,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(79,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(83,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(84,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
   Génération de code en cours
-  3 of 550 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  1 of 550 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

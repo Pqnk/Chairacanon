@@ -38,8 +38,15 @@ class LateralScreen
 		sf::Sprite latScreenSprite;
 		sf::Sprite earthSprite;
 		sf::IntRect earthFrame;
-		sf::Sprite numberSprite;
-		sf::IntRect numberFrame;
+
+		sf::Sprite numLevelSprite;
+		sf::IntRect numLevelFrame;
+
+		sf::Sprite numHealthSprite;
+		sf::IntRect numHealthFrame;
+
+		sf::Sprite numGrenadesSprite;
+		sf::IntRect numGrenadesFrame;
 
 };
 
