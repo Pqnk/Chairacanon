@@ -83,7 +83,13 @@ void Game::render()
 	this->enemyManager.drawEnemy(*this->gameWindow);
 	this->player.renderObject(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
-	this->latScreen.renderShape(this->camera, *this->gameWindow);
+	this->latScreen.renderShape(
+		this->camera, 
+		*this->gameWindow,
+		this->player.getHealth(),
+		this->player.getNumGrenades(),
+		this->numberLevel
+	);
 
 	this->cursor.renderObject(*this->gameWindow);
 	this->gameWindow->display();
@@ -179,6 +185,9 @@ void Game::initVariables()
 	*/
 
 	this->endGame = false;
+
+	this->numberLevel = 0;
+
 	this->camera.initCameraView(*this->gameWindow);
 
 	//	Sprite Manager : Loading All Sprites of the game	

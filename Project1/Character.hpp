@@ -21,6 +21,7 @@ class Character : public AnimatedObject
 		//	Accessors
 		//##########################
 		int getHealth();
+		int getNumGrenades();
 		sf::Vector2f getVelocity();
 		sf::Vector2f getScale();
 
@@ -39,6 +40,8 @@ class Character : public AnimatedObject
 		void setIsShooting(bool b);
 		void setCanShoot(bool b);
 
+		void setNumGrenades(int n);
+
 		//##########################
 		//	Dammage manager
 		//##########################
@@ -48,6 +51,7 @@ class Character : public AnimatedObject
 	protected :
 
 		int health;
+		int numGrenades;
 		sf::Vector2f scale;
 		sf::Vector2f velocitySprite;
 

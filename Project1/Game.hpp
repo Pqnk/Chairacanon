@@ -73,6 +73,8 @@ class Game
 		BulletManager bulletmanager;
 		SpriteManager spriteManager;
 		LevelManager levelManager;
+
+		int numberLevel;
 };
 #endif
 

@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true)
+Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true), numGrenades(0)
 {
 }
 
@@ -15,6 +15,11 @@ Character::~Character()
 int Character::getHealth()
 {
 	return health;
+}
+
+int Character::getNumGrenades()
+{
+	return numGrenades;
 }
 
 sf::Vector2f Character::getVelocity()
@@ -79,6 +84,11 @@ void Character::setIsShooting(bool b)
 void Character::setCanShoot(bool b)
 {
 	canShoot = b;
+}
+
+void Character::setNumGrenades(int n)
+{
+	numGrenades = n;
 }
 
 
