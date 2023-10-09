@@ -22,8 +22,12 @@ class Bullet
 		sf::Vector2f direction;
 		sf::Vector2f position;
 
-		void updateBullet(std::vector<Enemy> &enemies);
+		float bulletSpeed;
+
+		void updateBullet(std::vector<Enemy> &enemies, sf::Image maskLevel);
 		void animationBullet();
+
+		void collisionDetection(sf::Image maskLevel);
 
 		sf::Clock bulletTimer;
 		sf::Clock bulletAnimationTimer;

@@ -34,10 +34,10 @@ void BulletManager::eraseBullet()
 	}
 }
 
-void BulletManager::updateBullets(std::vector<Enemy>& enemies )
+void BulletManager::updateBullets(std::vector<Enemy>& enemies, sf::Image maskLevel)
 {
 	for (auto& bu : bullets)
 	{
-		bu.updateBullet(enemies);
+		bu.updateBullet(enemies, maskLevel);
 	}
 }

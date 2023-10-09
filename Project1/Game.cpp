@@ -51,7 +51,7 @@ void Game::update()
 			this->player.getSpritePosition(),
 			this->levelManager.levels[1].getMaskLevel()
 		);
-		this->bulletmanager.updateBullets(this->enemyManager.enemies);
+		this->bulletmanager.updateBullets(this->enemyManager.enemies, this->levelManager.levels[1].getMaskLevel());
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
 		this->levelManager.levels[1].updateLevelElements(*this->gameWindow);

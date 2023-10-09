@@ -5,6 +5,8 @@ Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 	waitingForDestroy = false;
 	hasAlreadyHit = false;
 
+	bulletSpeed = 3.f;
+
 	position = pos;
 	position.x += 5.f;
 	position.y -= 10.f;
@@ -24,17 +26,19 @@ Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 	float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 	if (length != 0)
 		direction /= length;
-	direction.x *= 2.f;
-	direction.y *= 2.f;
+	direction.x *= bulletSpeed;
+	direction.y *= bulletSpeed;
 
 	bulletTimer.restart();
 	bulletAnimationTimer.restart();
 }
 
-void Bullet::updateBullet(std::vector<Enemy> &enemies)
+void Bullet::updateBullet(std::vector<Enemy> &enemies, sf::Image maskLevel)
 {
 	animationBullet();
-
+	collisionDetection(maskLevel);
+	//	/////////////////////////////////////////////////////
+	//	Detects an enemy
 	for (auto& e : enemies)
 	{
 		sf::Vector2f bulletPosRelativeToEnemy;
@@ -76,5 +80,18 @@ void Bullet::animationBullet()
 		spriteBullet.setColor(sf::Color::Transparent);
 		waitingForDestroy = true;
 		bulletTimer.restart();
+	}
+}
+
+void Bullet::collisionDetection(sf::Image maskLevel)
+{
+	int pixelColored = maskLevel.getPixel(spriteBullet.getPosition().x, spriteBullet.getPosition().y).toInteger();
+
+	switch (pixelColored)
+	{
+		//	BLACK
+		case 255:
+			hasAlreadyHit = true;
+		break;
 	}
 }

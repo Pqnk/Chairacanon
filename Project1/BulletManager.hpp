@@ -16,7 +16,7 @@ class BulletManager
 		void addBullet(Bullet b);
 		void drawBullet(sf::RenderTarget& window);
 		void eraseBullet();
-		void updateBullets(std::vector<Enemy>& enemies);
+		void updateBullets(std::vector<Enemy>& enemies, sf::Image maskLevel);
 
 		std::vector<Bullet> bullets;
 };
