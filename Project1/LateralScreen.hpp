@@ -34,11 +34,12 @@ class LateralScreen
 
 	protected :
 
-		sf::RectangleShape sidePanel;
 		sf::Clock animationTimeLatScreen;
 		sf::Sprite latScreenSprite;
 		sf::Sprite earthSprite;
+		sf::IntRect earthFrame;
 		sf::Sprite numberSprite;
+		sf::IntRect numberFrame;
 
 };
 

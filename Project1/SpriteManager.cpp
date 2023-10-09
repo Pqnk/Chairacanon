@@ -14,6 +14,8 @@ void SpriteManager::initSpriteManager()
 	initLateralScreenSprite();
 	initLevelSprite();
 	initCloudSprite();
+	initEarthSprite();
+	initNumbersSprite();
 }
 
 void SpriteManager::initCharacterSprite()
