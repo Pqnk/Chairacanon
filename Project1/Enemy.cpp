@@ -45,14 +45,59 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 	setVelocity(speed);
 }
 
-void Enemy::updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel)
+//void Enemy::updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel)
+//{
+//
+//	if (isDead == true)
+//	{
+//		enemyDeathAnimation();
+//	}
+//	else 
+//	{
+//		enemyAnimation();
+//		enemyDetectingPlayer(playerPos);
+//
+//		if (playerDetected == true)
+//		{
+//			sf::Vector2f direction = playerPosRelativToEnemy;
+//			float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+//
+//			if (length != 0)
+//			{
+//				direction /= length;
+//			}
+//
+//			direction.x *= getVelocity().x;
+//			direction.y *= getVelocity().y;
+//
+//			float threshold = 15.f;
+//
+//			//	Cheking if the position is near the destination
+//			if (length <= threshold or isBlocked == true)
+//			{
+//				setSpritePosition(sprite.getPosition());
+//				isBlocked = false;
+//			}
+//			else
+//			{
+//				sprite.move(direction);
+//			}
+//
+//			collisionDetection(maskLevel, direction);
+//		}
+//	}
+//}
+
+void Enemy::updateEnemy(Player &player, sf::Image& maskLevel)
 {
+
+	sf::Vector2f playerPos = player.getSpritePosition();
 
 	if (isDead == true)
 	{
 		enemyDeathAnimation();
 	}
-	else 
+	else
 	{
 		enemyAnimation();
 		enemyDetectingPlayer(playerPos);
@@ -72,15 +117,26 @@ void Enemy::updateEnemy(sf::Vector2f &playerPos, sf::Image& maskLevel)
 
 			float threshold = 15.f;
 
-			//	Cheking if the position is near the destination
-			if (length <= threshold or isBlocked == true)
+			//	Cheking if the ENEMY arrived at the PLAYER
+			if (length <= threshold)
 			{
 				setSpritePosition(sprite.getPosition());
-				isBlocked = false;
+
+				//	If so, the ENEMY is DEAD and ah damaged the PLAYER
+				player.damageHealth(2);
+				isDead = true;
 			}
 			else
 			{
-				sprite.move(direction);
+				if (isBlocked == true)
+				{
+					setSpritePosition(sprite.getPosition());
+					isBlocked = false;
+				}
+				else
+				{
+					sprite.move(direction);
+				}
 			}
 
 			collisionDetection(maskLevel, direction);

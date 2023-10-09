@@ -21,7 +21,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(1.f, 1.f);
 
-	health = 50;
+	health = 10;
 
 	scale.x = 0.5f;
 	scale.y = 0.5f;

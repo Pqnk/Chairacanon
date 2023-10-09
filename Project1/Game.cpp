@@ -48,7 +48,8 @@ void Game::update()
 			this->levelManager.levels[1].getMaskLevel()
 		);
 		this->enemyManager.updateEnemies(
-			this->player.getSpritePosition(),
+			//this->player.getSpritePosition(),
+			this->player,
 			this->levelManager.levels[1].getMaskLevel()
 		);
 		this->bulletmanager.updateBullets(this->enemyManager.enemies, this->levelManager.levels[1].getMaskLevel());

@@ -1,52 +1,107 @@
-﻿  Bullet.cpp
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(16,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+﻿  Enemy.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(27,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(17,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(28,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(18,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(29,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(19,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(30,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(68,24): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(32,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(71,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(33,27): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(88,96): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(34,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(35,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(161,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(162,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(165,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(174,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(175,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(178,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(192,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(193,30): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(224,84): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
           with
           [
               T=float
           ]
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Bullet.cpp(88,66): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(224,60): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
           with
           [
               T=float
           ]
-  BulletManager.cpp
-  Game.cpp
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Game.cpp(137,53): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Game.cpp(145,91): warning C4018: '>' : incompatibilité signed/unsigned
-  Main.cpp
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(225,110): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\Ely\Documents\2 - Prog\Project1\Project1\Enemy.cpp(225,65): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
   Génération de code en cours
-  82 of 544 functions (15.1%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    35 functions had inline decision re-evaluated but remain unchanged
+  3 of 544 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Project1\x64\Release\Project1.exe

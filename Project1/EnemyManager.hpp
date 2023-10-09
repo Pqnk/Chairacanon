@@ -20,7 +20,7 @@ class EnemyManager
 		void addEnemy(Enemy e);
 		void drawEnemy(sf::RenderTarget& window);
 		void eraseEnemy();
-		void updateEnemies(sf::Vector2f playerPos, sf::Image maskLevel);
+		void updateEnemies(Player &player, sf::Image maskLevel);
 
 		std::vector <Enemy> enemies;
 
