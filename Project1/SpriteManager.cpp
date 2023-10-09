@@ -4,6 +4,7 @@ SpriteManager::SpriteManager()
 {
 }
 
+
 //#######################################################################################################
 //	Initialisations
 //#######################################################################################################
@@ -55,6 +56,19 @@ void SpriteManager::initCloudSprite()
 	cloudSprite.setTexture(cloudImage);
 }
 
+void SpriteManager::initEarthSprite()
+{
+	earthImage.loadFromFile("Textures/Earth_Spinning.png");
+	earthSprite.setTexture(earthImage);
+}
+
+void SpriteManager::initNumbersSprite()
+{
+	numbersImage.loadFromFile("Textures/Numbers.png");
+	numbersSprite.setTexture(numbersImage);
+}
+
+
 //#######################################################################################################
 //	Accessors
 //#######################################################################################################
@@ -96,4 +110,14 @@ sf::Sprite SpriteManager::getLevel2Sprite()
 sf::Image SpriteManager::getLevel2MaskImage()
 {
 	return level2MaskImage;
+}
+
+sf::Sprite SpriteManager::getEarthSprite()
+{
+	return earthSprite;
+}
+
+sf::Sprite SpriteManager::getNumbersSprite()
+{
+	return numbersSprite;
 }

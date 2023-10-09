@@ -194,7 +194,12 @@ void Game::initVariables()
 			this->spriteManager.getLevel2MaskImage()
 	);
 
-	this->latScreen.initLateralScreen(this->camera, *this->gameWindow);
+	this->latScreen.initLateralScreen(
+		this->spriteManager.getLateralScreenSprite(),
+		this->camera, 
+		this->spriteManager.getEarthSprite(),
+		this->spriteManager.getNumbersSprite()
+	);
 
 	//	Player : Initialisation
 	this->player.initPlayer(this->spriteManager.getCharacterSprite());

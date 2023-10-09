@@ -12,11 +12,33 @@ class LateralScreen
 		LateralScreen();
 		~LateralScreen();
 
-		void initLateralScreen(Camera& cam, sf::RenderTarget& target);
-		void renderShape(Camera& cam, sf::RenderTarget& target);
+		//##########################
+		//	Initial. of lat. Screen
+		//##########################
+		void initLateralScreen(sf::Sprite latScreen, Camera& cam, sf::Sprite earth, sf::Sprite numbers);
+		
+		//##########################
+		//	Update lat. Screen
+		//##########################
+
+
+		//##########################
+		//	Animation of lat.Screen
+		//##########################
+		void animationLatScreen();
+
+		//##########################
+		//	Render of lat. Screen
+		//##########################
+		void renderShape(Camera& cam, sf::RenderTarget& window);
 
 	protected :
 
 		sf::RectangleShape sidePanel;
+		sf::Clock animationTimeLatScreen;
+		sf::Sprite latScreenSprite;
+		sf::Sprite earthSprite;
+		sf::Sprite numberSprite;
+
 };
 

@@ -15,6 +15,8 @@ class SpriteManager
 		void initLevelSprite();
 		void initLateralScreenSprite();
 		void initCloudSprite();
+		void initEarthSprite();
+		void initNumbersSprite();
 
 		sf::Sprite getCharacterSprite();
 		sf::Sprite getMainMenuSprite();
@@ -24,6 +26,8 @@ class SpriteManager
 		sf::Sprite getLevel1CloudSprite();
 		sf::Sprite getLevel2Sprite();
 		sf::Image getLevel2MaskImage();
+		sf::Sprite getEarthSprite();
+		sf::Sprite getNumbersSprite();
 
 	private :
 
@@ -46,5 +50,11 @@ class SpriteManager
 
 		sf::Texture cloudImage;
 		sf::Sprite cloudSprite;
+
+		sf::Texture earthImage;
+		sf::Sprite earthSprite;
+
+		sf::Texture numbersImage;
+		sf::Sprite numbersSprite;
 };
 
