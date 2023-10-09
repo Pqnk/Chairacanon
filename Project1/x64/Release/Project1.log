@@ -44,20 +44,40 @@ C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(52,22): w
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(53,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(56,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(57,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(57,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(61,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(62,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(66,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp(67,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
   Main.cpp
   Génération de code en cours
-  1 of 550 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  3 of 550 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Chairacanon\x64\Release\Project1.exe

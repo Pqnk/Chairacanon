@@ -50,11 +50,21 @@ void LateralScreen::animationLatScreen()
 	if (animationTimeLatScreen.getElapsedTime().asSeconds() >= 0.5f)
 	{
 		earthFrame.left += 277.0f;
-		earthFrame.top = 5.0f;
 
-		if(earthFrame.left >= 2970.f)
+		if(earthFrame.top == 5.0f && earthFrame.left >= 3047.f)
 		{
 			earthFrame.left = 5.0f;
+			earthFrame.top = 225.0f;
+		}
+		if (earthFrame.top == 225.0f && earthFrame.left >= 3047.f)
+		{
+			earthFrame.left = 5.0f;
+			earthFrame.top = 455.0f;
+		}
+		if (earthFrame.top == 455.0f && earthFrame.left >= 2493.f)
+		{
+			earthFrame.left = 5.0f;
+			earthFrame.top = 5.0f;
 		}
 
 		earthSprite.setTextureRect(earthFrame);
