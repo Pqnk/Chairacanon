@@ -1,22 +1,21 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-#include <vector>
+#include "GrenadeStock.hpp"
 
-class Grenade
+class Grenade : public GrenadeStock
 {
-	public : 
+	public :
 
-		Grenade(sf::Sprite s);
+		Grenade();
+		Grenade(sf::Sprite s, sf::Vector2f playerPos, sf::Vector2f dir);
 
-		int amunition;
-		int grenadeDamage;
+		sf::Vector2f position;
+		sf::Vector2f direction;
+		float grenadeSpeed;
 
-		sf::Sprite grenadeSprite;
-		sf::IntRect grenadeFrame;
+		sf::Clock grenadeTimer;
+		sf::Clock grenadeAnimationTimer;
 
-		bool isPickedUp;
+		void updateGrenade(sf::Vector2f destinationPos);
+
+		bool hasHitTarget;
 };
 

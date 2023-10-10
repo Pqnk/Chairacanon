@@ -7,16 +7,29 @@ class GrenadesManager
 
 		GrenadesManager();
 
-		void initGrenadesManger(int numlevel, sf::Sprite s);
-		void addGrenade(Grenade g);
-		void drawGrenade(sf::RenderTarget& window);
-		void updateGrenades(Player& player);
-		void eraseGrenades();
+		//######################################################
+		//	Managing the STOCKS of grenade (the collectibles)
+		//######################################################
+		void initGrenadeStocksManager(int numlevel, sf::Sprite s);
+		void addGrenadeStocks(GrenadeStock gs);
+		void drawGrenadeStocks(sf::RenderTarget& window);
+		void updateGrenadeStocks(Player& player);
+		void eraseGrenadeStocks();
+
+		//######################################################
+		//	Managing the GRENADES THROWED
+		//######################################################
+		void addGrenadeThrowed(sf::Sprite s, Player& player, sf::Vector2f dir);
+		void updateGrenadesThrowed(sf::Vector2f destinationPos);
+		void eraseGrenadesThrowed();
+		void drawGrenadesThrowed(sf::RenderTarget& window);
 
 
 	protected :
 
-		std::vector<Grenade> grenades;
+		std::vector<GrenadeStock> grenadeStocks;
 		sf::Vector2f grenadePosRelToPlayer;
+
+		std::vector<Grenade> grenadeThrowed;
 };
 

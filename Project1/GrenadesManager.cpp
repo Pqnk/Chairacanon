@@ -4,40 +4,43 @@ GrenadesManager::GrenadesManager()
 {
 }
 
-void GrenadesManager::initGrenadesManger(int numLevel, sf::Sprite s)
+//######################################################
+//	Managing the STOCKS of grenade (the collectibles)
+//######################################################
+void GrenadesManager::initGrenadeStocksManager(int numLevel, sf::Sprite s)
 {
 	switch(numLevel)
 	{
 		case 1 :
-			Grenade blockGrenade1(s);
+			GrenadeStock blockGrenade1(s);
 			blockGrenade1.grenadeSprite.setPosition(500, 500);
-			addGrenade(blockGrenade1);
+			addGrenadeStocks(blockGrenade1);
 
-			Grenade blockGrenade2(s);
+			GrenadeStock blockGrenade2(s);
 			blockGrenade2.grenadeSprite.setPosition(500, 550);
-			addGrenade(blockGrenade2);
+			addGrenadeStocks(blockGrenade2);
 
 			break;
 	}
 }
 
-void GrenadesManager::addGrenade(Grenade g)
+void GrenadesManager::addGrenadeStocks(GrenadeStock gs)
 {
-	grenades.push_back(g);
+	grenadeStocks.push_back(gs);
 }
 
-void GrenadesManager::drawGrenade(sf::RenderTarget& window)
+void GrenadesManager::drawGrenadeStocks(sf::RenderTarget& window)
 {
-	for (auto& g : grenades)
+	for (auto& g : grenadeStocks)
 	{
 		window.draw(g.grenadeSprite);
 	}
-	eraseGrenades();
+	eraseGrenadeStocks();
 }
 
-void GrenadesManager::updateGrenades(Player& player)
+void GrenadesManager::updateGrenadeStocks(Player& player)
 {
-	for (auto& g : grenades)
+	for (auto& g : grenadeStocks)
 	{
 		grenadePosRelToPlayer = g.grenadeSprite.getPosition() - player.getSpritePosition();
 
@@ -52,20 +55,63 @@ void GrenadesManager::updateGrenades(Player& player)
 	}
 }
 
-void GrenadesManager::eraseGrenades()
+void GrenadesManager::eraseGrenadeStocks()
 {
-	grenades.erase(std::remove_if(grenades.begin(), grenades.end(), [](Grenade& gre)
+	grenadeStocks.erase(std::remove_if(grenadeStocks.begin(), grenadeStocks.end(), [](GrenadeStock& gre)
 		{
 			return gre.isPickedUp == true;
 		})
-		, grenades.end());
+		, grenadeStocks.end());
 
-	for (auto& g : grenades)
+	for (auto& g : grenadeStocks)
 	{
 		if (g.isPickedUp == true)
 		{
-			grenades.erase(grenades.end());
+			grenadeStocks.erase(grenadeStocks.end());
 		}
+	}
+}
+
+
+//######################################################
+//	Managing the GRENADES THROWED
+//######################################################
+void GrenadesManager::addGrenadeThrowed(sf::Sprite s, Player& player, sf::Vector2f dir)
+{
+	if (grenadeThrowed.size() == 0)
+	{
+		player.setNumGrenades(player.getNumGrenades() - 1);
+		Grenade g(s, player.getSpritePosition(), dir);
+		grenadeThrowed.push_back(g);
+	}
+
+}
+
+void GrenadesManager::updateGrenadesThrowed(sf::Vector2f destinationPos)
+{
+	for (auto& g : grenadeThrowed)
+	{
+		if (g.hasHitTarget == false)
+		{
+			g.updateGrenade(destinationPos);
+		}
+		else
+		{
+			eraseGrenadesThrowed();
+		}
+	}
+}
+
+void GrenadesManager::eraseGrenadesThrowed()
+{
+	grenadeThrowed.clear();
+}
+
+void GrenadesManager::drawGrenadesThrowed(sf::RenderTarget& window)
+{
+	for (auto& g : grenadeThrowed)
+	{
+		window.draw(g.grenadeSprite);
 	}
 }
 

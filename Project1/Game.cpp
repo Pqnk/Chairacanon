@@ -87,7 +87,7 @@ void Game::initVariables()
 	this->enemyManager.initEnemiesOnLevel(1);
 
 	//	Grenades : Initialisation
-	this->grenadeManager.initGrenadesManger(
+	this->grenadeManager.initGrenadeStocksManager(
 		this->numberLevel,
 		this->spriteManager.getCharacterSprite()
 		);
@@ -134,8 +134,11 @@ void Game::update()
 			this->enemyManager.enemies, 
 			this->levelManager.levels[1].getMaskLevel()
 		);
-		this->grenadeManager.updateGrenades(
+		this->grenadeManager.updateGrenadeStocks(
 			this->player
+		);
+		this->grenadeManager.updateGrenadesThrowed(
+			this->cursor.getRightClickPosition()
 		);
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
@@ -166,9 +169,10 @@ void Game::render()
 	this->gameWindow->setView(this->camera.getCameraView());
 	this->levelManager.renderLevel(*this->gameWindow, 1);
 	this->enemyManager.drawEnemy(*this->gameWindow);
-	this->grenadeManager.drawGrenade(*this->gameWindow);
+	this->grenadeManager.drawGrenadeStocks(*this->gameWindow);
 	this->player.renderObject(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
+	this->grenadeManager.drawGrenadesThrowed(*this->gameWindow);
 	this->latScreen.renderShape(
 		this->camera, 
 		*this->gameWindow,
@@ -231,8 +235,28 @@ void Game::pollEvents()
 				this->cursor.setIsClickingRight(true);
 				this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
 				this->player.setIsShooting(true);
-				Bullet bullet(this->player.getSpritePosition(), this->cursor.getPosCursorOnWorld(), this->spriteManager.getCharacterSprite());
+				Bullet bullet(
+					this->player.getSpritePosition(), 
+					this->cursor.getPosCursorOnWorld(), 
+					this->spriteManager.getCharacterSprite()
+				);
 				bulletmanager.addBullet(bullet);
+			}
+
+			//	/////////////////////////////////////////////////		
+			//	When the user is Clicking MIDDLE in the cameraView
+			if ((this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4) && event.mouseButton.button == sf::Mouse::Middle)
+			{
+				if (this->player.getNumGrenades() > 0)
+				{
+					this->cursor.setIsClickingRight(true);
+					this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
+					this->grenadeManager.addGrenadeThrowed(
+						this->spriteManager.getCharacterSprite(),
+						this->player,
+						this->cursor.getPosCursorOnWorld()
+					);
+				}
 			}
 		}
 	}
