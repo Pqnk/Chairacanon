@@ -142,6 +142,8 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Grenade.cpp" />
+    <ClCompile Include="GrenadesManager.cpp" />
     <ClCompile Include="LateralScreen.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="LevelManager.cpp" />
@@ -160,6 +162,8 @@
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="EnemyManager.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Grenade.hpp" />
+    <ClInclude Include="GrenadesManager.hpp" />
     <ClInclude Include="LateralScreen.hpp" />
     <ClInclude Include="Level.hpp" />
     <ClInclude Include="LevelManager.hpp" />

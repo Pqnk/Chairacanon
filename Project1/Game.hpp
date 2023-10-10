@@ -20,6 +20,7 @@
 #include "BulletManager.hpp"
 #include "SpriteManager.hpp"
 #include "LevelManager.hpp"
+#include "GrenadesManager.hpp"
 //#include "EnemyManager.hpp"
 
 #ifndef DEF_GAME
@@ -73,6 +74,7 @@ class Game
 		BulletManager bulletmanager;
 		SpriteManager spriteManager;
 		LevelManager levelManager;
+		GrenadesManager grenadeManager;
 
 		int numberLevel;
 };
