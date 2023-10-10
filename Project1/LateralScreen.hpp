@@ -20,7 +20,7 @@ class LateralScreen
 		//##########################
 		//	Update lat. Screen
 		//##########################
-		void updateLateralScreen(int playerHeath, int numGrenades, int numLevel);
+		void updateLateralScreen(int playerHeath, int numGrenades, int numLevel, int numEnemies, int numBuildings);
 
 		//##########################
 		//	Animation of lat.Screen
@@ -30,7 +30,7 @@ class LateralScreen
 		//##########################
 		//	Render of lat. Screen
 		//##########################
-		void renderShape(Camera& cam, sf::RenderTarget& window, int playerHeath, int numGrenades, int numLevel);
+		void renderShape(Camera& cam, sf::RenderTarget& window, int playerHeath, int numGrenades, int numLevel, int numEnemies, int numBuildings);
 
 	protected :
 
@@ -48,5 +48,10 @@ class LateralScreen
 		sf::Sprite numGrenadesSprite;
 		sf::IntRect numGrenadesFrame;
 
+		sf::Sprite numEnemiesSprite;
+		sf::IntRect numEnemiesFrame;
+
+		sf::Sprite numBuildingsSprite;
+		sf::IntRect numBuildingsFrame;
 };
 

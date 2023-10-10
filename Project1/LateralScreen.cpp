@@ -8,7 +8,6 @@ LateralScreen::~LateralScreen()
 {
 }
 
-
 //##########################
 //	Initial. of lat. Screen
 //##########################
@@ -48,6 +47,22 @@ void LateralScreen::initLateralScreen(sf::Sprite latScreen, Camera& cam, sf::Spr
 	numGrenadesSprite.setTextureRect(numGrenadesFrame);
 	numGrenadesSprite.setScale(0.4f, 0.4f);
 
+	numEnemiesSprite = numbers;
+	numEnemiesFrame.left = 0.0;
+	numEnemiesFrame.top = 0.0;
+	numEnemiesFrame.width = 64.0;
+	numEnemiesFrame.height = 64.0;
+	numEnemiesSprite.setTextureRect(numEnemiesFrame);
+	numEnemiesSprite.setScale(0.3f, 0.3f);
+
+	numBuildingsSprite = numbers;
+	numBuildingsFrame.left = 0.0;
+	numBuildingsFrame.top = 0.0;
+	numBuildingsFrame.width = 64.0;
+	numBuildingsFrame.height = 64.0;
+	numBuildingsSprite.setTextureRect(numBuildingsFrame);
+	numBuildingsSprite.setScale(0.3f, 0.3f);
+
 	latScreenSprite = latScreen;
 	latScreenSprite.setScale(0.4f, 0.4f);
 	latScreenSprite.setPosition(
@@ -56,11 +71,10 @@ void LateralScreen::initLateralScreen(sf::Sprite latScreen, Camera& cam, sf::Spr
 	);
 }
 
-
 //##########################
 //	Update lat. Screen
 //##########################
-void LateralScreen::updateLateralScreen(int playerHeath, int numGrenades, int numLevel)
+void LateralScreen::updateLateralScreen(int playerHeath, int numGrenades, int numLevel, int numEnemies, int numBuildings)
 {
 	switch(playerHeath)
 	{
@@ -151,15 +165,68 @@ void LateralScreen::updateLateralScreen(int playerHeath, int numGrenades, int nu
 		break;
 	}
 	numLevelSprite.setTextureRect(numLevelFrame);
-}
 
+	switch (numEnemies)
+	{
+	case 0:
+		numEnemiesFrame.left = 0.0;
+		break;
+	case 1:
+		numEnemiesFrame.left = 64.0;
+		break;
+	case 2:
+		numEnemiesFrame.left = 128.0;
+		break;
+	case 3:
+		numEnemiesFrame.left = 192.0;
+		break;
+	case 4:
+		numEnemiesFrame.left = 256.0;
+		break;
+	case 5:
+		numEnemiesFrame.left = 320.0;
+		break;
+	case 6:
+		numEnemiesFrame.left = 394.0;
+		break;
+	case 7:
+		numEnemiesFrame.left = 448.0;
+		break;
+	case 8:
+		numEnemiesFrame.left = 512.0;
+		break;
+	case 9:
+		numEnemiesFrame.left = 576.0;
+		break;
+	case 10:
+		numEnemiesFrame.left = 640.0;
+		break;
+	}
+	numEnemiesSprite.setTextureRect(numEnemiesFrame);
+
+	switch (numBuildings)
+	{
+	case 0:
+		numBuildingsFrame.left = 0.0;
+		break;
+	case 1:
+		numBuildingsFrame.left = 64.0;
+		break;
+	case 2:
+		numBuildingsFrame.left = 128.0;
+		break;
+	}
+	numBuildingsSprite.setTextureRect(numBuildingsFrame);
+}
 
 //##########################
 //	Animation of lat.Screen
 //##########################
 void LateralScreen::animationLatScreen()
 {
-	if (animationTimeLatScreen.getElapsedTime().asSeconds() >= 0.1f)
+	//	/////////////////////////////////////////////////////////////////
+	//	Animation of the earth sprite
+	if (animationTimeLatScreen.getElapsedTime().asSeconds() >= 2.f)
 	{
 		earthFrame.left += 277.0f;
 
@@ -184,14 +251,13 @@ void LateralScreen::animationLatScreen()
 	}
 }
 
-
 //##########################
 //	Render of lat. Screen
 //##########################
-void LateralScreen::renderShape(Camera& cam, sf::RenderTarget& window, int playerHeath, int numGrenades, int numLevel)
+void LateralScreen::renderShape(Camera& cam, sf::RenderTarget& window, int playerHeath, int numGrenades, int numLevel, int numEnemies, int numBuildings)
 {
 	animationLatScreen();
-	updateLateralScreen(playerHeath, numGrenades, numLevel);
+	updateLateralScreen(playerHeath, numGrenades, numLevel, numEnemies, numBuildings);
 
 	//	///////////////////////////////////////////////////////////////////////////
 	//	Setting the position of the Lateral screen, and drawing it
@@ -224,6 +290,22 @@ void LateralScreen::renderShape(Camera& cam, sf::RenderTarget& window, int playe
 		cam.getCameraView().getCenter().y - cam.getCameraView().getSize().y / 2 + 90
 	);
 	window.draw(numGrenadesSprite);
+
+	//	///////////////////////////////////////////////////////////////////////////
+	//	Setting the position of the ENEMIES NUMBER, and drawing it
+	numEnemiesSprite.setPosition(
+		cam.getCameraView().getCenter().x - cam.getCameraView().getSize().x / 2 + 9,
+		cam.getCameraView().getCenter().y - cam.getCameraView().getSize().y / 2 + 119
+	);
+	window.draw(numEnemiesSprite);
+
+	//	///////////////////////////////////////////////////////////////////////////
+	//	Setting the position of the BUILDINGS NUMBER, and drawing it
+	numBuildingsSprite.setPosition(
+		cam.getCameraView().getCenter().x - cam.getCameraView().getSize().x / 2 + 9,
+		cam.getCameraView().getCenter().y - cam.getCameraView().getSize().y / 2 + 137
+	);
+	window.draw(numBuildingsSprite);
 
 	//	///////////////////////////////////////////////////////////////////////////
 	//	Setting the position of the EARTH SPRITE, and drawing it
