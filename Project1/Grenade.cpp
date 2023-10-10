@@ -12,4 +12,8 @@ Grenade::Grenade(sf::Sprite s)
 	grenadeFrame.width = 64.f;
 	grenadeFrame.height = 64.f;
 	grenadeSprite.setTextureRect(grenadeFrame);
+
+	grenadeSprite.setScale(0.6, 0.6);
+
+	grenadeSprite.setOrigin(32.f, 32.f);
 }

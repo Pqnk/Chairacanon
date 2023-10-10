@@ -76,11 +76,21 @@ void Game::initVariables()
 	);
 
 	//	Player : Initialisation
-	this->player.initPlayer(this->spriteManager.getCharacterSprite());
+	this->player.initPlayer(
+		this->spriteManager.getCharacterSprite()
+	);
 
 	//	Enemies : Initialisation
-	this->enemyManager.initEnemyManager(this->spriteManager.getCharacterSprite());
+	this->enemyManager.initEnemyManager(
+		this->spriteManager.getCharacterSprite()
+	);
 	this->enemyManager.initEnemiesOnLevel(1);
+
+	//	Grenades : Initialisation
+	this->grenadeManager.initGrenadesManger(
+		this->numberLevel,
+		this->spriteManager.getCharacterSprite()
+		);
 
 	this->cursor.initCursor();
 
@@ -89,7 +99,9 @@ void Game::initVariables()
 	*	At each frame, the player access the left click position to update it's position.
 	*	This is a temporary sollution, so the player doesn't go the the (0,0) map origin at the begining
 	*/
-	this->cursor.setLeftClickPosition(this->player.getSprite().getPosition());	// TO REPLACE
+	this->cursor.setLeftClickPosition(
+		this->player.getSprite().getPosition()
+	);	// TO REPLACE
 
 	this->gameWindow->setView(this->camera.getCameraView());
 }
@@ -118,7 +130,11 @@ void Game::update()
 			this->player,
 			this->levelManager.levels[1].getMaskLevel()
 		);
-		this->bulletmanager.updateBullets(this->enemyManager.enemies, this->levelManager.levels[1].getMaskLevel());
+		this->bulletmanager.updateBullets(
+			this->enemyManager.enemies, 
+			this->levelManager.levels[1].getMaskLevel()
+		);
+		this->grenadeManager.updateGrenades();
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
 		this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
@@ -148,6 +164,7 @@ void Game::render()
 	this->gameWindow->setView(this->camera.getCameraView());
 	this->levelManager.renderLevel(*this->gameWindow, 1);
 	this->enemyManager.drawEnemy(*this->gameWindow);
+	this->grenadeManager.drawGrenade(*this->gameWindow);
 	this->player.renderObject(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
 	this->latScreen.renderShape(

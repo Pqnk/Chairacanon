@@ -12,6 +12,11 @@ void GrenadesManager::initGrenadesManger(int numLevel, sf::Sprite s)
 			Grenade blockGrenade1(s);
 			blockGrenade1.grenadeSprite.setPosition(500, 500);
 			addGrenade(blockGrenade1);
+
+			Grenade blockGrenade2(s);
+			blockGrenade2.grenadeSprite.setPosition(500, 550);
+			addGrenade(blockGrenade2);
+
 			break;
 	}
 }
@@ -19,5 +24,42 @@ void GrenadesManager::initGrenadesManger(int numLevel, sf::Sprite s)
 void GrenadesManager::addGrenade(Grenade g)
 {
 	grenades.push_back(g);
+}
+
+void GrenadesManager::drawGrenade(sf::RenderTarget& window)
+{
+	for (auto& g : grenades)
+	{
+		window.draw(g.grenadeSprite);
+	}
+	eraseGrenades();
+}
+
+void GrenadesManager::updateGrenades()
+{
+	for (auto& g : grenades)
+	{
+		if (g.grenadeSprite.getPosition().x < 10)
+		{
+			g.isPickedUp = true;
+		}
+	}
+}
+
+void GrenadesManager::eraseGrenades()
+{
+	grenades.erase(std::remove_if(grenades.begin(), grenades.end(), [](Grenade& gre)
+		{
+			return gre.isPickedUp == true;
+		})
+		, grenades.end());
+
+	for (auto& g : grenades)
+	{
+		if (g.isPickedUp == true)
+		{
+			grenades.erase(grenades.end());
+		}
+	}
 }
 
