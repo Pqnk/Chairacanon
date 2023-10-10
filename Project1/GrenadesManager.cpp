@@ -35,13 +35,19 @@ void GrenadesManager::drawGrenade(sf::RenderTarget& window)
 	eraseGrenades();
 }
 
-void GrenadesManager::updateGrenades()
+void GrenadesManager::updateGrenades(Player& player)
 {
 	for (auto& g : grenades)
 	{
-		if (g.grenadeSprite.getPosition().x < 10)
+		grenadePosRelToPlayer = g.grenadeSprite.getPosition() - player.getSpritePosition();
+
+		if (	grenadePosRelToPlayer.x	<  10
+			&&	grenadePosRelToPlayer.x > -10
+			&& grenadePosRelToPlayer.y	<  10
+			&& grenadePosRelToPlayer.y	> -10	)
 		{
 			g.isPickedUp = true;
+			player.setNumGrenades( player.getNumGrenades() + g.amunition);
 		}
 	}
 }

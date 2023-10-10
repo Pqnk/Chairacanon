@@ -22,6 +22,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	sf::Vector2f speed(1.f, 1.f);
 
 	health = 10;
+	numGrenades = 0;
 
 	scale.x = 0.5f;
 	scale.y = 0.5f;

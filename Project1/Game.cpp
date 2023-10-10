@@ -134,7 +134,9 @@ void Game::update()
 			this->enemyManager.enemies, 
 			this->levelManager.levels[1].getMaskLevel()
 		);
-		this->grenadeManager.updateGrenades();
+		this->grenadeManager.updateGrenades(
+			this->player
+		);
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
 		this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
@@ -174,7 +176,7 @@ void Game::render()
 		this->player.getNumGrenades(),
 		this->numberLevel,
 		this->enemyManager.enemies.size(),
-		0
+		this->player.getNumGrenades()
 	);
 
 	this->cursor.renderObject(*this->gameWindow);
