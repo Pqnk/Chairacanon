@@ -9,15 +9,16 @@ Grenade::Grenade()
 Grenade::Grenade(sf::Sprite s, sf::Vector2f playerPos, sf::Vector2f dir)
 {
 	hasHitTarget = false;
-	grenadeSpeed = 3.f;
+	explosion = false;
+	grenadeSpeed = 2.f;
 
 	grenadeSprite = s;
-	grenadeFrame.left = 64.f;
-	grenadeFrame.top = 1856.f;
+	grenadeFrame.left = 256.f;
+	grenadeFrame.top = 1792.f;
 	grenadeFrame.width = 64.f;
 	grenadeFrame.height = 64.f;
 	grenadeSprite.setTextureRect(grenadeFrame);
-	grenadeSprite.setScale(0.6, 0.6);
+	grenadeSprite.setScale(0.4, 0.4);
 	grenadeSprite.setOrigin(32.f, 32.f);
 	grenadeSprite.setPosition(playerPos);
 
@@ -33,30 +34,76 @@ Grenade::Grenade(sf::Sprite s, sf::Vector2f playerPos, sf::Vector2f dir)
 	direction.x *= grenadeSpeed;
 	direction.y *= grenadeSpeed;
 
+	//std::cout << direction.x << "   " << direction.y << std::endl;
+
+	if (direction.x < 0 && direction.y < 0)
+	{
+		grenadeSprite.setRotation(-135.f);
+	}
+	if (direction.x > 0 && direction.y > 0)
+	{
+		grenadeSprite.setRotation(45.f);
+	}
+	if (direction.x < 0 && direction.y > 0)
+	{
+		grenadeSprite.setRotation(135.f);
+	}
+	if (direction.x > 0 && direction.y < 0)
+	{
+		grenadeSprite.setRotation(-45.f);
+	}
+
 	grenadeTimer.restart();
 	grenadeAnimationTimer.restart();
 }
 
-void Grenade::updateGrenade(sf::Vector2f destinationPos)
+void Grenade::updateGrenade()
 {
-	sf::Vector2f dest = grenadeSprite.getPosition() - destinationPos;
-	if (	dest.x > -10
-		&&	dest.x < 10
-		&&	dest.y > -10
-		&&	dest.y < 10
-		)
+	if (explosion == true)
 	{
-		hasHitTarget = true;
+		if (grenadeAnimationTimer.getElapsedTime().asSeconds() >= 0.06f)
+		{
+			grenadeFrame.left += 64.f;
+			if (grenadeFrame.left >= 832.f)
+			{
+				grenadeSprite.setColor(sf::Color::Transparent);
+				hasHitTarget = true;
+			}
+			grenadeSprite.setTextureRect(grenadeFrame);
+			grenadeAnimationTimer.restart();
+		}
 	}
 	else
 	{
-		if (grenadeTimer.getElapsedTime().asSeconds() >= 3.f)
+		animationGrenade();
+	}
+}
+
+void Grenade::animationGrenade()
+{
+	if (grenadeTimer.getElapsedTime().asSeconds() < 2.f)
+	{
+		grenadeSprite.move(direction);
+
+		if (grenadeAnimationTimer.getElapsedTime().asSeconds() >= 0.06f)
 		{
-			hasHitTarget = true;
+			grenadeFrame.left += 64.f;
+			if (grenadeFrame.left >= 1024.f)
+			{
+				grenadeFrame.left = 832.f;
+			}
+			grenadeSprite.setTextureRect(grenadeFrame);
+			grenadeAnimationTimer.restart();
 		}
-		else
-		{
-			grenadeSprite.move(direction);
-		}
+	}
+	else
+	{
+		grenadeFrame.top = 1600.f;
+		grenadeFrame.left = 0.f;
+		grenadeSprite.setTextureRect(grenadeFrame);
+		grenadeSprite.setScale(1.f, 1.f);
+		grenadeAnimationTimer.restart();
+
+		explosion = true;
 	}
 }

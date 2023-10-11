@@ -5,6 +5,7 @@ Bullet::Bullet(sf::Vector2f pos, sf::Vector2f dir, sf::Sprite sprite)
 	waitingForDestroy = false;
 	hasAlreadyHit = false;
 
+
 	bulletSpeed = 3.f;
 
 	position = pos;

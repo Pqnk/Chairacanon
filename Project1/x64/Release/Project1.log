@@ -1,11 +1,55 @@
-﻿  Game.cpp
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(182,34): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(225,51): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(233,89): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(248,51): warning C4018: '>' : incompatibilité signed/unsigned
+﻿  Grenade.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(16,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(17,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(18,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(19,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(21,30): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(21,25): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(66,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(90,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(93,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(101,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(102,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  Main.cpp
   Génération de code en cours
-  0 of 691 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 692 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Chairacanon\x64\Release\Project1.exe

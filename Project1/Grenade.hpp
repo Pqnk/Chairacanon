@@ -14,8 +14,10 @@ class Grenade : public GrenadeStock
 		sf::Clock grenadeTimer;
 		sf::Clock grenadeAnimationTimer;
 
-		void updateGrenade(sf::Vector2f destinationPos);
+		void updateGrenade();
+		void animationGrenade();
 
 		bool hasHitTarget;
+		bool explosion;
 };
 

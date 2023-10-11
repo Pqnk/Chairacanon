@@ -138,7 +138,6 @@ void Game::update()
 			this->player
 		);
 		this->grenadeManager.updateGrenadesThrowed(
-			this->cursor.getRightClickPosition()
 		);
 		this->cursor.updateCursor(this->gameWindow);
 		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);

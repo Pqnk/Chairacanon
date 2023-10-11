@@ -20,7 +20,7 @@ class GrenadesManager
 		//	Managing the GRENADES THROWED
 		//######################################################
 		void addGrenadeThrowed(sf::Sprite s, Player& player, sf::Vector2f dir);
-		void updateGrenadesThrowed(sf::Vector2f destinationPos);
+		void updateGrenadesThrowed();
 		void eraseGrenadesThrowed();
 		void drawGrenadesThrowed(sf::RenderTarget& window);
 

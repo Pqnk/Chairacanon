@@ -87,13 +87,13 @@ void GrenadesManager::addGrenadeThrowed(sf::Sprite s, Player& player, sf::Vector
 
 }
 
-void GrenadesManager::updateGrenadesThrowed(sf::Vector2f destinationPos)
+void GrenadesManager::updateGrenadesThrowed()
 {
 	for (auto& g : grenadeThrowed)
 	{
 		if (g.hasHitTarget == false)
 		{
-			g.updateGrenade(destinationPos);
+			g.updateGrenade();
 		}
 		else
 		{
