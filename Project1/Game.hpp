@@ -55,6 +55,7 @@ class Game
 		//##############################
 		void initVariables();
 		void initWindow();
+		void initLevel1();
 
 		//##############################
 		//	Variables
@@ -79,6 +80,7 @@ class Game
 		BuildingManager tankManager;
 
 		int numberLevel;
+		bool isLevel1Loaded;
 };
 #endif
 

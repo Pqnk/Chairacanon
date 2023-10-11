@@ -1,38 +1,11 @@
-﻿  Building.cpp
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(8,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(9,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(10,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(11,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(13,31): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(13,26): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(23,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-  Game.cpp
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(197,34): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(240,51): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(248,89): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(263,51): warning C4018: '>' : incompatibilité signed/unsigned
+﻿  Game.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(241,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(302,50): warning C4018: '>' : incompatibilité signed/unsigned
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(314,53): warning C4018: '>' : incompatibilité signed/unsigned
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(332,49): warning C4018: '>' : incompatibilité signed/unsigned
+  Main.cpp
   Génération de code en cours
-  15 of 751 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+  3 of 757 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     4 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

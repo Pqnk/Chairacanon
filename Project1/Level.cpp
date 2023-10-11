@@ -28,6 +28,7 @@ void Level::updateLevelElements(sf::RenderTarget& window)
 	}
 }
 
+
 //#######################################################################################################
 //	Accessors
 //#######################################################################################################
@@ -46,6 +47,16 @@ sf::Sprite Level::getCloudLevel()
 	return spriteCloudLevel;
 }
 
+sf::Sprite Level::getButton1Level()
+{
+	return spriteButton1;
+}
+
+sf::Sprite Level::getButton2Level()
+{
+	return spriteButton2;
+}
+
 //#######################################################################################################
 //	Setters
 //#######################################################################################################
@@ -62,4 +73,23 @@ void Level::setMaskLevel(sf::Image i)
 void Level::setCloudLevel(sf::Sprite s)
 {
 	spriteCloudLevel = s;
+}
+
+void Level::setButtonsLevel(sf::Sprite s)
+{
+	spriteButton1 = s;
+	frameButton1.left = 0.f;
+	frameButton1.top = 0.f;
+	frameButton1.width = 230.f;
+	frameButton1.height = 80.f;
+	spriteButton1.setTextureRect(frameButton1);
+	spriteButton1.setPosition(700.f, 400.f);
+
+	spriteButton2 = s;
+	frameButton2.left = 0.f;
+	frameButton2.top = 80.f;
+	frameButton2.width = 230.f;
+	frameButton2.height = 80.f;
+	spriteButton2.setTextureRect(frameButton2);
+	spriteButton2.setPosition(700.f, 600.f);
 }

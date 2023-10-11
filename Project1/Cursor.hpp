@@ -48,6 +48,7 @@ class Cursor : public AnimatedObject
 		void setPosCursorOnCameraView(sf::Vector2f position);
 		void setRightClickPosition(sf::Vector2f rCPos);
 		void setLeftClickPosition(sf::Vector2f lCPos);
+		void setSpriteScale(float x);
 
 
 	private :

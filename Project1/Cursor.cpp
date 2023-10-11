@@ -167,6 +167,11 @@ void Cursor::setLeftClickPosition(sf::Vector2f lCPos)
 	leftClickPosition = lCPos;
 }
 
+void Cursor::setSpriteScale(float x)
+{
+	sprite.setScale(x, x);
+}
+
 void Cursor::setIsFirstFrame(bool b)
 {
 	isFirstFrame = b;

@@ -16,6 +16,7 @@ void SpriteManager::initSpriteManager()
 	initCloudSprite();
 	initEarthSprite();
 	initNumbersSprite();
+	initButtonsSprite();
 }
 
 void SpriteManager::initCharacterSprite()
@@ -70,6 +71,12 @@ void SpriteManager::initNumbersSprite()
 	numbersSprite.setTexture(numbersImage);
 }
 
+void SpriteManager::initButtonsSprite()
+{
+	buttonsImage.loadFromFile("Textures/Buttons.png");
+	buttonsSprite.setTexture(buttonsImage);
+}
+
 
 //#######################################################################################################
 //	Accessors
@@ -122,4 +129,9 @@ sf::Sprite SpriteManager::getEarthSprite()
 sf::Sprite SpriteManager::getNumbersSprite()
 {
 	return numbersSprite;
+}
+
+sf::Sprite SpriteManager::getButtonsSprite()
+{
+	return buttonsSprite;
 }

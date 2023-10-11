@@ -26,6 +26,8 @@ class Level
 		sf::Sprite getSpriteLevel();
 		sf::Image getMaskLevel();
 		sf::Sprite getCloudLevel();
+		sf::Sprite getButton1Level();
+		sf::Sprite getButton2Level();
 
 		//##########################
 		//	Setters
@@ -33,12 +35,18 @@ class Level
 		void setSpriteLevel(sf::Sprite s);
 		void setMaskLevel(sf::Image i);
 		void setCloudLevel(sf::Sprite s);
+		void setButtonsLevel(sf::Sprite s);
 
 	protected : 
 
 		sf::Sprite	spriteLevel;
 		sf::Image	maskLevel;
 		sf::Sprite	spriteCloudLevel;
+
+		sf::Sprite	spriteButton1;
+		sf::IntRect frameButton1;
+		sf::Sprite	spriteButton2;
+		sf::IntRect frameButton2;
 };
 
 #endif

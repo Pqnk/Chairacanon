@@ -4,10 +4,11 @@ LevelManager::LevelManager()
 {
 }
 
-void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf::Image maskLevel1, sf::Sprite cloudLevel1, sf::Sprite spriteLevel2, sf::Image maskLevel2)
+void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteButtons, sf::Sprite spriteLevel1, sf::Image maskLevel1, sf::Sprite cloudLevel1, sf::Sprite spriteLevel2, sf::Image maskLevel2)
 {
 	Level menu;
 	menu.setSpriteLevel(spriteMenu);
+	menu.setButtonsLevel(spriteButtons);
 	levels.push_back(menu);
 
 	Level level1;
@@ -27,5 +28,13 @@ void LevelManager::initLevels(sf::Sprite spriteMenu, sf::Sprite spriteLevel1, sf
 void LevelManager::renderLevel(sf::RenderTarget& window, int numLevel)
 {
 	window.draw(levels[numLevel].getSpriteLevel());
-	window.draw(levels[numLevel].getCloudLevel());
+
+	if (numLevel == 0)
+	{
+		window.draw(levels[numLevel].getButton1Level());
+		window.draw(levels[numLevel].getButton2Level());
+	}
+
+	if (numLevel == 1)
+		window.draw(levels[numLevel].getCloudLevel());
 }
