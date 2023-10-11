@@ -1,74 +1,35 @@
-﻿  Grenade.cpp
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(16,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+﻿  Building.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(8,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(17,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(9,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(18,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(10,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(19,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(11,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(21,30): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(21,25): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(66,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(13,31): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(13,26): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Building.cpp(23,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(91,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(94,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(102,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(103,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(114,98): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(114,67): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(121,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(122,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
+  BuildingManager.cpp
+  Main.cpp
   Génération de code en cours
-  4 of 693 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 693 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Chairacanon\x64\Release\Project1.exe
