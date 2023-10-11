@@ -17,6 +17,7 @@ class Grenade : public GrenadeStock
 		void updateGrenade(sf::Image maskLevel);
 		void animationGrenade();
 		void collisionDetection(sf::Image maskLevel);
+		void resetAnimExplosion();
 
 		bool hasHitTarget;
 		bool explosion;

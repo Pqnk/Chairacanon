@@ -24,12 +24,14 @@ class GrenadesManager
 		void eraseGrenadesThrowed();
 		void drawGrenadesThrowed(sf::RenderTarget& window);
 
+		std::vector<Grenade> grenadeThrowed;
+
 
 	protected :
 
 		std::vector<GrenadeStock> grenadeStocks;
 		sf::Vector2f grenadePosRelToPlayer;
 
-		std::vector<Grenade> grenadeThrowed;
+
 };
 

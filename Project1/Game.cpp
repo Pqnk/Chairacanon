@@ -86,6 +86,12 @@ void Game::initVariables()
 	);
 	this->enemyManager.initEnemiesOnLevel(1);
 
+	//	Tank : Initialisation
+	this->tankManager.initTanksOnMap(
+		this->numberLevel,
+		this->spriteManager.getCharacterSprite()
+	);
+
 	//	Grenades : Initialisation
 	this->grenadeManager.initGrenadeStocksManager(
 		this->numberLevel,
@@ -140,8 +146,16 @@ void Game::update()
 		this->grenadeManager.updateGrenadesThrowed(
 			this->spriteManager.getLevel1MaskImage()
 		);
+		this->tankManager.updateTanksOnMap(
+			this->grenadeManager.grenadeThrowed
+		);
 		this->cursor.updateCursor(this->gameWindow);
-		this->camera.updateCamera(this->levelManager.levels[1], this->cursor, this->player, *this->gameWindow);
+		this->camera.updateCamera(
+			this->levelManager.levels[1], 
+			this->cursor, 
+			this->player, 
+			*this->gameWindow
+		);
 		this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
 	}
 
@@ -169,6 +183,7 @@ void Game::render()
 	this->gameWindow->setView(this->camera.getCameraView());
 	this->levelManager.renderLevel(*this->gameWindow, 1);
 	this->enemyManager.drawEnemy(*this->gameWindow);
+	this->tankManager.drawTanks(*this->gameWindow);
 	this->grenadeManager.drawGrenadeStocks(*this->gameWindow);
 	this->player.renderObject(*this->gameWindow);
 	this->bulletmanager.drawBullet(*this->gameWindow);
@@ -180,7 +195,7 @@ void Game::render()
 		this->player.getNumGrenades(),
 		this->numberLevel,
 		this->enemyManager.enemies.size(),
-		this->player.getNumGrenades()
+		this->tankManager.initialTankNumber
 	);
 
 	this->cursor.renderObject(*this->gameWindow);

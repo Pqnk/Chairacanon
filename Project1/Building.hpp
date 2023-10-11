@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include <vector>
+#include "GrenadesManager.hpp"
 
 class Building
 {
@@ -11,7 +12,9 @@ class Building
 
 		Building(sf::Sprite s, sf::Vector2f position);
 
-		void animationBuilding();
+		void destroyingBuilding();
+
+		void updatingBuildgin(std::vector<Grenade>& gre);
 
 		sf::Sprite spriteBuilding;
 		sf::IntRect frameBuilding;
@@ -19,7 +22,6 @@ class Building
 		sf::Clock buildingAnimationTimer;
 
 		bool isHitByRocket;
-
 
 };
 

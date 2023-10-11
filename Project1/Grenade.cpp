@@ -99,13 +99,7 @@ void Grenade::animationGrenade()
 	}
 	else
 	{
-		grenadeFrame.top = 1600.f;
-		grenadeFrame.left = 0.f;
-		grenadeSprite.setTextureRect(grenadeFrame);
-		grenadeSprite.setScale(1.f, 1.f);
-		grenadeAnimationTimer.restart();
-
-		explosion = true;
+		resetAnimExplosion();
 	}
 }
 
@@ -117,13 +111,18 @@ void Grenade::collisionDetection(sf::Image maskLevel)
 	{
 		//	BLACK
 		case 255:
-
-			grenadeFrame.top = 1600.f;
-			grenadeFrame.left = 0.f;
-			grenadeSprite.setTextureRect(grenadeFrame);
-			grenadeSprite.setScale(1.f, 1.f);
-			grenadeAnimationTimer.restart();
-			explosion = true;
+			resetAnimExplosion();
 		break;
 	}
+}
+
+void Grenade::resetAnimExplosion()
+{
+	grenadeFrame.top = 1600.f;
+	grenadeFrame.left = 0.f;
+	grenadeSprite.setTextureRect(grenadeFrame);
+	grenadeSprite.setScale(1.f, 1.f);
+	grenadeAnimationTimer.restart();
+
+	explosion = true;
 }
