@@ -57,7 +57,7 @@ Grenade::Grenade(sf::Sprite s, sf::Vector2f playerPos, sf::Vector2f dir)
 	grenadeAnimationTimer.restart();
 }
 
-void Grenade::updateGrenade()
+void Grenade::updateGrenade(sf::Image maskLevel)
 {
 	if (explosion == true)
 	{
@@ -76,6 +76,7 @@ void Grenade::updateGrenade()
 	else
 	{
 		animationGrenade();
+		collisionDetection(maskLevel);
 	}
 }
 
@@ -105,5 +106,24 @@ void Grenade::animationGrenade()
 		grenadeAnimationTimer.restart();
 
 		explosion = true;
+	}
+}
+
+void Grenade::collisionDetection(sf::Image maskLevel)
+{
+	int pixelColored = maskLevel.getPixel(grenadeSprite.getPosition().x, grenadeSprite.getPosition().y).toInteger();
+
+	switch (pixelColored)
+	{
+		//	BLACK
+		case 255:
+
+			grenadeFrame.top = 1600.f;
+			grenadeFrame.left = 0.f;
+			grenadeSprite.setTextureRect(grenadeFrame);
+			grenadeSprite.setScale(1.f, 1.f);
+			grenadeAnimationTimer.restart();
+			explosion = true;
+		break;
 	}
 }

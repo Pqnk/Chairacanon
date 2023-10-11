@@ -87,13 +87,13 @@ void GrenadesManager::addGrenadeThrowed(sf::Sprite s, Player& player, sf::Vector
 
 }
 
-void GrenadesManager::updateGrenadesThrowed()
+void GrenadesManager::updateGrenadesThrowed(sf::Image maskLevel)
 {
 	for (auto& g : grenadeThrowed)
 	{
 		if (g.hasHitTarget == false)
 		{
-			g.updateGrenade();
+			g.updateGrenade(maskLevel);
 		}
 		else
 		{

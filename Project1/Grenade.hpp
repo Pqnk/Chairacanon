@@ -14,8 +14,9 @@ class Grenade : public GrenadeStock
 		sf::Clock grenadeTimer;
 		sf::Clock grenadeAnimationTimer;
 
-		void updateGrenade();
+		void updateGrenade(sf::Image maskLevel);
 		void animationGrenade();
+		void collisionDetection(sf::Image maskLevel);
 
 		bool hasHitTarget;
 		bool explosion;

@@ -26,30 +26,49 @@ C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(66,25): warning
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(90,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(91,25): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(93,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(94,25): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(101,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(102,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(102,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(103,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-  Main.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(114,98): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(114,67): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(121,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp(122,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
   Génération de code en cours
-  1 of 692 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  4 of 693 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Chairacanon\x64\Release\Project1.exe
