@@ -52,7 +52,10 @@ void BuildingManager::updateTanksOnMap(std::vector<Grenade>& gre)
 		else
 		{
 			t.destroyingBuilding();
-			initialTankNumber -= 1;
+			if (initialTankNumber > 0)
+			{
+				initialTankNumber -= 1;
+			}
 		}
 	}
 }

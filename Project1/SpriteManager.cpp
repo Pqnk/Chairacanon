@@ -17,6 +17,7 @@ void SpriteManager::initSpriteManager()
 	initEarthSprite();
 	initNumbersSprite();
 	initButtonsSprite();
+	initVictorySprite();
 }
 
 void SpriteManager::initCharacterSprite()
@@ -77,6 +78,14 @@ void SpriteManager::initButtonsSprite()
 	buttonsSprite.setTexture(buttonsImage);
 }
 
+void SpriteManager::initVictorySprite()
+{
+	victoryImage.loadFromFile("Textures/Victory.png");
+	victorySprite.setTexture(victoryImage);
+	victorySprite.setScale(0.5, 0.5);
+	victorySprite.setOrigin(800, 400);
+}
+
 
 //#######################################################################################################
 //	Accessors
@@ -134,4 +143,13 @@ sf::Sprite SpriteManager::getNumbersSprite()
 sf::Sprite SpriteManager::getButtonsSprite()
 {
 	return buttonsSprite;
+}
+
+void SpriteManager::renderVictory(Camera& cam, sf::RenderTarget& window)
+{
+	victorySprite.setPosition(
+		cam.getCameraView().getCenter().x,
+		cam.getCameraView().getCenter().y
+	);
+	window.draw(victorySprite);
 }

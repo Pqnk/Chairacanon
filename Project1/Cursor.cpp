@@ -172,6 +172,11 @@ void Cursor::setSpriteScale(float x)
 	sprite.setScale(x, x);
 }
 
+void Cursor::setPosCursorOnWorld(sf::Vector2f position)
+{
+	posCursorOnWorld = position;
+}
+
 void Cursor::setIsFirstFrame(bool b)
 {
 	isFirstFrame = b;

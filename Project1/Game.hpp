@@ -56,6 +56,7 @@ class Game
 		void initVariables();
 		void initWindow();
 		void initLevel1();
+		void initLevel2();
 
 		//##############################
 		//	Variables
@@ -81,6 +82,7 @@ class Game
 
 		int numberLevel;
 		bool isLevel1Loaded;
+		sf::Clock victoryTimer;
 };
 #endif
 

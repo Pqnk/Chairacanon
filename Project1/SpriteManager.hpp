@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include "Camera.hpp"
 
 class SpriteManager
 {
@@ -18,6 +19,7 @@ class SpriteManager
 		void initEarthSprite();
 		void initNumbersSprite();
 		void initButtonsSprite();
+		void initVictorySprite();
 
 		sf::Sprite getCharacterSprite();
 		sf::Sprite getMainMenuSprite();
@@ -30,6 +32,8 @@ class SpriteManager
 		sf::Sprite getEarthSprite();
 		sf::Sprite getNumbersSprite();
 		sf::Sprite getButtonsSprite();
+
+		void renderVictory(Camera& cam, sf::RenderTarget& window);
 
 	private :
 
@@ -61,5 +65,8 @@ class SpriteManager
 
 		sf::Texture buttonsImage;
 		sf::Sprite buttonsSprite;
+
+		sf::Texture victoryImage;
+		sf::Sprite victorySprite;
 };
 

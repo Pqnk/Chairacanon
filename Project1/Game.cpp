@@ -120,6 +120,52 @@ void Game::initLevel1()
 	this->isLevel1Loaded = true;
 }
 
+void Game::initLevel2()
+{
+	this->numberLevel = 2;
+
+	this->latScreen.initLateralScreen(
+		this->spriteManager.getLateralScreenSprite(),
+		this->camera,
+		this->spriteManager.getEarthSprite(),
+		this->spriteManager.getNumbersSprite()
+	);
+
+	//	Player : Initialisation
+	this->player.initPlayer(
+		this->spriteManager.getCharacterSprite()
+	);
+
+	//	Enemies : Initialisation
+	this->enemyManager.initEnemyManager(
+		this->spriteManager.getCharacterSprite()
+	);
+	this->enemyManager.initEnemiesOnLevel(1);
+
+	//	Tank : Initialisation
+	this->tankManager.initTanksOnMap(
+		this->numberLevel,
+		this->spriteManager.getCharacterSprite()
+	);
+
+	//	Grenades : Initialisation
+	this->grenadeManager.initGrenadeStocksManager(
+		this->numberLevel,
+		this->spriteManager.getCharacterSprite()
+	);
+
+	/*
+*	Initialisation of LEFT CLICK POSITION at the Player position
+*	At each frame, the player access the left click position to update it's position.
+*	This is a temporary sollution, so the player doesn't go the the (0,0) map origin at the begining
+*/
+	this->cursor.setLeftClickPosition(
+		this->player.getSprite().getPosition()
+	);
+
+	this->gameWindow->setView(this->camera.getCameraView());
+}
+
 
 //#######################################################################################################
 //	Game
@@ -138,47 +184,53 @@ void Game::update()
 
 		//	//////////////////////////////////////////
 		//	Main Menu
-		if (numberLevel == 0)
+		if (this->numberLevel == 0)
 		{
 			this->cursor.updateCursor(this->gameWindow);
 			this->cursor.setSpriteScale(0.5f);
+
+			if (this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
+			{
+				this->levelManager.levels[this->numberLevel].getButton1Level().setColor(sf::Color::Blue);
+			}
 		}
 
 		//	//////////////////////////////////////////
-		//	Levels 1 and 2
-		if (numberLevel > 0 && numberLevel < 3)
+		//	Levels 1 
+		if (this->numberLevel == 1 || this->numberLevel == 2)
 		{
-			this->player.updatePlayer(
-				this->cursor.getLeftClickPosition(),
-				this->cursor.getRightClickPosition(),
-				this->levelManager.levels[numberLevel].getMaskLevel()
-			);
-			this->enemyManager.updateEnemies(
-				this->player,
-				this->levelManager.levels[numberLevel].getMaskLevel()
-			);
-			this->bulletmanager.updateBullets(
-				this->enemyManager.enemies,
-				this->levelManager.levels[numberLevel].getMaskLevel()
-			);
-			this->grenadeManager.updateGrenadeStocks(
-				this->player
-			);
-			this->grenadeManager.updateGrenadesThrowed(
-				this->levelManager.levels[numberLevel].getMaskLevel()
-			);
-			this->tankManager.updateTanksOnMap(
-				this->grenadeManager.grenadeThrowed
-			);
-			this->cursor.setSpriteScale(0.1f);
-			this->cursor.updateCursor(this->gameWindow);
-			this->camera.updateCamera(
-				this->levelManager.levels[numberLevel],
-				this->cursor,
-				this->player,
-				*this->gameWindow
-			);
-			this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
+
+				this->player.updatePlayer(
+					this->cursor.getLeftClickPosition(),
+					this->cursor.getRightClickPosition(),
+					this->levelManager.levels[numberLevel].getMaskLevel()
+				);
+				this->enemyManager.updateEnemies(
+					this->player,
+					this->levelManager.levels[numberLevel].getMaskLevel()
+				);
+				this->bulletmanager.updateBullets(
+					this->enemyManager.enemies,
+					this->levelManager.levels[numberLevel].getMaskLevel()
+				);
+				this->grenadeManager.updateGrenadeStocks(
+					this->player
+				);
+				this->grenadeManager.updateGrenadesThrowed(
+					this->levelManager.levels[numberLevel].getMaskLevel()
+				);
+				this->tankManager.updateTanksOnMap(
+					this->grenadeManager.grenadeThrowed
+				);
+				this->cursor.setSpriteScale(0.1f);
+				this->cursor.updateCursor(this->gameWindow);
+				this->camera.updateCamera(
+					this->levelManager.levels[numberLevel],
+					this->cursor,
+					this->player,
+					*this->gameWindow
+				);
+				this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
 
 			//	Endgame condition
 			if (this->player.getHealth() <= 0)
@@ -187,7 +239,7 @@ void Game::update()
 
 		//	//////////////////////////////////////////
 		//	GameOver Screen
-		if (numberLevel == 3)
+		if (this->numberLevel == 3)
 		{
 
 		}
@@ -213,7 +265,7 @@ void Game::render()
 
 	//	//////////////////////////////////////////
 	//	Main Menu
-	if (numberLevel == 0)
+	if (this->numberLevel == 0)
 	{
 		this->gameWindow->setView(this->gameWindow->getDefaultView());
 		this->levelManager.renderLevel(*this->gameWindow, numberLevel);
@@ -221,8 +273,8 @@ void Game::render()
 	}
 
 	//	//////////////////////////////////////////
-	//	Levels 1 and 2
-	if (numberLevel > 0 && numberLevel < 3)
+	//	Levels 1 & 2
+	if (this->numberLevel == 1 || this->numberLevel == 2)
 	{
 		this->gameWindow->setView(this->camera.getCameraView());
 		this->levelManager.renderLevel(*this->gameWindow, numberLevel);
@@ -242,8 +294,20 @@ void Game::render()
 			this->tankManager.initialTankNumber
 		);
 
-		this->cursor.renderObject(*this->gameWindow);
+		if (this->enemyManager.enemies.size() == 0 && this->tankManager.initialTankNumber == 0)
+		{
+			this->spriteManager.renderVictory(this->camera, *this->gameWindow);
 
+			if (victoryTimer.getElapsedTime().asSeconds() > 5)
+			{
+				initLevel2();
+			}
+		}
+		else
+		{
+			victoryTimer.restart();
+		}
+		this->cursor.renderObject(*this->gameWindow);
 	}
 
 	//	//////////////////////////////////////////
@@ -267,83 +331,95 @@ void Game::pollEvents()
 
 	while (this->gameWindow->pollEvent(this->event))
 	{
-		switch (this->event.type)
+		if (numberLevel == 0)
 		{
-		case	sf::Event::Closed:
-			this->gameWindow->close();
-			break;
-
-		case	sf::Event::KeyPressed:
-			if (this->event.key.code == sf::Keyboard::Escape)
+			switch (this->event.type)
 			{
-				this->numberLevel = 0;
-			}
+			case	sf::Event::Closed:
+				this->gameWindow->close();
+				break;
 
-		case	sf::Event::MouseButtonPressed:
+			case	sf::Event::MouseButtonPressed:
 
-			if (numberLevel == 0)
-			{
-				if (event.mouseButton.button == sf::Mouse::Left)
+				if (this->numberLevel == 0)
 				{
-					numberLevel = 1;
-					if (isLevel1Loaded == false)
+					if (event.mouseButton.button == sf::Mouse::Left
+						&& this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
 					{
-						initLevel1();
-
+						numberLevel = 1;
+						if (this->isLevel1Loaded == false)
+						{
+							initLevel1();
+						}
+						this->cursor.setPosCursorOnWorld(this->player.getSprite().getPosition());
 					}
 				}
 			}
+		}
 
-			if (numberLevel > 0 && numberLevel < 3)
+		if (this->numberLevel == 1 || this->numberLevel == 2)
+		{
+			switch (this->event.type)
 			{
+			case	sf::Event::Closed:
+				this->gameWindow->close();
+				break;
+
+			case	sf::Event::KeyPressed:
+				if (this->event.key.code == sf::Keyboard::Escape)
+				{
+					this->numberLevel = 0;
+				}
+
+			case	sf::Event::MouseButtonPressed:
+
 				//	/////////////////////////////////////////////////		
 				//	When the user is Clicking LEFT in the cameraView
-				if (
-						(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4) 
-						&& event.mouseButton.button == sf::Mouse::Left
+				if (	(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
+						&& event.mouseButton.button == sf::Mouse::Left 
 					)
-				{
-					this->cursor.setIsClicking(true);
-					this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
-				}
+					{
+						this->cursor.setIsClicking(true);
+						this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
+					}
 
-				//	/////////////////////////////////////////////////		
-				//	When the user is Clicking RIGHT in the cameraView
-				if (
-						this->player.getCanShoot() == true 
-						&& (this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4) 
-						&& event.mouseButton.button == sf::Mouse::Right
-					)
-				{
-					this->cursor.setIsClickingRight(true);
-					this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
-					this->player.setIsShooting(true);
-					Bullet bullet(
-						this->player.getSpritePosition(), 
-						this->cursor.getPosCursorOnWorld(), 
-						this->spriteManager.getCharacterSprite()
-					);
-					bulletmanager.addBullet(bullet);
-				}
-
-				//	/////////////////////////////////////////////////		
-				//	When the user is Clicking MIDDLE in the cameraView
-				if (
-					(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4) 
-					&& event.mouseButton.button == sf::Mouse::Middle
-					)
-				{
-					if (this->player.getNumGrenades() > 0)
+					//	/////////////////////////////////////////////////		
+					//	When the user is Clicking RIGHT in the cameraView
+					if (	this->player.getCanShoot() == true
+							&& (this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
+							&& event.mouseButton.button == sf::Mouse::Right
+						)
 					{
 						this->cursor.setIsClickingRight(true);
 						this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
-						this->grenadeManager.addGrenadeThrowed(
-							this->spriteManager.getCharacterSprite(),
-							this->player,
-							this->cursor.getPosCursorOnWorld()
+						this->player.setIsShooting(true);
+						Bullet bullet(
+							this->player.getSpritePosition(),
+							this->cursor.getPosCursorOnWorld(),
+							this->spriteManager.getCharacterSprite()
 						);
+						bulletmanager.addBullet(bullet);
 					}
-				}
+
+					//	/////////////////////////////////////////////////		
+					//	When the user is Clicking MIDDLE in the cameraView
+					if (
+						(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
+						&& event.mouseButton.button == sf::Mouse::Middle
+						)
+					{
+						if (this->player.getNumGrenades() > 0)
+						{
+							this->cursor.setIsClickingRight(true);
+							this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
+							this->grenadeManager.addGrenadeThrowed(
+								this->spriteManager.getCharacterSprite(),
+								this->player,
+								this->cursor.getPosCursorOnWorld()
+							);
+						}
+					}
+			
 			}
 		}
 	}

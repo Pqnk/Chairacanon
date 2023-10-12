@@ -49,6 +49,7 @@ class Cursor : public AnimatedObject
 		void setRightClickPosition(sf::Vector2f rCPos);
 		void setLeftClickPosition(sf::Vector2f lCPos);
 		void setSpriteScale(float x);
+		void setPosCursorOnWorld(sf::Vector2f position);
 
 
 	private :
