@@ -122,6 +122,7 @@ void Game::initLevel1()
 
 void Game::initLevel2()
 {
+	isLevel1Loaded == true;
 	this->numberLevel = 2;
 
 	this->latScreen.initLateralScreen(
@@ -300,7 +301,14 @@ void Game::render()
 
 			if (victoryTimer.getElapsedTime().asSeconds() > 5)
 			{
-				initLevel2();
+				if (this->numberLevel == 2)
+				{
+					this->numberLevel = 0;
+				}
+				else
+				{
+					initLevel2();
+				}
 			}
 		}
 		else
