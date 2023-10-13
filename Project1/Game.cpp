@@ -75,6 +75,18 @@ void Game::initVariables()
 	);
 
 	this->cursor.initCursor();
+
+	//	Initialisation of Sounds and music
+	bufferShooting.loadFromFile("Sounds/Shoot.mp3");
+	soundShooting.setBuffer(bufferShooting);
+	bufferVictory.loadFromFile("Sounds/Win.mp3");
+	soundVictory.setBuffer(bufferVictory);
+	bufferGameOver.loadFromFile("Sounds/Death.mp3");
+	soundGameOver.setBuffer(bufferGameOver);
+
+	music.openFromFile("Music/Menu_Theme_Fast.mp3");
+	music.play();
+	music.setPlayingOffset(sf::seconds(1));
 }
 
 void Game::initLevel1()
@@ -121,6 +133,11 @@ void Game::initLevel1()
 	this->gameWindow->setView(this->camera.getCameraView());
 
 	this->isLevel1Loaded = true;
+
+	music.openFromFile("Music/Chairacanon_Theme.mp3");
+	music.setVolume(20);
+	music.play();
+
 }
 
 void Game::initLevel2()
@@ -167,6 +184,10 @@ void Game::initLevel2()
 	);
 
 	this->gameWindow->setView(this->camera.getCameraView());
+
+	music.openFromFile("Music/Chairacanon_Theme.mp3");
+	music.setVolume(20);
+	music.play();
 }
 
 
@@ -250,9 +271,12 @@ void Game::update()
 				);
 				this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
 
-			//	Endgame condition
+			//	Game Over condition
 			if (this->player.getHealth() <= 0)
 			{
+				music.stop();
+				soundGameOver.play();
+
 				this->numberLevel = 3;
 				gameOverTimer.restart();
 			}
@@ -319,6 +343,8 @@ void Game::render()
 
 		if (this->enemyManager.enemies.size() == 0 && this->tankManager.tankNumber == 0)
 		{
+			//soundVictory.play();
+			music.stop();
 			this->spriteManager.renderVictory(this->camera, *this->gameWindow);
 
 			if (victoryTimer.getElapsedTime().asSeconds() > 3)
@@ -442,6 +468,7 @@ void Game::pollEvents()
 							&& event.mouseButton.button == sf::Mouse::Right
 						)
 					{
+						soundShooting.play();
 						this->cursor.setIsClickingRight(true);
 						this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
 						this->player.setIsShooting(true);
@@ -462,6 +489,7 @@ void Game::pollEvents()
 					{
 						if (this->player.getNumGrenades() > 0)
 						{
+							soundShooting.play();
 							this->cursor.setIsClickingRight(true);
 							this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
 							this->rocketsManager.addRocketThrowed(

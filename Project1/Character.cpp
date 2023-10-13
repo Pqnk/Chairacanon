@@ -97,6 +97,9 @@ void Character::setNumGrenades(int n)
 //##################################################
 void Character::damageHealth(int damage)
 {
+	soundDamage.play();
+	soundDamage.setPlayingOffset(sf::seconds(0.5));
+
 	isGettingDamage = true;
 	if (isFirstDamage == false)
 	{

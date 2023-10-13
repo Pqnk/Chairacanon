@@ -59,6 +59,7 @@ void RocketsManager::updateRocketStocks(Player& player)
 			&&	rocketPosRelToPlayer.y	<  10
 			&&	rocketPosRelToPlayer.y	> -10	)
 		{
+			//g.soundPickUp.play();
 			g.isPickedUp = true;
 			player.setNumGrenades( player.getNumGrenades() + g.amunition);
 		}

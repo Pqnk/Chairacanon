@@ -68,6 +68,9 @@ class Character : public AnimatedObject
 		bool isFirstFrame;
 		bool isGettingDamage;
 
+		sf::SoundBuffer bufferDamage;
+		sf::Sound soundDamage;
+
 };
 
 #endif

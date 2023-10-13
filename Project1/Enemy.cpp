@@ -15,6 +15,12 @@ Enemy::~Enemy()
 //#######################################################################################################
 void Enemy::initEnemy(sf::Sprite &characterSprite)
 {
+
+	bufferDamage.loadFromFile("Sounds/Damage.mp3");
+	soundDamage.setBuffer(bufferDamage);
+	bufferDamageEn.loadFromFile("Sounds/Damage_Enemy.wav");
+	soundDamageEn.setBuffer(bufferDamageEn);
+
 	sf::Vector2f position(600.f, 500.f);
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(0.5f, 0.5f);
@@ -52,6 +58,7 @@ void Enemy::updateEnemy(Player &player, sf::Image& maskLevel)
 
 	if (isDead == true)
 	{
+		soundDamageEn.play();
 		if (isNotFirstFrame == false)
 		{
 			currentFrameSprite.left = 0.f;
@@ -115,8 +122,6 @@ void Enemy::enemyAnimation()
 {
 	if (animationTimer.getElapsedTime().asSeconds() >= 0.1f)
 	{
-
-
 		//	/////////////////////////////////////////
 		//	Idle animation
 		if (playerDetected == false && isDead == false)
@@ -150,6 +155,8 @@ void Enemy::enemyAnimation()
 
 void Enemy::enemyDeathAnimation()
 {
+	soundDamageEn.play();
+
 	if (animationTimer.getElapsedTime().asSeconds() >= 0.1f)
 	{
 		currentFrameSprite.top = 1472.f;

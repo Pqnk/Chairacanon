@@ -41,5 +41,8 @@ class Enemy : public Character
 		sf::Vector2f playerPosRelativToEnemy;
 		bool waitingForErase;
 		bool isNotFirstFrame;
+
+		sf::SoundBuffer bufferDamageEn;
+		sf::Sound soundDamageEn;
 };
 

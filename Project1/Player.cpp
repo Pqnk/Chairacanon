@@ -17,6 +17,9 @@ Player::~Player()
 //#######################################################################################################
 void Player::initPlayer(sf::Sprite characterSprite)
 {
+	bufferDamage.loadFromFile("Sounds/Damage.mp3");
+	soundDamage.setBuffer(bufferDamage);
+
 	isNotfirstFrame = false;
 	isDead = false;
 	sf::Vector2f position(500.f, 600.f);

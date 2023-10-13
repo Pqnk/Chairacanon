@@ -16,5 +16,8 @@ class RocketStock
 		int amunition;
 		sf::Sprite spriteRocket;
 		sf::IntRect frameRocket;
+
+		sf::SoundBuffer bufferPickUp;
+		sf::Sound soundPickUp;
 };
 

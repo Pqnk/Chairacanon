@@ -19,4 +19,7 @@ RocketStock::RocketStock(sf::Sprite s)
 	spriteRocket.setScale(0.6, 0.6);
 
 	spriteRocket.setOrigin(32.f, 32.f);
+
+	bufferPickUp.loadFromFile("Sounds/Pick_Up.mp3");
+	soundPickUp.setBuffer(bufferPickUp);
 }

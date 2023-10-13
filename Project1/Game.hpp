@@ -85,6 +85,18 @@ class Game
 		sf::Clock victoryTimer;
 		sf::Clock gameOverTimer;
 		bool canQuitGameOverScreen;
+
+
+		//############################
+		//	Test Music
+		//############################
+		sf::Music music;
+		sf::SoundBuffer bufferVictory;
+		sf::Sound soundVictory;
+		sf::SoundBuffer bufferShooting;
+		sf::Sound soundShooting;
+		sf::SoundBuffer bufferGameOver;
+		sf::Sound soundGameOver;
 };
 #endif
 
