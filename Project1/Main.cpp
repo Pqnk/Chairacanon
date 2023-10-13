@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Jour 8 : Menu test 13!" << std::endl;
+	std::cout << "Jour 9 : Correction des problèmes entres levels!" << std::endl;
 
 	//	Initialisation of the randomization seed
 	std::srand(static_cast<unsigned>(time(NULL)));

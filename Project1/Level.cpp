@@ -83,7 +83,8 @@ void Level::setButtonsLevel(sf::Sprite s)
 	frameButton1.width = 230.f;
 	frameButton1.height = 80.f;
 	spriteButton1.setTextureRect(frameButton1);
-	spriteButton1.setPosition(700.f, 400.f);
+	spriteButton1.setOrigin(115, 40);
+	spriteButton1.setPosition(815.f, 440.f);
 
 	spriteButton2 = s;
 	frameButton2.left = 0.f;
@@ -91,5 +92,34 @@ void Level::setButtonsLevel(sf::Sprite s)
 	frameButton2.width = 230.f;
 	frameButton2.height = 80.f;
 	spriteButton2.setTextureRect(frameButton2);
-	spriteButton2.setPosition(700.f, 600.f);
+	spriteButton2.setOrigin(115, 40);
+	spriteButton2.setPosition(815.f, 640.f);
+}
+
+void Level::setColorButton1()
+{
+	frameButton1.left = 234.f;
+	spriteButton1.setTextureRect(frameButton1);
+	spriteButton1.setScale(1.2f, 1.2f);
+}
+
+void Level::resetColorButton1()
+{
+	frameButton1.left = 0.f;
+	spriteButton1.setTextureRect(frameButton1);
+	spriteButton1.setScale(1.f, 1.f);
+}
+
+void Level::setColorButton2()
+{
+	frameButton2.left = 234.f;
+	spriteButton2.setTextureRect(frameButton2);
+	spriteButton2.setScale(1.2f, 1.2f);
+}
+
+void Level::resetColorButton2()
+{
+	frameButton2.left = 0.f;
+	spriteButton2.setTextureRect(frameButton2);
+	spriteButton2.setScale(1.f, 1.f);
 }

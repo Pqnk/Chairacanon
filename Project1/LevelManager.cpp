@@ -31,10 +31,12 @@ void LevelManager::renderLevel(sf::RenderTarget& window, int numLevel)
 
 	if (numLevel == 0)
 	{
-		window.draw(levels[numLevel].getButton1Level());
-		window.draw(levels[numLevel].getButton2Level());
+		window.draw(levels[0].getButton1Level());
+		window.draw(levels[0].getButton2Level());
 	}
 
 	if (numLevel == 1)
+	{
 		window.draw(levels[numLevel].getCloudLevel());
+	}
 }

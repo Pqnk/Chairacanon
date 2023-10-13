@@ -123,6 +123,7 @@ void Game::initLevel1()
 void Game::initLevel2()
 {
 	isLevel1Loaded == true;
+
 	this->numberLevel = 2;
 
 	this->latScreen.initLateralScreen(
@@ -190,9 +191,24 @@ void Game::update()
 			this->cursor.updateCursor(this->gameWindow);
 			this->cursor.setSpriteScale(0.5f);
 
+			//	When overing the PLAY BUTTON
 			if (this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
 			{
-				this->levelManager.levels[this->numberLevel].getButton1Level().setColor(sf::Color::Blue);
+				this->levelManager.levels[this->numberLevel].setColorButton1();
+			}
+			else
+			{
+				this->levelManager.levels[this->numberLevel].resetColorButton1();
+			}
+
+			//	When overing the QUIT BUTTON
+			if (this->levelManager.levels[this->numberLevel].getButton2Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
+			{
+				this->levelManager.levels[this->numberLevel].setColorButton2();
+			}
+			else
+			{
+				this->levelManager.levels[this->numberLevel].resetColorButton2();
 			}
 		}
 
@@ -269,7 +285,7 @@ void Game::render()
 	if (this->numberLevel == 0)
 	{
 		this->gameWindow->setView(this->gameWindow->getDefaultView());
-		this->levelManager.renderLevel(*this->gameWindow, numberLevel);
+		this->levelManager.renderLevel(*this->gameWindow, this->numberLevel);
 		this->cursor.renderObject(*this->gameWindow);
 	}
 
@@ -339,7 +355,7 @@ void Game::pollEvents()
 
 	while (this->gameWindow->pollEvent(this->event))
 	{
-		if (numberLevel == 0)
+		if (this->numberLevel == 0)
 		{
 			switch (this->event.type)
 			{
@@ -349,18 +365,25 @@ void Game::pollEvents()
 
 			case	sf::Event::MouseButtonPressed:
 
-				if (this->numberLevel == 0)
+				//	//////////////////////////////////////////////
+				//	When clicking on PLAY button
+				if (event.mouseButton.button == sf::Mouse::Left
+					&& this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
 				{
-					if (event.mouseButton.button == sf::Mouse::Left
-						&& this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
+					numberLevel = 1;
+					if (this->isLevel1Loaded == false)
 					{
-						numberLevel = 1;
-						if (this->isLevel1Loaded == false)
-						{
-							initLevel1();
-						}
-						this->cursor.setPosCursorOnWorld(this->player.getSprite().getPosition());
+						initLevel1();
 					}
+					this->cursor.setPosCursorOnWorld(this->player.getSprite().getPosition());
+				}
+
+				//	//////////////////////////////////////////////
+				//	When clicking on QUIT button
+				if (event.mouseButton.button == sf::Mouse::Left
+					&& this->levelManager.levels[this->numberLevel].getButton2Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
+				{
+					this->gameWindow->close();
 				}
 			}
 		}

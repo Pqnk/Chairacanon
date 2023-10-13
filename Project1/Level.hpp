@@ -36,6 +36,10 @@ class Level
 		void setMaskLevel(sf::Image i);
 		void setCloudLevel(sf::Sprite s);
 		void setButtonsLevel(sf::Sprite s);
+		void setColorButton1();
+		void resetColorButton1();
+		void setColorButton2();
+		void resetColorButton2();
 
 	protected : 
 
