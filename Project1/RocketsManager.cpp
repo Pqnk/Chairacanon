@@ -9,18 +9,28 @@ RocketsManager::RocketsManager()
 //######################################################
 void RocketsManager::initRocketStocksManager(int numLevel, sf::Sprite s)
 {
-	switch(numLevel)
+	if(numLevel == 1)
 	{
-		case 1 :
-			RocketStock rocketStock1(s);
-			rocketStock1.spriteRocket.setPosition(500, 500);
-			addRocketStocks(rocketStock1);
+		rocketStocks.clear();
+		RocketStock rocketStock1(s);
+		rocketStock1.spriteRocket.setPosition(500, 500);
+		addRocketStocks(rocketStock1);
 
-			RocketStock rocketStock2(s);
-			rocketStock2.spriteRocket.setPosition(500, 550);
-			addRocketStocks(rocketStock2);
+		RocketStock rocketStock2(s);
+		rocketStock2.spriteRocket.setPosition(500, 550);
+		addRocketStocks(rocketStock2);
+	}
 
-			break;
+	if (numLevel == 2)
+	{
+		rocketStocks.clear();
+		RocketStock rocketStock1(s);
+		rocketStock1.spriteRocket.setPosition(500, 500);
+		addRocketStocks(rocketStock1);
+
+		RocketStock rocketStock2(s);
+		rocketStock2.spriteRocket.setPosition(500, 550);
+		addRocketStocks(rocketStock2);
 	}
 }
 
