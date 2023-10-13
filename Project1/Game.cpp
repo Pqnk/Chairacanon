@@ -101,7 +101,7 @@ void Game::initLevel1()
 	);
 
 	//	Grenades : Initialisation
-	this->grenadeManager.initGrenadeStocksManager(
+	this->rocketsManager.initRocketStocksManager(
 		this->numberLevel,
 		this->spriteManager.getCharacterSprite()
 	);
@@ -151,7 +151,7 @@ void Game::initLevel2()
 	);
 
 	//	Grenades : Initialisation
-	this->grenadeManager.initGrenadeStocksManager(
+	this->rocketsManager.initRocketStocksManager(
 		this->numberLevel,
 		this->spriteManager.getCharacterSprite()
 	);
@@ -230,14 +230,14 @@ void Game::update()
 					this->enemyManager.enemies,
 					this->levelManager.levels[numberLevel].getMaskLevel()
 				);
-				this->grenadeManager.updateGrenadeStocks(
+				this->rocketsManager.updateRocketStocks(
 					this->player
 				);
-				this->grenadeManager.updateGrenadesThrowed(
+				this->rocketsManager.updateRocketsThrowed(
 					this->levelManager.levels[numberLevel].getMaskLevel()
 				);
 				this->tankManager.updateTanksOnMap(
-					this->grenadeManager.grenadeThrowed
+					this->rocketsManager.rocketsThrowed
 				);
 				this->cursor.setSpriteScale(0.1f);
 				this->cursor.updateCursor(this->gameWindow);
@@ -297,10 +297,10 @@ void Game::render()
 		this->levelManager.renderLevel(*this->gameWindow, numberLevel);
 		this->enemyManager.drawEnemy(*this->gameWindow);
 		this->tankManager.drawTanks(*this->gameWindow);
-		this->grenadeManager.drawGrenadeStocks(*this->gameWindow);
+		this->rocketsManager.drawRocketStocks(*this->gameWindow);
 		this->player.renderObject(*this->gameWindow);
 		this->bulletmanager.drawBullet(*this->gameWindow);
-		this->grenadeManager.drawGrenadesThrowed(*this->gameWindow);
+		this->rocketsManager.drawRocketsThrowed(*this->gameWindow);
 		this->latScreen.renderShape(
 			this->camera,
 			*this->gameWindow,
@@ -443,7 +443,7 @@ void Game::pollEvents()
 						{
 							this->cursor.setIsClickingRight(true);
 							this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
-							this->grenadeManager.addGrenadeThrowed(
+							this->rocketsManager.addRocketThrowed(
 								this->spriteManager.getCharacterSprite(),
 								this->player,
 								this->cursor.getPosCursorOnWorld()

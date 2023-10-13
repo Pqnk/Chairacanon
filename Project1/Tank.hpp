@@ -4,7 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 #include <vector>
-#include "GrenadesManager.hpp"
+#include "RocketsManager.hpp"
 
 class Tank
 {
@@ -14,7 +14,7 @@ class Tank
 
 		void destroyingTanks();
 
-		void updatingTanks(std::vector<Grenade>& gre);
+		void updatingTanks(std::vector<Rocket>& gre);
 
 		sf::Sprite spriteTank;
 		sf::IntRect frameTank;

@@ -24,13 +24,13 @@ void Tank::destroyingTanks()
 	spriteTank.setTextureRect(frameTank);
 }
 
-void Tank::updatingTanks(std::vector<Grenade>& gre)
+void Tank::updatingTanks(std::vector<Rocket>& gre)
 {
 	sf::Vector2f posBuildingRelToRocket;
 
 	for (auto& g : gre)
 	{
-		posBuildingRelToRocket = spriteTank.getPosition() - g.grenadeSprite.getPosition();
+		posBuildingRelToRocket = spriteTank.getPosition() - g.spriteRocket.getPosition();
 
 		if (	posBuildingRelToRocket.x < 20
 				&& posBuildingRelToRocket.x > -20

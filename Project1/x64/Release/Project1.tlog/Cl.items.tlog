@@ -9,9 +9,9 @@ C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Cursor.cpp;C:\Users\Ely\Doc
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Enemy.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\Enemy.obj
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\EnemyManager.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\EnemyManager.obj
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\Game.obj
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Grenade.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\Grenade.obj
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\GrenadeStock.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\GrenadeStock.obj
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\GrenadesManager.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\GrenadesManager.obj
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Rocket.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\Rocket.obj
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\RocketStock.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\RocketStock.obj
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\RocketsManager.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\RocketsManager.obj
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LateralScreen.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\LateralScreen.obj
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\Level.obj
 C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\LevelManager.cpp;C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\x64\Release\LevelManager.obj

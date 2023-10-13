@@ -77,7 +77,7 @@ class Game
 		BulletManager bulletmanager;
 		SpriteManager spriteManager;
 		LevelManager levelManager;
-		GrenadesManager grenadeManager;
+		RocketsManager rocketsManager;
 		TankManager tankManager;
 
 		int numberLevel;

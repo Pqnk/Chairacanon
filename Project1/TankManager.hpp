@@ -11,7 +11,7 @@ class TankManager
 		//#######################
 		void initTanksOnMap(int numLevel, sf::Sprite s);
 		void drawTanks(sf::RenderTarget& window);
-		void updateTanksOnMap(std::vector<Grenade>& gre);
+		void updateTanksOnMap(std::vector<Rocket>& gre);
 		void eraseTank();
 
 		std::vector<Tank> tanks;

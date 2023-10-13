@@ -63,13 +63,13 @@
     <ClCompile Include="EnemyManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="GrenadesManager.cpp">
+    <ClCompile Include="RocketsManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="GrenadeStock.cpp">
+    <ClCompile Include="RocketStock.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Grenade.cpp">
+    <ClCompile Include="Rocket.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Tank.cpp">
@@ -128,13 +128,13 @@
     <ClInclude Include="EnemyManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="GrenadesManager.hpp">
+    <ClInclude Include="RocketsManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="GrenadeStock.hpp">
+    <ClInclude Include="RocketStock.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Grenade.hpp">
+    <ClInclude Include="Rocket.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Tank.hpp">

@@ -69,13 +69,13 @@ void TankManager::drawTanks(sf::RenderTarget& window)
 
 }
 
-void TankManager::updateTanksOnMap(std::vector<Grenade>& gre)
+void TankManager::updateTanksOnMap(std::vector<Rocket>& rocket)
 {
 	for (auto& t : tanks)
 	{
 		if (t.isHitByRocket == false)
 		{
-			t.updatingTanks(gre);
+			t.updatingTanks(rocket);
 		}
 		else
 		{
