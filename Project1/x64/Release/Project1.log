@@ -1,67 +1,16 @@
-﻿  Level.cpp
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(81,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(82,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(83,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(84,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(90,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(91,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(92,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(93,24): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(101,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(108,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(115,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Level.cpp(122,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
+﻿  Game.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(125,17): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(310,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(409,53): warning C4018: '>' : incompatibilité signed/unsigned
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(420,54): warning C4018: '>' : incompatibilité signed/unsigned
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\Game.cpp(438,50): warning C4018: '>' : incompatibilité signed/unsigned
+  TankManager.cpp
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\TankManager.cpp(31,26): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\TankManager.cpp(53,26): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Ely\Documents\2 - Prog\Chairacanon\Project1\TankManager.cpp(85,27): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
   Génération de code en cours
-  7 of 768 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+  4 of 794 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    6 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> C:\Users\Ely\Documents\2 - Prog\Chairacanon\x64\Release\Project1.exe

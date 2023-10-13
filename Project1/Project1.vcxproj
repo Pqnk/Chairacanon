@@ -134,8 +134,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedObject.cpp" />
-    <ClCompile Include="Building.cpp" />
-    <ClCompile Include="BuildingManager.cpp" />
+    <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="TankManager.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -157,8 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedObject.hpp" />
-    <ClInclude Include="Building.hpp" />
-    <ClInclude Include="BuildingManager.hpp" />
+    <ClInclude Include="Tank.hpp" />
+    <ClInclude Include="TankManager.hpp" />
     <ClInclude Include="Bullet.hpp" />
     <ClInclude Include="BulletManager.hpp" />
     <ClInclude Include="Camera.hpp" />

@@ -21,7 +21,7 @@
 #include "SpriteManager.hpp"
 #include "LevelManager.hpp"
 //#include "GrenadesManager.hpp"
-#include "BuildingManager.hpp"
+#include "TankManager.hpp"
 //#include "EnemyManager.hpp"
 
 #ifndef DEF_GAME
@@ -78,7 +78,7 @@ class Game
 		SpriteManager spriteManager;
 		LevelManager levelManager;
 		GrenadesManager grenadeManager;
-		BuildingManager tankManager;
+		TankManager tankManager;
 
 		int numberLevel;
 		bool isLevel1Loaded;

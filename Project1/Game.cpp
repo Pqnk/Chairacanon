@@ -92,7 +92,7 @@ void Game::initLevel1()
 	this->enemyManager.initEnemyManager(
 		this->spriteManager.getCharacterSprite()
 	);
-	this->enemyManager.initEnemiesOnLevel(1);
+	this->enemyManager.initEnemiesOnLevel(this->numberLevel);
 
 	//	Tank : Initialisation
 	this->tankManager.initTanksOnMap(
@@ -308,10 +308,10 @@ void Game::render()
 			this->player.getNumGrenades(),
 			this->numberLevel,
 			this->enemyManager.enemies.size(),
-			this->tankManager.initialTankNumber
+			this->tankManager.tankNumber
 		);
 
-		if (this->enemyManager.enemies.size() == 0 && this->tankManager.initialTankNumber == 0)
+		if (this->enemyManager.enemies.size() == 0 && this->tankManager.tankNumber == 0)
 		{
 			this->spriteManager.renderVictory(this->camera, *this->gameWindow);
 
