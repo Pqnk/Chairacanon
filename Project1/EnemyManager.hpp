@@ -21,6 +21,7 @@ class EnemyManager
 		void drawEnemy(sf::RenderTarget& window);
 		void eraseEnemy();
 		void updateEnemies(Player &player, sf::Image maskLevel);
+		void clearEnemies();
 
 		std::vector <Enemy> enemies;
 

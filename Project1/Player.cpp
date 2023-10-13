@@ -17,6 +17,8 @@ Player::~Player()
 //#######################################################################################################
 void Player::initPlayer(sf::Sprite characterSprite)
 {
+	isNotfirstFrame = false;
+	isDead = false;
 	sf::Vector2f position(500.f, 600.f);
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(1.f, 1.f);
@@ -383,12 +385,38 @@ void Player::playerAnimation(sf::Vector2f leftClic, sf::Vector2f rightClic)
 			{
 				currentFrameSprite.left = 0.f;
 				animationTimer.restart();
-				isDead = false;
 			}
 		}
 
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
+	}
+}
+
+void Player::playerDeathAnimation()
+{
+	if (isNotfirstFrame == false)
+	{
+		currentFrameSprite.top = 960.f;
+		currentFrameSprite.left = 0.f;
+		sprite.setTextureRect(currentFrameSprite);
+		animationTimer.restart();
+		isNotfirstFrame = true;
+	}
+	else
+	{
+		if (animationTimer.getElapsedTime().asSeconds() >= 0.15f)
+		{
+			currentFrameSprite.top = 960.f;
+			currentFrameSprite.left += 64.f;
+			if (currentFrameSprite.left >= 1024.f)
+			{
+				currentFrameSprite.left = 960.f;
+			}
+
+			animationTimer.restart();
+			sprite.setTextureRect(currentFrameSprite);
+		}
 	}
 }
 

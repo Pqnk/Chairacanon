@@ -123,3 +123,4 @@ void Level::resetColorButton2()
 	spriteButton2.setTextureRect(frameButton2);
 	spriteButton2.setScale(1.f, 1.f);
 }
+

@@ -40,5 +40,6 @@ class Enemy : public Character
 		bool playerDetected;
 		sf::Vector2f playerPosRelativToEnemy;
 		bool waitingForErase;
+		bool isNotFirstFrame;
 };
 

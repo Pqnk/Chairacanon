@@ -20,6 +20,7 @@ class SpriteManager
 		void initNumbersSprite();
 		void initButtonsSprite();
 		void initVictorySprite();
+		void initGameOverSprite();
 
 		sf::Sprite getCharacterSprite();
 		sf::Sprite getMainMenuSprite();
@@ -32,8 +33,10 @@ class SpriteManager
 		sf::Sprite getEarthSprite();
 		sf::Sprite getNumbersSprite();
 		sf::Sprite getButtonsSprite();
+		sf::Sprite getGameOverSprite();
 
 		void renderVictory(Camera& cam, sf::RenderTarget& window);
+		void renderGameOver(Camera& cam, sf::RenderTarget& window);
 
 	private :
 
@@ -68,5 +71,8 @@ class SpriteManager
 
 		sf::Texture victoryImage;
 		sf::Sprite victorySprite;
+
+		sf::Texture gameOverImage;
+		sf::Sprite gameOverSprite;
 };
 

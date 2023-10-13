@@ -22,12 +22,14 @@ class Player : public Character
 		//	Animation & Deplacement
 		//##########################
 		void playerAnimation(sf::Vector2f cursorPos, sf::Vector2f rightClic);
+		void playerDeathAnimation();
 
 		//##########################
 		//	Col. Detection (Color)
 		//##########################
 		void collisionDetection(sf::Image maskLevel, sf::Vector2f direction);
 
+		bool isNotfirstFrame;
 };
 
 #endif

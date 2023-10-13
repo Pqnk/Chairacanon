@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true), numGrenades(0)
+Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true), numGrenades(0), isFirstDamage(false), isGettingDamage(false)
 {
 }
 
@@ -97,10 +97,33 @@ void Character::setNumGrenades(int n)
 //##################################################
 void Character::damageHealth(int damage)
 {
+	isGettingDamage = true;
+	if (isFirstDamage == false)
+	{
+		isFirstDamage = true;
+		damageTimer.restart();
+	}
+
 	health -= damage;
 
 	if (health <= 0)
 	{
 		isDead = true;
 	}
+
+}
+
+void Character::updateSpriteColor()
+{
+	if (isGettingDamage == true && damageTimer.getElapsedTime().asSeconds() <= 0.5f)
+	{
+		sprite.setColor(sf::Color::Red);
+	}
+	else
+	{
+		sprite.setColor(sf::Color::White);
+		isFirstDamage = false;
+		isGettingDamage = false;
+	}
+
 }

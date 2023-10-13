@@ -18,6 +18,7 @@ void SpriteManager::initSpriteManager()
 	initNumbersSprite();
 	initButtonsSprite();
 	initVictorySprite();
+	initGameOverSprite();
 }
 
 void SpriteManager::initCharacterSprite()
@@ -86,6 +87,14 @@ void SpriteManager::initVictorySprite()
 	victorySprite.setOrigin(800, 400);
 }
 
+void SpriteManager::initGameOverSprite()
+{
+	gameOverImage.loadFromFile("Textures/GameOver.png");
+	gameOverSprite.setTexture(gameOverImage);
+	gameOverSprite.setScale(0.5, 0.5);
+	gameOverSprite.setOrigin(800, 400);
+}
+
 
 //#######################################################################################################
 //	Accessors
@@ -145,6 +154,15 @@ sf::Sprite SpriteManager::getButtonsSprite()
 	return buttonsSprite;
 }
 
+sf::Sprite SpriteManager::getGameOverSprite()
+{
+	return gameOverSprite;
+}
+
+
+//#######################################################################################################
+//	Renders
+//#######################################################################################################
 void SpriteManager::renderVictory(Camera& cam, sf::RenderTarget& window)
 {
 	victorySprite.setPosition(
@@ -152,4 +170,13 @@ void SpriteManager::renderVictory(Camera& cam, sf::RenderTarget& window)
 		cam.getCameraView().getCenter().y
 	);
 	window.draw(victorySprite);
+}
+
+void SpriteManager::renderGameOver(Camera& cam, sf::RenderTarget& window)
+{
+	gameOverSprite.setPosition(
+		cam.getCameraView().getCenter().x,
+		cam.getCameraView().getCenter().y
+	);
+	window.draw(gameOverSprite);
 }

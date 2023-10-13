@@ -53,6 +53,8 @@ void Game::initVariables()
 
 	this->isLevel1Loaded = false;
 
+	this->canQuitGameOverScreen = false;
+
 	this->numberLevel = 0;
 
 	this->camera.initCameraView(*this->gameWindow);
@@ -68,7 +70,8 @@ void Game::initVariables()
 		this->spriteManager.getLevel1MaskImage(),
 		this->spriteManager.getLevel1CloudSprite(),
 		this->spriteManager.getLevel2Sprite(),
-		this->spriteManager.getLevel2MaskImage()
+		this->spriteManager.getLevel2MaskImage(),
+		this->spriteManager.getGameOverSprite()
 	);
 
 	this->cursor.initCursor();
@@ -122,8 +125,6 @@ void Game::initLevel1()
 
 void Game::initLevel2()
 {
-	isLevel1Loaded == true;
-
 	this->numberLevel = 2;
 
 	this->latScreen.initLateralScreen(
@@ -142,7 +143,7 @@ void Game::initLevel2()
 	this->enemyManager.initEnemyManager(
 		this->spriteManager.getCharacterSprite()
 	);
-	this->enemyManager.initEnemiesOnLevel(1);
+	this->enemyManager.initEnemiesOnLevel(this->numberLevel);
 
 	//	Tank : Initialisation
 	this->tankManager.initTanksOnMap(
@@ -216,12 +217,12 @@ void Game::update()
 		//	Levels 1 
 		if (this->numberLevel == 1 || this->numberLevel == 2)
 		{
-
 				this->player.updatePlayer(
 					this->cursor.getLeftClickPosition(),
 					this->cursor.getRightClickPosition(),
 					this->levelManager.levels[numberLevel].getMaskLevel()
 				);
+				this->player.updateSpriteColor();
 				this->enemyManager.updateEnemies(
 					this->player,
 					this->levelManager.levels[numberLevel].getMaskLevel()
@@ -251,14 +252,19 @@ void Game::update()
 
 			//	Endgame condition
 			if (this->player.getHealth() <= 0)
-				this->endGame = true;
+			{
+				this->numberLevel = 3;
+				gameOverTimer.restart();
+			}
+
 		}
 
 		//	//////////////////////////////////////////
 		//	GameOver Screen
 		if (this->numberLevel == 3)
 		{
-
+			this->player.playerDeathAnimation();
+			this->cursor.updateCursor(this->gameWindow);
 		}
 
 	}
@@ -315,11 +321,12 @@ void Game::render()
 		{
 			this->spriteManager.renderVictory(this->camera, *this->gameWindow);
 
-			if (victoryTimer.getElapsedTime().asSeconds() > 5)
+			if (victoryTimer.getElapsedTime().asSeconds() > 3)
 			{
 				if (this->numberLevel == 2)
 				{
 					this->numberLevel = 0;
+					this->isLevel1Loaded = false;
 				}
 				else
 				{
@@ -336,9 +343,23 @@ void Game::render()
 
 	//	//////////////////////////////////////////
 	//	GameOver Screen
-	if (numberLevel == 3)
+	if (this->numberLevel == 3)
 	{
+		gameWindow->clear();
 
+		this->player.renderObject(*this->gameWindow);
+
+		if (gameOverTimer.getElapsedTime().asSeconds() >= 3.f)
+		{
+			this->spriteManager.renderGameOver(this->camera, *this->gameWindow);
+			if (gameOverTimer.getElapsedTime().asSeconds() >= 5.f)
+			{
+				gameWindow->clear();
+				this->numberLevel = 0;
+				this->isLevel1Loaded = false;
+			}
+			this->cursor.renderObject(*this->gameWindow);
+		}
 	}
 
 	this->gameWindow->display();
@@ -453,7 +474,23 @@ void Game::pollEvents()
 			
 			}
 		}
-	}
+
+		if (this->numberLevel == 3 && canQuitGameOverScreen == true)
+		{
+			switch (this->event.type)
+			{
+				case	sf::Event::Closed:
+						this->gameWindow->close();
+				break;
+
+				case	sf::Event::KeyPressed:
+					if (this->event.key.code == sf::Keyboard::Escape)
+					{
+						this->numberLevel = 0;
+					}
+			}
+		}
+}
 }
 
 bool Game::getEndGame()

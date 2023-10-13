@@ -83,6 +83,8 @@ class Game
 		int numberLevel;
 		bool isLevel1Loaded;
 		sf::Clock victoryTimer;
+		sf::Clock gameOverTimer;
+		bool canQuitGameOverScreen;
 };
 #endif
 

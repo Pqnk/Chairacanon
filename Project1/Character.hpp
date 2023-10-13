@@ -47,6 +47,10 @@ class Character : public AnimatedObject
 		//##########################
 		void damageHealth(int damage);
 
+		void updateSpriteColor();
+
+		bool isFirstDamage;
+		sf::Clock damageTimer;
 
 	protected :
 
@@ -62,6 +66,8 @@ class Character : public AnimatedObject
 		bool canShoot;
 
 		bool isFirstFrame;
+		bool isGettingDamage;
+
 };
 
 #endif

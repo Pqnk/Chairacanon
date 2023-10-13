@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy() : playerDetected(false), waitingForErase(false)
+Enemy::Enemy() : playerDetected(false), waitingForErase(false), isNotFirstFrame(false)
 {
 	isDead = false;
 }
@@ -52,6 +52,12 @@ void Enemy::updateEnemy(Player &player, sf::Image& maskLevel)
 
 	if (isDead == true)
 	{
+		if (isNotFirstFrame == false)
+		{
+			currentFrameSprite.left = 0.f;
+			sprite.setTextureRect(currentFrameSprite);
+			isNotFirstFrame = true;
+		}
 		enemyDeathAnimation();
 	}
 	else
@@ -80,7 +86,7 @@ void Enemy::updateEnemy(Player &player, sf::Image& maskLevel)
 				setSpritePosition(sprite.getPosition());
 
 				//	If so, the ENEMY is DEAD and ah damaged the PLAYER
-				player.damageHealth(2);
+				player.damageHealth(5);
 				isDead = true;
 			}
 			else
