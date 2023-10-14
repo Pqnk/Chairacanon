@@ -2,6 +2,8 @@
 
 Character::Character() : health(0), scale(1.f,1.f), isDead(false), isMoving(false), isShooting(false), canShoot(true), isBlocked(false), isFirstFrame(true), numGrenades(0), isFirstDamage(false), isGettingDamage(false)
 {
+	bufferDamage.loadFromFile("Sounds/Damage.mp3");
+	soundDamage.setBuffer(bufferDamage);
 }
 
 Character::~Character()

@@ -15,9 +15,6 @@ Enemy::~Enemy()
 //#######################################################################################################
 void Enemy::initEnemy(sf::Sprite &characterSprite)
 {
-
-	bufferDamage.loadFromFile("Sounds/Damage.mp3");
-	soundDamage.setBuffer(bufferDamage);
 	bufferDamageEn.loadFromFile("Sounds/Damage_Enemy.wav");
 	soundDamageEn.setBuffer(bufferDamageEn);
 

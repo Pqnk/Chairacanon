@@ -51,6 +51,8 @@ class Character : public AnimatedObject
 
 		bool isFirstDamage;
 		sf::Clock damageTimer;
+		sf::SoundBuffer bufferDamage;
+		sf::Sound soundDamage;
 
 	protected :
 
@@ -68,8 +70,7 @@ class Character : public AnimatedObject
 		bool isFirstFrame;
 		bool isGettingDamage;
 
-		sf::SoundBuffer bufferDamage;
-		sf::Sound soundDamage;
+
 
 };
 
