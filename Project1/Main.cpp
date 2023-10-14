@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Jour 9 : Music 1!" << std::endl;
+	std::cout << "Jour 9 : mini map!" << std::endl;
 
 	//	Initialisation of the randomization seed
 	std::srand(static_cast<unsigned>(time(NULL)));

@@ -47,6 +47,7 @@ class Game
 		void pollEvents();
 		bool getEndGame();
 		const bool running() const;
+		void showMapAndPosition();
 
 	private:
 
@@ -85,6 +86,12 @@ class Game
 		sf::Clock victoryTimer;
 		sf::Clock gameOverTimer;
 		bool canQuitGameOverScreen;
+
+		bool isMapShowing;
+		sf::Texture textMap;
+		sf::Sprite spriteMap;
+		sf::Sprite spriteCrossMap;
+		sf::Texture textureCrossMap;
 
 
 		//############################

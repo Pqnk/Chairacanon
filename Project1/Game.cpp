@@ -52,6 +52,7 @@ void Game::initVariables()
 	this->endGame = false;
 
 	this->isLevel1Loaded = false;
+	this->isMapShowing = false;
 
 	this->canQuitGameOverScreen = false;
 
@@ -331,6 +332,12 @@ void Game::render()
 		this->player.renderObject(*this->gameWindow);
 		this->bulletmanager.drawBullet(*this->gameWindow);
 		this->rocketsManager.drawRocketsThrowed(*this->gameWindow);
+		if (this->isMapShowing == true)
+		{
+			showMapAndPosition();
+			this->gameWindow->draw(spriteMap);
+			this->gameWindow->draw(spriteCrossMap);
+		}
 		this->latScreen.renderShape(
 			this->camera,
 			*this->gameWindow,
@@ -461,44 +468,54 @@ void Game::pollEvents()
 						this->cursor.setLeftClickPosition(this->cursor.getPosCursorOnWorld());
 					}
 
-					//	/////////////////////////////////////////////////		
-					//	When the user is Clicking RIGHT in the cameraView
-					if (	this->player.getCanShoot() == true
-							&& (this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
-							&& event.mouseButton.button == sf::Mouse::Right
-						)
+				//	/////////////////////////////////////////////////		
+				//	When the user is Clicking RIGHT in the cameraView
+				if (	this->player.getCanShoot() == true
+						&& (this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
+						&& event.mouseButton.button == sf::Mouse::Right
+					)
+				{
+					soundShooting.play();
+					this->cursor.setIsClickingRight(true);
+					this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
+					this->player.setIsShooting(true);
+					Bullet bullet(
+						this->player.getSpritePosition(),
+						this->cursor.getPosCursorOnWorld(),
+						this->spriteManager.getCharacterSprite()
+					);
+					bulletmanager.addBullet(bullet);
+				}
+
+				//	/////////////////////////////////////////////////		
+				//	When the user is Clicking MIDDLE in the cameraView
+				if (
+					(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
+					&& event.mouseButton.button == sf::Mouse::Middle
+					)
+				{
+					if (this->player.getNumGrenades() > 0)
 					{
 						soundShooting.play();
 						this->cursor.setIsClickingRight(true);
 						this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
-						this->player.setIsShooting(true);
-						Bullet bullet(
-							this->player.getSpritePosition(),
-							this->cursor.getPosCursorOnWorld(),
-							this->spriteManager.getCharacterSprite()
+						this->rocketsManager.addRocketThrowed(
+							this->spriteManager.getCharacterSprite(),
+							this->player,
+							this->cursor.getPosCursorOnWorld()
 						);
-						bulletmanager.addBullet(bullet);
 					}
+				}
 
-					//	/////////////////////////////////////////////////		
-					//	When the user is Clicking MIDDLE in the cameraView
-					if (
-						(this->cursor.getPosCursorOnGameWindow().x > this->gameWindow->getSize().x / 4)
-						&& event.mouseButton.button == sf::Mouse::Middle
-						)
-					{
-						if (this->player.getNumGrenades() > 0)
-						{
-							soundShooting.play();
-							this->cursor.setIsClickingRight(true);
-							this->cursor.setRightClickPosition(this->cursor.getPosCursorOnWorld());
-							this->rocketsManager.addRocketThrowed(
-								this->spriteManager.getCharacterSprite(),
-								this->player,
-								this->cursor.getPosCursorOnWorld()
-							);
-						}
-					}
+				//	/////////////////////////////////////////////////		
+				//	When the user is Clicking on the PLANETE SPRITE
+				if (
+					(this->latScreen.getPlaneteSprite().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
+					&& event.mouseButton.button == sf::Mouse::Left
+					)
+				{
+					isMapShowing = !isMapShowing;
+				}
 			
 			}
 		}
@@ -529,4 +546,29 @@ bool Game::getEndGame()
 const bool Game::running() const
 {
 	return this->gameWindow->isOpen();
+}
+
+void Game::showMapAndPosition()
+{
+	spriteMap = this->spriteManager.getLevel1Sprite();
+	textMap = this->spriteManager.getLevel1Texture();
+
+	spriteMap.setScale(
+		(this->camera.getCameraView().getSize().x / textMap.getSize().x), 
+		(this->camera.getCameraView().getSize().y / textMap.getSize().y)
+	);
+	spriteMap.setPosition(
+		(this->camera.getCameraView().getCenter().x - this->camera.getCameraView().getSize().x / 2.0f) + 150,
+		this->camera.getCameraView().getCenter().y - this->camera.getCameraView().getSize().y / 2.0f
+	);	
+	spriteMap.setColor(sf::Color::Red);
+
+
+	textureCrossMap.loadFromFile("Textures/Pika.png");
+	spriteCrossMap.setTexture(textureCrossMap);
+	spriteCrossMap.setScale(0.1, 0.1);
+	spriteCrossMap.setPosition(
+		spriteMap.getPosition().x + (player.getSpritePosition().x * spriteMap.getScale().x),
+		spriteMap.getPosition().y + (player.getSpritePosition().y * spriteMap.getScale().y)
+	);
 }

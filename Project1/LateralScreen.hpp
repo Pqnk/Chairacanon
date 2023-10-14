@@ -32,6 +32,11 @@ class LateralScreen
 		//##########################
 		void renderShape(Camera& cam, sf::RenderTarget& window, int playerHeath, int numGrenades, int numLevel, int numEnemies, int numBuildings);
 
+		//##########################
+		//	Accessor
+		//##########################
+		sf::Sprite getPlaneteSprite();
+
 	protected :
 
 		sf::Clock animationTimeLatScreen;

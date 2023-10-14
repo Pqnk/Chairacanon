@@ -26,6 +26,7 @@ class SpriteManager
 		sf::Sprite getMainMenuSprite();
 		sf::Sprite getLateralScreenSprite();
 		sf::Sprite getLevel1Sprite();
+		sf::Texture getLevel1Texture();
 		sf::Image getLevel1MaskImage();
 		sf::Sprite getLevel1CloudSprite();
 		sf::Sprite getLevel2Sprite();

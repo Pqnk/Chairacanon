@@ -119,6 +119,11 @@ sf::Sprite SpriteManager::getLevel1Sprite()
 	return level1Sprite;
 }
 
+sf::Texture SpriteManager::getLevel1Texture()
+{
+	return level1Image;
+}
+
 sf::Image SpriteManager::getLevel1MaskImage()
 {
 	return level1MaskImage;

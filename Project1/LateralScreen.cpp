@@ -315,3 +315,8 @@ void LateralScreen::renderShape(Camera& cam, sf::RenderTarget& window, int playe
 	);
 	window.draw(earthSprite);
 }
+
+sf::Sprite LateralScreen::getPlaneteSprite()
+{
+	return earthSprite;
+}
