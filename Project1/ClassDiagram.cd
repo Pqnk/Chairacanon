@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AnimatedObject" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAAAAIAIAAAjACAAAgABIQAgAAAAAAAAEAKCA=</HashCode>
+      <FileName>AnimatedObject.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tank" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAIAAAAAAAAAACAAAAAAUAgAAAABAA=</HashCode>
+      <FileName>Tank.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TankManager" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARBIAAAAAAAAAABEAAAAAAAAAAAAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>TankManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAIABAAAAAIAEQgAABAAAAAAAAFiASAAA=</HashCode>
+      <FileName>Bullet.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletManager" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAQAAAIAAAAACAAAAAAAAIAAAA=</HashCode>
+      <FileName>BulletManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EReDAAgACgAACCEAQAAAIYDIiAAIAAAAACAAAACQiAM=</HashCode>
+      <FileName>Camera.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Character" Collapsed="true">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECCIBggQgAEABAQAIAAAgAQCADEgQAAAIAJBAgACKEg=</HashCode>
+      <FileName>Character.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cursor" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiMGCAAAAQAAAAAiYgUiYAAAAKgAAAAAAMAAGAAAIIA=</HashCode>
+      <FileName>Cursor.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAgAEAABAQAAAAEAAAAgABAIAAACAABAAFAAABAA=</HashCode>
+      <FileName>Enemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyManager" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAAAAAAAAQIAAAAIQABAAAQAgABAAAAAAAAAAA=</HashCode>
+      <FileName>EnemyManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQBAABoCiABAoMHFCBYAIAAAgqAEApBEBAAAAAUAAI=</HashCode>
+      <FileName>Game.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rocket" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAgAAgAIIAAAAAABACAAAACEACAEBA=</HashCode>
+      <FileName>Rocket.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RocketStock" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBAAACAAAAAAAAAAIAAAAACAAgAAAAAgAAAAAAA=</HashCode>
+      <FileName>RocketStock.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RocketsManager" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAABAQAAAAAAAAAAAAAAABAAIAIAEAAAIMABAQA=</HashCode>
+      <FileName>RocketsManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LateralScreen" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAESAABAAAEgAEgAAAAAAgBAAACQgQAAAAICAAEAg=</HashCode>
+      <FileName>LateralScreen.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAgAQAABAAAAAAQAAEAAAEAAAAQEIBAgACgFAACSA=</HashCode>
+      <FileName>Level.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAACAEAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>LevelManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAABABAAAAAAAAAEAAAgAAAAAAAAAEQAAABA=</HashCode>
+      <FileName>Player.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteManager" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iCBAABgCQqAEQiENSAUAJoEAlEAAgAlAAIAAAABACgk=</HashCode>
+      <FileName>SpriteManager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="8.77" />
+</ClassDiagram>
