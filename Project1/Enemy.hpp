@@ -44,5 +44,7 @@ class Enemy : public Character
 
 		sf::SoundBuffer bufferDamageEn;
 		sf::Sound soundDamageEn;
+
+		bool ploufen;
 };
 

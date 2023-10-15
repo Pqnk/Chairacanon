@@ -22,6 +22,7 @@ void Player::initPlayer(sf::Sprite characterSprite)
 
 	isNotfirstFrame = false;
 	isDead = false;
+	isPlouf = false;
 	sf::Vector2f position(500.f, 600.f);
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(1.f, 1.f);
@@ -391,6 +392,20 @@ void Player::playerAnimation(sf::Vector2f leftClic, sf::Vector2f rightClic)
 			}
 		}
 
+		//	/////////////////////////////////////////
+		//	Plouf Animation
+		if (isPlouf == true)
+		{
+			currentFrameSprite.top = 1216.f;
+			currentFrameSprite.left += 64.f;
+
+			if (currentFrameSprite.left >= 256.f)
+			{
+				currentFrameSprite.left = 0.f;
+				animationTimer.restart();
+			}
+		}
+
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
 	}
@@ -436,6 +451,7 @@ void Player::collisionDetection(sf::Image maskLevel, sf::Vector2f direction)
 			newSpeed = sf::Vector2f(1.f, 1.f);
 			setVelocity(newSpeed);
 			canShoot = true;
+			isPlouf = false;
 		break;
 
 		//	PINK
@@ -443,6 +459,7 @@ void Player::collisionDetection(sf::Image maskLevel, sf::Vector2f direction)
 			newSpeed = sf::Vector2f(0.5f, 0.5f);
 			setVelocity(newSpeed);
 			canShoot = true;
+			isPlouf = false;
 		break;
 
 		//	BLUE
@@ -450,6 +467,7 @@ void Player::collisionDetection(sf::Image maskLevel, sf::Vector2f direction)
 			newSpeed = sf::Vector2f(0.5f, 0.5f);
 			setVelocity(newSpeed);
 			canShoot = false;
+			isPlouf = true;
 		break;
 	}
 
@@ -458,6 +476,7 @@ void Player::collisionDetection(sf::Image maskLevel, sf::Vector2f direction)
 		//	BLACK
 		case 255:
 			isBlocked = true;
+			isPlouf = false;
 		break;
 	}
 }

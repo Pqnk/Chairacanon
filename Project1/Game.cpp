@@ -561,12 +561,12 @@ void Game::showMapAndPosition()
 		(this->camera.getCameraView().getCenter().x - this->camera.getCameraView().getSize().x / 2.0f) + 150,
 		this->camera.getCameraView().getCenter().y - this->camera.getCameraView().getSize().y / 2.0f
 	);	
-	spriteMap.setColor(sf::Color::Red);
+	//spriteMap.setColor(sf::Color::Blue);
 
 
 	textureCrossMap.loadFromFile("Textures/Pika.png");
 	spriteCrossMap.setTexture(textureCrossMap);
-	spriteCrossMap.setScale(0.1, 0.1);
+	spriteCrossMap.setScale(0.05, 0.05);
 	spriteCrossMap.setPosition(
 		spriteMap.getPosition().x + (player.getSpritePosition().x * spriteMap.getScale().x),
 		spriteMap.getPosition().y + (player.getSpritePosition().y * spriteMap.getScale().y)

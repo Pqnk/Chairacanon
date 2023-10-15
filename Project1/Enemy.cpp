@@ -15,6 +15,8 @@ Enemy::~Enemy()
 //#######################################################################################################
 void Enemy::initEnemy(sf::Sprite &characterSprite)
 {
+	ploufen = false;
+
 	bufferDamageEn.loadFromFile("Sounds/Damage_Enemy.wav");
 	soundDamageEn.setBuffer(bufferDamageEn);
 
@@ -145,6 +147,20 @@ void Enemy::enemyAnimation()
 			}
 		}
 
+		//	/////////////////////////////////////////
+		//	Plouf animation
+		if (ploufen == true)
+		{
+			currentFrameSprite.top = 1152.f;
+			currentFrameSprite.left += 64.f;
+			if (currentFrameSprite.left >= 256.f)
+			{
+				currentFrameSprite.left = 0.f;
+				animationTimer.restart();
+			}
+		}
+
+
 		animationTimer.restart();
 		sprite.setTextureRect(currentFrameSprite);
 	}
@@ -198,6 +214,7 @@ void Enemy::collisionDetection(sf::Image& maskLevel, sf::Vector2f& direction)
 		newSpeed = sf::Vector2f(0.5f, 0.5f);
 		setVelocity(newSpeed);
 		canShoot = true;
+		ploufen = false;
 		break;
 
 		//	PINK
@@ -205,6 +222,7 @@ void Enemy::collisionDetection(sf::Image& maskLevel, sf::Vector2f& direction)
 		newSpeed = sf::Vector2f(0.2f, 0.2f);
 		setVelocity(newSpeed);
 		canShoot = true;
+		ploufen = false;
 		break;
 
 		//	BLUE
@@ -212,6 +230,7 @@ void Enemy::collisionDetection(sf::Image& maskLevel, sf::Vector2f& direction)
 		newSpeed = sf::Vector2f(0.2f, 0.2f);
 		setVelocity(newSpeed);
 		canShoot = false;
+		ploufen = true;
 		break;
 	}
 

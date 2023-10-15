@@ -1,6 +1,12 @@
-﻿  EnemyManager.cpp
+﻿  Game.cpp
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(347,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(463,53): warning C4018: '>' : incompatibilité signed/unsigned
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(474,53): warning C4018: '>' : incompatibilité signed/unsigned
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(493,49): warning C4018: '>' : incompatibilité signed/unsigned
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,32): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,26): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours
-  6 of 813 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+  2 of 813 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

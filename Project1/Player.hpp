@@ -30,6 +30,7 @@ class Player : public Character
 		void collisionDetection(sf::Image maskLevel, sf::Vector2f direction);
 
 		bool isNotfirstFrame;
+		bool isPlouf;
 };
 
 #endif
