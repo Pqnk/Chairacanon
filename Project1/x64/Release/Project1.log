@@ -1,4 +1,125 @@
-﻿  Game.cpp
+﻿  Enemy.cpp
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(32,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(33,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(34,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(35,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(37,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(38,27): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(39,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(40,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(63,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(128,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(129,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(132,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(141,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(142,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(145,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(154,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(155,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(158,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(175,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(176,30): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(207,84): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(207,60): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(208,110): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(208,65): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Game.cpp
 D:\7 - Programmation\Chairacanon\Project1\Game.cpp(347,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
 D:\7 - Programmation\Chairacanon\Project1\Game.cpp(463,53): warning C4018: '>' : incompatibilité signed/unsigned
 D:\7 - Programmation\Chairacanon\Project1\Game.cpp(474,53): warning C4018: '>' : incompatibilité signed/unsigned
@@ -6,8 +127,8 @@ D:\7 - Programmation\Chairacanon\Project1\Game.cpp(493,49): warning C4018: '>' 
 D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,32): warning C4305: 'argument' : troncation de 'double' à 'float'
 D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,26): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours
-  2 of 813 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  0 of 813 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> D:\7 - Programmation\Chairacanon\x64\Release\Project1.exe
