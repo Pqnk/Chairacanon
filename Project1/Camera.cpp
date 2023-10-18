@@ -20,7 +20,8 @@ void Camera::initCameraView(sf::RenderTarget& target)
 	*	-	Setting also the double view of the game and the lateral menu.
 	*/
 
-	cameraView.setCenter(sf::Vector2f(500.f, 600.f));
+	//	Initialisation of camera according to the level 1
+	cameraView.setCenter(sf::Vector2f(380.f, 160.f));
 	cameraView.setSize(600, 300);
 }
 

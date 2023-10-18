@@ -13,24 +13,28 @@ void RocketsManager::initRocketStocksManager(int numLevel, sf::Sprite s)
 	{
 		rocketStocks.clear();
 		RocketStock rocketStock1(s);
-		rocketStock1.spriteRocket.setPosition(500, 500);
+		rocketStock1.spriteRocket.setPosition(500, 120);
 		addRocketStocks(rocketStock1);
-
-		RocketStock rocketStock2(s);
-		rocketStock2.spriteRocket.setPosition(500, 550);
-		addRocketStocks(rocketStock2);
 	}
 
 	if (numLevel == 2)
 	{
 		rocketStocks.clear();
 		RocketStock rocketStock1(s);
-		rocketStock1.spriteRocket.setPosition(500, 500);
+		rocketStock1.spriteRocket.setPosition(950, 425);
 		addRocketStocks(rocketStock1);
 
 		RocketStock rocketStock2(s);
-		rocketStock2.spriteRocket.setPosition(500, 550);
+		rocketStock2.spriteRocket.setPosition(1010, 475);
 		addRocketStocks(rocketStock2);
+
+		RocketStock rocketStock3(s);
+		rocketStock3.spriteRocket.setPosition(75, 525);
+		addRocketStocks(rocketStock3);
+
+		RocketStock rocketStock4(s);
+		rocketStock4.spriteRocket.setPosition(725, 525);
+		addRocketStocks(rocketStock4);
 	}
 }
 

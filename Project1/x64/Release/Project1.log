@@ -1,134 +1,380 @@
-﻿  Enemy.cpp
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(32,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+﻿  LateralScreen.cpp
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(19,20): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(33,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(20,19): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(34,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(21,21): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(35,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(22,22): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(37,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(27,23): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(38,27): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(28,22): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(39,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(29,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(40,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(30,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(63,30): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(36,23): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(128,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(37,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(129,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(38,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(132,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(43,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(141,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(44,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(142,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(45,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(145,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(46,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(154,29): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(51,25): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(155,31): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(52,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(158,31): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(53,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(175,28): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(54,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(176,30): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(59,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(207,84): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(60,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=float
+              T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(207,60): warning C4244: 'argument' : conversion de 'const T' en 'unsigned int', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(61,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=float
+              T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(208,110): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(62,29): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=float
+              T=int
           ]
-D:\7 - Programmation\Chairacanon\Project1\Enemy.cpp(208,65): warning C4244: 'argument' : conversion de 'T' en 'unsigned int', perte possible de données
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(82,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
           with
           [
-              T=float
+              T=int
           ]
-  Game.cpp
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(347,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(463,53): warning C4018: '>' : incompatibilité signed/unsigned
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(474,53): warning C4018: '>' : incompatibilité signed/unsigned
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(493,49): warning C4018: '>' : incompatibilité signed/unsigned
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,32): warning C4305: 'argument' : troncation de 'double' à 'float'
-D:\7 - Programmation\Chairacanon\Project1\Game.cpp(569,26): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(85,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(88,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(91,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(94,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(97,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(100,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(103,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(106,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(109,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(112,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(120,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(123,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(126,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(129,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(132,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(135,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(138,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(141,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(144,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(147,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(150,27): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(158,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(161,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(164,24): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(172,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(175,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(178,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(181,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(184,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(187,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(190,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(193,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(196,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(199,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(202,26): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(210,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(213,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(216,28): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(219,32): warning C4244: '=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(234,22): warning C4244: '+=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(238,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(239,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(243,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(244,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(248,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\LateralScreen.cpp(249,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  RocketStock.cpp
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(13,21): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(14,20): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(15,22): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(16,23): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(19,29): warning C4305: 'argument' : troncation de 'double' à 'float'
+D:\7 - Programmation\Chairacanon\Project1\RocketStock.cpp(19,24): warning C4305: 'argument' : troncation de 'double' à 'float'
   Génération de code en cours
-  0 of 813 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  3 of 814 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Project1.vcxproj -> D:\7 - Programmation\Chairacanon\x64\Release\Project1.exe

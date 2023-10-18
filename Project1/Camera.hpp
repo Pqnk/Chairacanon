@@ -39,10 +39,10 @@ class Camera
 		//	Accessors
 		//##########################
 		sf::View getCameraView();
+		sf::View cameraView;
 
 	private :
 
-		sf::View cameraView;
 		float marginForCursor;
 		float marginForPlayer;
 		float marginForPlayerReposition;

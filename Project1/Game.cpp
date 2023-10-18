@@ -132,6 +132,7 @@ void Game::initLevel1()
 	);
 
 	this->gameWindow->setView(this->camera.getCameraView());
+	this->camera.cameraView.setCenter(sf::Vector2f(380.f, 160.f));
 
 	this->isLevel1Loaded = true;
 
@@ -156,6 +157,7 @@ void Game::initLevel2()
 	this->player.initPlayer(
 		this->spriteManager.getCharacterSprite()
 	);
+	this->player.setSpritePosition(sf::Vector2f(480,700));
 
 	//	Enemies : Initialisation
 	this->enemyManager.initEnemyManager(
@@ -184,6 +186,7 @@ void Game::initLevel2()
 		this->player.getSprite().getPosition()
 	);
 
+	this->camera.cameraView.setCenter(this->player.getSpritePosition());
 	this->gameWindow->setView(this->camera.getCameraView());
 
 	music.openFromFile("Music/Chairacanon_Theme.mp3");
@@ -239,7 +242,7 @@ void Game::update()
 		//	Levels 1 
 		if (this->numberLevel == 1 || this->numberLevel == 2)
 		{
-				this->player.updatePlayer(
+					this->player.updatePlayer(
 					this->cursor.getLeftClickPosition(),
 					this->cursor.getRightClickPosition(),
 					this->levelManager.levels[numberLevel].getMaskLevel()
@@ -272,7 +275,7 @@ void Game::update()
 				);
 				this->levelManager.levels[1].updateLevelElements(*this->gameWindow);
 
-			//	Game Over condition
+			//	GameOver condition
 			if (this->player.getHealth() <= 0)
 			{
 				music.stop();
@@ -425,10 +428,13 @@ void Game::pollEvents()
 					&& this->levelManager.levels[this->numberLevel].getButton1Level().getGlobalBounds().contains(this->cursor.getSpritePosition().x, this->cursor.getSpritePosition().y))
 				{
 					numberLevel = 1;
-					if (this->isLevel1Loaded == false)
-					{
-						initLevel1();
-					}
+					initLevel1();
+
+					//if (this->isLevel1Loaded == false)
+					//{
+					// 		initLevel1();
+					//}
+
 					this->cursor.setPosCursorOnWorld(this->player.getSprite().getPosition());
 				}
 
@@ -550,15 +556,24 @@ const bool Game::running() const
 
 void Game::showMapAndPosition()
 {
-	spriteMap = this->spriteManager.getLevel1Sprite();
-	textMap = this->spriteManager.getLevel1Texture();
+	if (this->numberLevel == 1)
+	{
+		spriteMap = this->spriteManager.getLevel1Sprite();
+		textMap = this->spriteManager.getLevel1Texture();
+	}
+	else if(this->numberLevel == 2)
+	{
+		spriteMap = this->spriteManager.getLevel2Sprite();
+		textMap = this->spriteManager.getLevel2Texture();
+	}
+
 
 	spriteMap.setScale(
 		(this->camera.getCameraView().getSize().x / textMap.getSize().x), 
 		(this->camera.getCameraView().getSize().y / textMap.getSize().y)
 	);
 	spriteMap.setPosition(
-		(this->camera.getCameraView().getCenter().x - this->camera.getCameraView().getSize().x / 2.0f) + 150,
+		(this->camera.getCameraView().getCenter().x - this->camera.getCameraView().getSize().x + 450)/ 2.0f ,
 		this->camera.getCameraView().getCenter().y - this->camera.getCameraView().getSize().y / 2.0f
 	);	
 	//spriteMap.setColor(sf::Color::Blue);
@@ -567,6 +582,7 @@ void Game::showMapAndPosition()
 	textureCrossMap.loadFromFile("Textures/Pika.png");
 	spriteCrossMap.setTexture(textureCrossMap);
 	spriteCrossMap.setScale(0.05, 0.05);
+	spriteCrossMap.setOrigin(450, 450);
 	spriteCrossMap.setPosition(
 		spriteMap.getPosition().x + (player.getSpritePosition().x * spriteMap.getScale().x),
 		spriteMap.getPosition().y + (player.getSpritePosition().y * spriteMap.getScale().y)

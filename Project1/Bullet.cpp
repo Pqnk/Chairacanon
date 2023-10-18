@@ -60,7 +60,7 @@ void Bullet::updateBullet(std::vector<Enemy> &enemies, sf::Image maskLevel)
 
 void Bullet::animationBullet()
 {
-	if (bulletTimer.getElapsedTime().asSeconds() < 1.f)
+	if (bulletTimer.getElapsedTime().asSeconds() < 1.f && hasAlreadyHit == false)
 	{
 		spriteBullet.move(direction);
 
@@ -87,6 +87,7 @@ void Bullet::animationBullet()
 void Bullet::collisionDetection(sf::Image maskLevel)
 {
 	int pixelColored = maskLevel.getPixel(spriteBullet.getPosition().x, spriteBullet.getPosition().y).toInteger();
+
 
 	switch (pixelColored)
 	{

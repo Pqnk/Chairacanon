@@ -6,7 +6,7 @@ RocketStock::RocketStock()
 
 RocketStock::RocketStock(sf::Sprite s)
 {
-	amunition = 5;
+	amunition = 2;
 	isPickedUp = false;
 
 	spriteRocket = s;

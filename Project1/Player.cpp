@@ -23,7 +23,8 @@ void Player::initPlayer(sf::Sprite characterSprite)
 	isNotfirstFrame = false;
 	isDead = false;
 	isPlouf = false;
-	sf::Vector2f position(500.f, 600.f);
+	//sf::Vector2f position(500.f, 600.f);
+	sf::Vector2f position(660.f, 250.f);
 	sf::Vector2f origin(32.f, 50.f);
 	sf::Vector2f speed(1.f, 1.f);
 

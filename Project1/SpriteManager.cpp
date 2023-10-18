@@ -36,17 +36,17 @@ void SpriteManager::initLevelSprite()
 
 	//	////////////////////////////////////////////////////////
 	//	Level 01
-	level1Image.loadFromFile("Textures/Level_01.png");
+	level1Image.loadFromFile("Textures/Level_00.png");
 	level1Sprite.setTexture(level1Image);
 	//	Mask Level1
-	level1MaskImage.loadFromFile("Textures/Level_01_Mask.png");
+	level1MaskImage.loadFromFile("Textures/Level_00_Mask.png");
 
 	//	////////////////////////////////////////////////////////
 	//	Level 02
-	level2Image.loadFromFile("Textures/Level_02.png");
+	level2Image.loadFromFile("Textures/Level_02bis.png");
 	level2Sprite.setTexture(level2Image);
 	//	Mask Level2
-	level2MaskImage.loadFromFile("Textures/Level_02_Mask.png");
+	level2MaskImage.loadFromFile("Textures/Level_02bis_Mask.png");
 }
 
 void SpriteManager::initLateralScreenSprite()
@@ -137,6 +137,11 @@ sf::Sprite SpriteManager::getLevel1CloudSprite()
 sf::Sprite SpriteManager::getLevel2Sprite()
 {
 	return level2Sprite;
+}
+
+sf::Texture SpriteManager::getLevel2Texture()
+{
+	return level2Image;
 }
 
 sf::Image SpriteManager::getLevel2MaskImage()

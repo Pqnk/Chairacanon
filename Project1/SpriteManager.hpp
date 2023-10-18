@@ -30,6 +30,7 @@ class SpriteManager
 		sf::Image getLevel1MaskImage();
 		sf::Sprite getLevel1CloudSprite();
 		sf::Sprite getLevel2Sprite();
+		sf::Texture getLevel2Texture();
 		sf::Image getLevel2MaskImage();
 		sf::Sprite getEarthSprite();
 		sf::Sprite getNumbersSprite();

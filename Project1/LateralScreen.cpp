@@ -215,6 +215,9 @@ void LateralScreen::updateLateralScreen(int playerHeath, int numGrenades, int nu
 	case 2:
 		numBuildingsFrame.left = 128.0;
 		break;
+	case 3:
+		numBuildingsFrame.left = 64.0*3.0;
+		break;
 	}
 	numBuildingsSprite.setTextureRect(numBuildingsFrame);
 }
