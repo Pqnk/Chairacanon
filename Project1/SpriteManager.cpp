@@ -25,6 +25,10 @@ void SpriteManager::initCharacterSprite()
 {
 	characterImage.loadFromFile("Textures/Sprite_Sheet.png");
 	characterSprite.setTexture(characterImage);
+
+	enemyImage.loadFromFile("Textures/Enemy_Sheet.png");
+	enemySprite.setTexture(enemyImage);
+	enemySprite.setColor(sf::Color::Green);
 }
 
 void SpriteManager::initLevelSprite()
@@ -167,6 +171,11 @@ sf::Sprite SpriteManager::getButtonsSprite()
 sf::Sprite SpriteManager::getGameOverSprite()
 {
 	return gameOverSprite;
+}
+
+sf::Sprite SpriteManager::getEnemySprite()
+{
+	return enemySprite;
 }
 
 

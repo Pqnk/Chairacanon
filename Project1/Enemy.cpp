@@ -30,12 +30,14 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 	scale.y = 0.5f;
 
 	frameSprite.left = 0.f;
-	frameSprite.top = 1280.f;
+	//frameSprite.top = 1280.f;
+	frameSprite.top = 0.f;
 	frameSprite.width = 64.f;
 	frameSprite.height = 64.f;
 
 	currentFrameSprite.left = 0.f;
-	currentFrameSprite.top = 1280.f;
+	//currentFrameSprite.top = 1280.f;
+	frameSprite.top = 0.f;
 	currentFrameSprite.width = 64.f;
 	currentFrameSprite.height = 64.f;
 
@@ -46,6 +48,8 @@ void Enemy::initEnemy(sf::Sprite &characterSprite)
 	sprite.setOrigin(origin);
 	sprite.setPosition(position);
 	sprite.setScale(scale);
+
+	//sprite.setColor(sf::Color::Green);
 
 	setVelocity(speed);
 }
@@ -73,7 +77,7 @@ void Enemy::updateEnemy(Player &player, sf::Image& maskLevel)
 
 		if (playerDetected == true)
 		{
-			sf::Vector2f direction = playerPosRelativToEnemy;
+			direction = playerPosRelativToEnemy;
 			float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
 
 			if (length != 0)
@@ -125,26 +129,147 @@ void Enemy::enemyAnimation()
 		//	Idle animation
 		if (playerDetected == false && isDead == false)
 		{
-			currentFrameSprite.top = 1280.f;
-			currentFrameSprite.left += 64.f;
-			if (currentFrameSprite.left >= 512)
-			{
-				currentFrameSprite.left = 0.f;
-				animationTimer.restart();
-			}
-		}
-		
-		//	/////////////////////////////////////////
-		//	Attack animation
-		if (playerDetected == true && isDead == false)
-		{
-			currentFrameSprite.top = 1344.f;
+			//currentFrameSprite.top = 1280.f;
+			//currentFrameSprite.left += 64.f;
+			//if (currentFrameSprite.left >= 512)
+			//{
+			//	currentFrameSprite.left = 0.f;
+			//	animationTimer.restart();
+			//}
+
+			currentFrameSprite.top = 0.f;
 			currentFrameSprite.left += 64.f;
 			if (currentFrameSprite.left >= 768.f)
 			{
 				currentFrameSprite.left = 0.f;
-				animationTimer.restart();			
+				animationTimer.restart();
 			}
+
+		}
+		
+		//	/////////////////////////////////////////
+		//	Moving animation
+		if (playerDetected == true && isDead == false)
+		{
+			//	//////////////////////////
+			//	Player Sprite Going : UP
+			if (direction.x > -30 && direction.x < 30 && direction.y < 0)
+			{
+				currentFrameSprite.top = 65.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : DOWN
+			if (direction.x > -30 && direction.x < 30 && direction.y > 0)
+			{
+				currentFrameSprite.top = 512.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : LEFT
+			if (direction.x < 0 && direction.y < 30 && direction.y > -30)
+			{
+				currentFrameSprite.top = 384.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : RIGHT
+			if (direction.x > 0 && direction.y < 30 && direction.y > -30)
+			{
+				currentFrameSprite.top = 192.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : UP RIGHT
+			if (direction.x > 0 && direction.x > 30 && direction.y < -30)
+			{
+				currentFrameSprite.top = 128.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : UP LEFT
+			if (direction.x < 0 && direction.x < -30 && direction.y < -30)
+			{
+				currentFrameSprite.top = 320.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : DOWN RIGHT
+			if (direction.y > 0 && direction.x > 30 && direction.y > 30)
+			{
+				currentFrameSprite.top = 256.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//	//////////////////////////
+			//	Player Sprite Going : DOWN LEFT
+			if (direction.y > 0 && direction.x < -30 && direction.y > 30)
+			{
+				currentFrameSprite.top = 448.f;
+				currentFrameSprite.left += 64.f;
+
+				if (currentFrameSprite.left >= 1024.f)
+				{
+					currentFrameSprite.left = 0.f;
+					animationTimer.restart();
+				}
+			}
+
+			//currentFrameSprite.top = 1344.f;
+			//currentFrameSprite.left += 64.f;
+			//if (currentFrameSprite.left >= 768.f)
+			//{
+			//	currentFrameSprite.left = 0.f;
+			//	animationTimer.restart();			
+			//}
 		}
 
 		//	/////////////////////////////////////////

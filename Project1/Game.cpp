@@ -106,7 +106,7 @@ void Game::initLevel1()
 
 	//	Enemies : Initialisation
 	this->enemyManager.initEnemyManager(
-		this->spriteManager.getCharacterSprite()
+		this->spriteManager.getEnemySprite()
 	);
 	this->enemyManager.initEnemiesOnLevel(this->numberLevel);
 
@@ -161,7 +161,7 @@ void Game::initLevel2()
 
 	//	Enemies : Initialisation
 	this->enemyManager.initEnemyManager(
-		this->spriteManager.getCharacterSprite()
+		this->spriteManager.getEnemySprite()
 	);
 	this->enemyManager.initEnemiesOnLevel(this->numberLevel);
 

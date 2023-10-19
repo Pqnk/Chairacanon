@@ -36,6 +36,7 @@ class SpriteManager
 		sf::Sprite getNumbersSprite();
 		sf::Sprite getButtonsSprite();
 		sf::Sprite getGameOverSprite();
+		sf::Sprite getEnemySprite();
 
 		void renderVictory(Camera& cam, sf::RenderTarget& window);
 		void renderGameOver(Camera& cam, sf::RenderTarget& window);
@@ -44,6 +45,8 @@ class SpriteManager
 
 		sf::Texture characterImage;
 		sf::Sprite characterSprite;
+		sf::Texture enemyImage;
+		sf::Sprite enemySprite;
 
 		sf::Texture mainMenuImage;
 		sf::Sprite mainMenuSprite;

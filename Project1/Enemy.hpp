@@ -37,6 +37,8 @@ class Enemy : public Character
 
 	protected :
 
+		sf::Vector2f direction;
+
 		bool playerDetected;
 		sf::Vector2f playerPosRelativToEnemy;
 		bool waitingForErase;

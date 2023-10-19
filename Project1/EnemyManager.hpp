@@ -26,5 +26,7 @@ class EnemyManager
 		std::vector <Enemy> enemies;
 
 		sf::Sprite characterSprite;
+
+		sf::Sprite enemySprite;
 };
 
