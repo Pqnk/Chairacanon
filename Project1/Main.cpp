@@ -2,7 +2,8 @@
 
 int main()
 {
-	std::cout << "WAAH 1  " << std::endl;
+	//std::cout << "Build no : x  " << std::endl;
+	 
 	//	Initialisation of the randomization seed
 	std::srand(static_cast<unsigned>(time(NULL)));
 
